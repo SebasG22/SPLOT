@@ -1,0 +1,27 @@
+{
+  "1": {
+    "titulo": "Inicio",
+    "class": "fa fa-home",
+    "direccion": ".bienvenida"
+  },
+  "2": {
+    "titulo": "Usuarios",
+    "class": "fa fa-table",
+    "direccion": ".listarUsuarios"
+  },
+  "3": {
+    "titulo": "Crear Usuario",
+    "class": "fa fa-bar-chart-o",
+    "direccion": ".crearUsuario"
+  },
+  "4": {
+    "titulo": "Mi Perfil",
+    "class": "fa fa-clone",
+    "direccion": ".perfil"
+  },
+  "5": {
+    "titulo": "Nosotros",
+    "subtitulo": "Equipo Desarollo",
+    "class": "fa fa-laptop",
+    "direccion": ""
+  }}

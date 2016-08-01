@@ -1,0 +1,93 @@
+<div class="container body">
+
+    <div class="main_container">
+
+        <aside-menu id="sol1" side="left" width="75px" is-backdrop="true" push-content="true" class="nav-sm">
+            <div class="left_col scroll-view">
+                <div class="navbar nav_title" style="border: 0;">
+                    <a  class="site_title"><i class="fa fa-paw"></i> <span>SPLOT V3.0!</span></a>
+                </div>
+
+                <div class="clearfix"></div>
+
+                <!-- menu profile quick info -->
+                <div class="profile">
+                    <div class="profile_pic">
+                        <img src="images/user.png" alt="..." class="img-circle profile_img">
+                    </div>
+                    <div class="profile_info">
+                        <span>Welcome,</span>
+                        <h2>{{ firebaseUser.email }}</h2>
+                    </div>
+                </div>
+                <!-- /menu profile quick info -->
+
+                <br>
+
+                <!-- sidebar menu -->
+                <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                    <div class="menu_section active">
+                        <h3>General</h3>
+                        <ul class="nav side-menu" style="" ng-repeat="menu in menuGeneral">
+                            <li class=""><a ui-sref="{{menu.direccion}}"><i class="{{menu.class}}"></i> {{menu.titulo}} <span class="fa fa-chevron-down"></span></a>
+
+                            </li>
+
+                        </ul>
+                    </div>
+
+
+                </div>
+                <!-- /sidebar menu -->
+
+
+            </div>
+        </aside-menu>
+
+        <div class="right_col" role="main" >
+
+
+            <aside-menu-content >
+
+                <div class="nav_menu">
+                    <nav class="" role="navigation">
+                        <div class="nav toggle">
+                            <a id="menu_toggle"><i class="fa fa-bars" aside-menu-toggle="sol1"></i></a>
+
+                        </div>
+
+                        <ul class="nav navbar-nav navbar-right">
+
+
+                            <li class="{{class}}">
+                                <a class="user-profile dropdown-toggle" aria-expanded="{{expanded}}" ng-click="dropdown()">
+                                    <img src="images/user.png" alt="">{{ usuario.nombre }}
+                                    <span class=" fa fa-angle-down"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                    <li><a ui-sref=".perfil"> Profile</a></li>
+
+                                    <li ng-controller="authCtrl as ctrl">
+                                        <a ng-click="ctrl.signOut()"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                                </ul>
+                            </li>
+
+
+                        </ul>
+                    </nav>
+                </div>
+
+
+
+                <div ui-view>
+
+                </div>
+
+
+
+
+            </aside-menu-content>
+
+        </div>
+    </div>
+</div>

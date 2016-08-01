@@ -1,0 +1,19 @@
+{
+  "menuGeneral": {
+    "1": {
+      "label": "Inicio", "icono": "fa fa-home", "direccion":""},
+    "2":{
+      "label":"Uso Aplicación", "icono":"fa fa-check-circle", "direccion":""},
+    "3":{
+      "label":"Proyectos", "icono":"fa fa-folder-open", "direccion":"#proyectos"}
+  },
+  "menuAjustes": {
+    "1": {
+        "label": "Mi perfil", "icono": "fa fa-user", "direccion":""},
+    "2":{
+        "label":"Administrar Usuarios","icono":"fa fa-users", "direccion":"#adminUsers"
+    }
+  }
+}
+
+

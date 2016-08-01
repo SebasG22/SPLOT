@@ -1,0 +1,30 @@
+{
+  "user":"Lider",
+  "1": {
+    "titulo": "Inicio",
+    "class": "fa fa-home",
+    "direccion": ".bienvenida"
+  },
+  "2": {
+    "titulo": "Mis Proyectos",
+    "class": "fa fa-edit",
+    "direccion": ".listarProyectos"
+  },
+  "3": {
+    "titulo": "Crear Proyecto",
+    "class": "fa fa-folder-open",
+    "direccion": ".crearProyecto"
+  },
+  "4": {
+    "titulo": "Mi Perfil",
+    "class": "fa fa-clone",
+    "direccion": ".perfil"
+  },
+
+  "5": {
+    "titulo": "Nosotros",
+    "subtitulo": "Equipo Desarollo",
+    "class": "fa fa-laptop",
+    "direccion": ""
+  }
+}
