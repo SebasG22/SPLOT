@@ -1,0 +1,71 @@
+<div class="page-title">
+    <div class="title_left">
+        <h2> Detalles del Proyecto</h2>
+
+
+    </div>
+
+
+</div>
+
+<div class="clearfix"></div>
+
+<div class="row">
+    <div class="">
+        <div class="x_panel">
+
+
+
+            <!-- start project-detail sidebar -->
+            <div class="col-md-12 col-sm-12 col-xs-12">
+
+                <section class="panel">
+
+                    <div class="x_title">
+                        <h2>Vista de diseño</h2>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="panel-body">
+                        <h3 class="green"><i class="fa fa-paint-brush"></i> {{proyecto.nombre}}</h3>
+
+                        <p>{{proyecto.descripcion}}</p>
+                        <br />
+
+                        <div class="project_detail">
+
+                            <p class="title">Compañia</p>
+                            <p>Here is the company</p>
+                            <p class="title">Miembros Proyecto</p>
+                            <div ng-repeat="miembro in miembros">
+                                <p>{{miembro.nombre}}</p>
+                            </div>
+
+                        </div>
+
+                        <br />
+                        <h5>Archivos del Proyecto</h5>
+                        <ul class="list-unstyled project_files" ng-repeat="archivo in proyecto.archivos" >
+                            <li><a href=""><i class=""></i> {{archivo.nombre}}</a>
+                            </li>
+
+                        </ul>
+                        <br />
+
+                        <div class="text-center" >
+
+
+                            <a href="" class="">Configurar</a>
+
+                        </div>
+                    </div>
+
+                </section>
+
+
+            </div>
+            <!-- end project-detail sidebar -->
+
+
+        </div>
+    </div>
+</div>

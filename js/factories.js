@@ -96,6 +96,36 @@ angular
         };
     });
 
+//Factory para almacenar el project Key del proyecto que se desea ver en detalle cuado se haga click en detallar
+angular
+    .module('asideMenuDemo')
+    .factory('projectSelected', function() {
+        var key;
+        var information;
+        var members;
+
+        return {
+
+            get: function () {
+                return key;
+            },
+            set: function (newKey) {
+                key=newKey;
+            },
+            getInformation: function () {
+                return information;
+            },
+            setInformation: function (newInfo) {
+                information=newInfo;
+            },
+            getMember: function () {
+                return members;
+            },
+            setMember: function (newMembers) {
+                members=newMembers;
+            }
+        };
+    });
 
 angular
     .module('asideMenuDemo')

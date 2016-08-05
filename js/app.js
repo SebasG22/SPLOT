@@ -111,7 +111,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
         controller:'projectListCtrl',
         authenticate: false
 
-    });
+    })
+        .state('inicio.detalleProyecto', {
+            url: '/detalleProyecto',
+            templateUrl: 'views/detalleProyecto.html',
+            controller:'detalleproyectoCtrl',
+            authenticate: false
+
+        });
 
 
 

@@ -3,7 +3,7 @@
  */
 angular.module('asideMenuDemo')
     .controller('inicioCtrl',
-        function (users, $scope, sistema, $firebaseObject, auth, user, typeUser,userActual, projects ,projectsRelatedF) {
+        function (users, $scope, sistema, $firebaseObject, auth, user, typeUser,userActual, projects ,projectsRelatedF,$window) {
 
             //Variables para ampliar/reducir el Dropdown de la barra
             $scope.class = '';
@@ -12,7 +12,7 @@ angular.module('asideMenuDemo')
             //Obtiene los valores del sistema el cual contiene el menuInicial mediante el uso de una Factory
             $scope.sistema = sistema;
 
-            
+
 
 
             var i=0;
@@ -216,7 +216,7 @@ angular.module('asideMenuDemo')
                                 });
 
                                 //Agrego la información de cada proyecto en el que esta relacionado y sus miembros
-                                $scope.projectsRelated.push({proyecto:$scope.projectFounded,miembros:$scope.relatedMembers});
+                                $scope.projectsRelated.push({proyecto:$scope.projectFounded,miembros:$scope.relatedMembers,key:value.$id});
 
                             });
 
