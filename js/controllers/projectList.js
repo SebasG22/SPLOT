@@ -10,13 +10,20 @@ angular.module('asideMenuDemo')
 
 
             $scope.projectDetail= function (projectKey,project,miembros) {
-                $window.alert("Ha seleccionado: "+ projectKey);
-                $window.alert(JSON.stringify(project, null, 4));
-                $window.alert(JSON.stringify(miembros, null, 4));
+                /*Imprimir el project Key*/
+                //$window.alert("Ha seleccionado: "+ projectKey);
+
+                /*Imprimir el project*/
+                //$window.alert(JSON.stringify(project, null, 4));
+
+                /*Imprimir el miembros*/
+                //$window.alert(JSON.stringify(miembros, null, 4));
 
                 projectSelected.set(projectKey);
                 projectSelected.setInformation(project);
                 projectSelected.setMember(miembros);
+
+                $state.go("inicio.detalleProyecto");
 
             };
 

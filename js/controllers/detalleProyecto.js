@@ -10,7 +10,8 @@ angular.module('asideMenuDemo')
 
             $scope.miembros=projectSelected.getMember();
 
-            $window.alert(JSON.stringify($scope.miembros, null, 4));
+            /* Imprime los miembros */
+            //$window.alert(JSON.stringify($scope.miembros, null, 4));
 
 
 

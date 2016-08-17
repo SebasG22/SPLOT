@@ -3,7 +3,11 @@
  */
 angular.module('asideMenuDemo')
     .controller('configuracionCtrl',
-        function($scope, $state, auth, $window,userActual, $firebaseObject, $firebaseArray) {
+        function(users, $scope,typeUser,$window,$http) {
 
-           
+          // $scope.proyecto=fileTojson.get();
+
+                //$window.alert(JSON.stringify($scope.proyecto, null, 4));
+
+                $http.get('json/stores.json');
         });

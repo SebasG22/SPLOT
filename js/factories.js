@@ -18,11 +18,23 @@ angular.module('asideMenuDemo')
         });
 angular
     .module('asideMenuDemo')
-    .factory('fileTojson', function ($http) {
+    .factory('fileTojson', function ($http,$window,$scope) {
         return {
             get: function () {
                 console.log("inside function");
-                return $http.get('json/Menus.json');
+                console.log(""+$http.get('json/stores.json'));
+                $window.alert(JSON.stringify($http.get('json/stores.json'), null, 4));
+
+                $http.get('json/stores.json').then(function (msg) {
+                    $scope.msg = msg;
+                    console.log("He convertido el archivoJson a un Arreglo");
+                    console.log(msg);
+                    $window.alert(JSON.stringify(msg, null, 4));
+
+                });
+
+
+                return $http.get('json/stores.json');
             }
         };
     });
@@ -129,10 +141,52 @@ angular
 
 angular
     .module('asideMenuDemo')
-    .controller('yourCtrl', function ($scope, fileTojson) {
+    .controller('yourCtrl', function ($scope, fileTojson,$window) {
         fileTojson.get().then(function (msg) {
             $scope.msg = msg;
             console.log("He convertido el archivoJson a un Arreglo");
             console.log(msg);
+        });
+    });
+
+
+angular
+    .module('asideMenuDemo')
+    .factory('yourCtrl2', function ($scope, fileTojson,$window) {
+
+
+        return {
+
+            getFile: function () {
+
+                fileTojson.get().then(function (msg) {
+                    $scope.msg = msg;
+                    console.log("He convertido el archivoJson a un Arreglo");
+                    console.log(msg);
+                    $window.alert(JSON.stringify(msg, null, 4));
+
+                });
+
+                return msg;
+            }
+        };
+    });
+
+angular
+    .module('asideMenuDemo')
+    .factory('Friend', function ($http) {
+        return {
+            get: function () {
+                console.log("inside function");
+                return $http.get('json/stores.json');
+            }
+        };
+    });
+
+angular
+    .module('asideMenuDemo')
+    .controller('yourCtrl', function ($scope, Friend) {
+        Friend.get().then(function (msg) {
+            $scope.msg = msg;
         });
     });

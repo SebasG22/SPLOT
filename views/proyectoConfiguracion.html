@@ -11,7 +11,9 @@
 
         <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="x_panel">
-                <div class="x_title">
+                <div class="x_title" ng-controller="yourCtrl">
+
+                    <pre>{{msg}}</pre>
                     <h2>{{proyecto[0].modelo.nombre}}
                         <small>{{proyecto[0].modelo.numCaracteristicas}} Caractertisticas</small>
                     </h2>
