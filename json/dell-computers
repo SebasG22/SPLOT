@@ -1,0 +1,1370 @@
+<!-- saved from url=(0053)http://localhost:8080/famosa.server/splot/json.fm.egl -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"></head><body>{
+"model" : {
+"name": "Dell Laptops/Notebooks",
+
+"complete": false,
+
+"tree" : {
+
+"id" : "_id_0",
+"name" : "Dell Laptops/Notebooks",
+"type" : "RootFeature",
+"state" : 2,
+            "children": [ {
+            "id" : "productcategory",
+            "name" : "Product Category",
+            "type" : "SolitaireFeature",
+
+            "state" : 2,
+            "undoable" : false,
+
+            "mandatory" : true,
+
+            "children": [
+                              {
+                              "id" : "_id_1",
+                              "name" : "_id_1",
+                              "type" : "FeatureGroup",
+
+                              "state" : 0,
+
+                              "min" : 1,
+                              "max" : 1,
+
+
+                              "children": [
+                              {
+                              "id" : "mininotebooks",
+                              "name" : "Mini Notebooks",
+                              "type" : "GroupedFeature",
+
+                              "state" : 0,
+
+                              "changeable" : false,
+
+                              "children": [
+
+                              ]
+                              }
+                              ,
+                              {
+                              "id" : "inspironlaptops",
+                              "name" : "Inspiron Laptops",
+                              "type" : "GroupedFeature",
+
+                              "state" : 0,
+
+                              "changeable" : false,
+
+                              "children": [
+
+                              ]
+                              }
+                              ,
+                              {
+                              "id" : "studiolaptops",
+                              "name" : "Studio Laptops",
+                              "type" : "GroupedFeature",
+
+                              "state" : 0,
+
+                              "changeable" : false,
+
+                              "children": [
+
+                              ]
+                              }
+                              ,
+                              {
+                              "id" : "xpslaptops",
+                              "name" : "XPS Laptops",
+                              "type" : "GroupedFeature",
+
+                              "state" : 0,
+
+                              "changeable" : false,
+
+                              "children": [
+
+                              ]
+                              }
+                              ,
+                              {
+                              "id" : "adamo",
+                              "name" : "Adamo",
+                              "type" : "GroupedFeature",
+
+                              "state" : 0,
+
+                              "changeable" : false,
+
+                              "children": [
+
+                              ]
+                              }
+                              ,
+                              {
+                              "id" : "studioxpslaptops",
+                              "name" : "Studio XPS Laptops",
+                              "type" : "GroupedFeature",
+
+                              "state" : 0,
+
+                              "changeable" : false,
+
+                              "children": [
+
+                              ]
+                              }
+
+                              ]
+                              }
+
+                              ]
+            }
+            ,
+            {
+            "id" : "operatingsystem",
+            "name" : "Operating System",
+            "type" : "SolitaireFeature",
+
+            "state" : 2,
+            "undoable" : false,
+
+            "mandatory" : true,
+
+            "children": [
+            {
+            "id" : "_id_2",
+            "name" : "_id_2",
+            "type" : "FeatureGroup",
+
+            "state" : 0,
+
+            "min" : 1,
+            "max" : 1,
+
+
+            "children": [
+            {
+            "id" : "windowsvista64bit",
+            "name" : "Windows Vista 64 bit",
+            "type" : "GroupedFeature",
+
+            "state" : 0,
+
+            "changeable" : false,
+
+            "children": [
+
+            ]
+            }
+            ,
+            {
+            "id" : "windowsxphome",
+            "name" : "Windows XP Home",
+            "type" : "GroupedFeature",
+
+            "state" : 0,
+
+            "changeable" : false,
+
+            "children": [
+
+            ]
+            }
+            ,
+            {
+            "id" : "ubuntulinux",
+            "name" : "Ubuntu Linux",
+            "type" : "GroupedFeature",
+
+            "state" : 0,
+
+            "changeable" : false,
+
+            "children": [
+
+            ]
+            }
+            ,
+            {
+            "id" : "_id_2_48",
+            "name" : "Windows 7",
+            "type" : "GroupedFeature",
+
+            "state" : 0,
+
+            "changeable" : false,
+
+            "children": [
+
+            ]
+            }
+            ,
+            {
+            "id" : "_id_2_49",
+            "name" : "Windows 8",
+            "type" : "GroupedFeature",
+
+            "state" : 0,
+
+            "changeable" : false,
+
+            "children": [
+
+            ]
+            }
+
+            ]
+            }
+
+            ]
+            }
+            ,
+            {
+            "id" : "harddrive",
+            "name" : "Hard Drive",
+            "type" : "SolitaireFeature",
+
+            "state" : 2,
+            "undoable" : false,
+
+            "mandatory" : true,
+
+            "children": [
+            {
+            "id" : "_id_3",
+            "name" : "_id_3",
+            "type" : "FeatureGroup",
+
+            "state" : 0,
+
+            "min" : 1,
+            "max" : 1,
+
+
+            "children": [
+            {
+            "id" : "hd500gb",
+            "name" : "500GB",
+            "type" : "GroupedFeature",
+
+            "state" : 0,
+
+            "changeable" : false,
+
+            "children": [
+
+            ]
+            }
+            ,
+            {
+            "id" : "hd320gb",
+            "name" : "320GB",
+            "type" : "GroupedFeature",
+
+            "state" : 0,
+
+            "changeable" : false,
+
+            "children": [
+
+            ]
+            }
+            ,
+            {
+            "id" : "hd250gb",
+            "name" : "250GB",
+            "type" : "GroupedFeature",
+
+            "state" : 0,
+
+            "changeable" : false,
+
+            "children": [
+
+            ]
+            }
+            ,
+            {
+            "id" : "hd160gb",
+            "name" : "160GB",
+            "type" : "GroupedFeature",
+
+            "state" : 0,
+
+            "changeable" : false,
+
+            "children": [
+
+            ]
+            }
+            ,
+            {
+            "id" : "hd128gbsolidstate",
+            "name" : "128GB Solid State",
+            "type" : "GroupedFeature",
+
+            "state" : 0,
+
+            "changeable" : false,
+
+            "children": [
+
+            ]
+            }
+            ,
+            {
+            "id" : "hd120gb",
+            "name" : "120GB",
+            "type" : "GroupedFeature",
+
+            "state" : 0,
+
+            "changeable" : false,
+
+            "children": [
+
+            ]
+            }
+            ,
+            {
+            "id" : "hd80gb",
+            "name" : "80GB",
+            "type" : "GroupedFeature",
+
+            "state" : 0,
+
+            "changeable" : false,
+
+            "children": [
+
+            ]
+            }
+
+            ]
+            }
+
+            ]
+            }
+            ,
+            {
+            "id" : "opticaldrive",
+            "name" : "Optical Drive",
+            "type" : "SolitaireFeature",
+
+            "state" : 0,
+            "undoable" : false,
+
+            "mandatory" : false,
+
+            "children": [
+            {
+            "id" : "_id_4",
+            "name" : "_id_4",
+            "type" : "FeatureGroup",
+
+            "state" : 0,
+
+            "min" : 1,
+            "max" : 1,
+
+
+            "children": [
+            {
+            "id" : "cddvdrw",
+            "name" : "CD_DVD +RW",
+            "type" : "GroupedFeature",
+
+            "state" : 0,
+
+            "changeable" : false,
+
+            "children": [
+
+            ]
+            }
+            ,
+            {
+            "id" : "dvdromdriveanddvdrw",
+            "name" : "DVD-ROM Drive and DVD+-RW",
+            "type" : "GroupedFeature",
+
+            "state" : 0,
+
+            "changeable" : false,
+
+            "children": [
+
+            ]
+            }
+            ,
+            {
+            "id" : "dvdrwandcdrwcombo",
+            "name" : "DVD+-RW and CD-RW Combo",
+            "type" : "GroupedFeature",
+
+            "state" : 0,
+
+            "changeable" : false,
+
+            "children": [
+
+            ]
+            }
+            ,
+            {
+            "id" : "bluraydisc",
+            "name" : "Blu Ray Disc",
+            "type" : "GroupedFeature",
+
+            "state" : 0,
+
+            "changeable" : false,
+
+            "children": [
+
+            ]
+            }
+
+            ]
+            }
+
+            ]
+            }
+            ,
+            {
+            "id" : "laptopweight",
+            "name" : "Laptop Weight",
+            "type" : "SolitaireFeature",
+
+            "state" : 2,
+            "undoable" : false,
+
+            "mandatory" : true,
+
+            "children": [
+            {
+            "id" : "_id_5",
+            "name" : "_id_5",
+            "type" : "FeatureGroup",
+
+            "state" : 0,
+
+            "min" : 1,
+            "max" : 1,
+
+
+            "children": [
+            {
+            "id" : "ultralight",
+            "name" : "Ultra Light",
+            "type" : "GroupedFeature",
+
+            "state" : 0,
+
+            "changeable" : false,
+
+            "children": [
+
+            ]
+            }
+            ,
+            {
+            "id" : "light",
+            "name" : "Light",
+            "type" : "GroupedFeature",
+
+            "state" : 0,
+
+            "changeable" : false,
+
+            "children": [
+
+            ]
+            }
+            ,
+            {
+            "id" : "desktopreplacement",
+            "name" : "Desktop Replacement",
+            "type" : "GroupedFeature",
+
+            "state" : 0,
+
+            "changeable" : false,
+
+            "children": [
+
+            ]
+            }
+
+            ]
+            }
+
+            ]
+            }
+            ,
+            {
+            "id" : "memory",
+            "name" : "Memory",
+            "type" : "SolitaireFeature",
+
+            "state" : 2,
+            "undoable" : false,
+
+            "mandatory" : true,
+
+            "children": [
+            {
+            "id" : "_id_6",
+            "name" : "_id_6",
+            "type" : "FeatureGroup",
+
+            "state" : 0,
+
+            "min" : 1,
+            "max" : 1,
+
+
+            "children": [
+            {
+            "id" : "morethan4g",
+            "name" : "More than 4GB",
+            "type" : "GroupedFeature",
+
+            "state" : 0,
+
+            "changeable" : false,
+
+            "children": [
+
+            ]
+            }
+            ,
+            {
+            "id" : "mem4gb",
+            "name" : "4GB",
+            "type" : "GroupedFeature",
+
+            "state" : 0,
+
+            "changeable" : false,
+
+            "children": [
+
+            ]
+            }
+            ,
+            {
+            "id" : "mem3gb",
+            "name" : "3GB",
+            "type" : "GroupedFeature",
+
+            "state" : 0,
+
+            "changeable" : false,
+
+            "children": [
+
+            ]
+            }
+            ,
+            {
+            "id" : "mem2gb",
+            "name" : "2GB",
+            "type" : "GroupedFeature",
+
+            "state" : 0,
+
+            "changeable" : false,
+
+            "children": [
+
+            ]
+            }
+            ,
+            {
+            "id" : "mem1gb",
+            "name" : "1GB",
+            "type" : "GroupedFeature",
+
+            "state" : 0,
+
+            "changeable" : false,
+
+            "children": [
+
+            ]
+            }
+
+            ]
+            }
+
+            ]
+            }
+            ,
+            {
+            "id" : "processor",
+            "name" : "Processor",
+            "type" : "SolitaireFeature",
+
+            "state" : 2,
+            "undoable" : false,
+
+            "mandatory" : true,
+
+            "children": [
+            {
+            "id" : "_id_7",
+            "name" : "_id_7",
+            "type" : "FeatureGroup",
+
+            "state" : 0,
+
+            "min" : 1,
+            "max" : 1,
+
+
+            "children": [
+            {
+            "id" : "intelcore2duo",
+            "name" : "Intel Core 2 Duo",
+            "type" : "GroupedFeature",
+
+            "state" : 0,
+
+            "changeable" : false,
+
+            "children": [
+
+            ]
+            }
+            ,
+            {
+            "id" : "intelpentiumdualcore",
+            "name" : "Intel Pentium Dual core",
+            "type" : "GroupedFeature",
+
+            "state" : 0,
+
+            "changeable" : false,
+
+            "children": [
+
+            ]
+            }
+            ,
+            {
+            "id" : "intelceleron",
+            "name" : "Intel Celeron",
+            "type" : "GroupedFeature",
+
+            "state" : 0,
+
+            "changeable" : false,
+
+            "children": [
+
+            ]
+            }
+            ,
+            {
+            "id" : "intelatom",
+            "name" : "Intel Atom",
+            "type" : "GroupedFeature",
+
+            "state" : 0,
+
+            "changeable" : false,
+
+            "children": [
+
+            ]
+            }
+
+            ]
+            }
+
+            ]
+            }
+            ,
+            {
+            "id" : "price",
+            "name" : "Price",
+            "type" : "SolitaireFeature",
+
+            "state" : 2,
+            "undoable" : false,
+
+            "mandatory" : true,
+
+            "children": [
+            {
+            "id" : "_id_8",
+            "name" : "_id_8",
+            "type" : "FeatureGroup",
+
+            "state" : 0,
+
+            "min" : 1,
+            "max" : 1,
+
+
+            "children": [
+            {
+            "id" : "lessthanus400",
+            "name" : "Less than $400",
+            "type" : "GroupedFeature",
+
+            "state" : 0,
+
+            "changeable" : false,
+
+            "children": [
+
+            ]
+            }
+            ,
+            {
+            "id" : "us400us800",
+            "name" : "$400 - $800",
+            "type" : "GroupedFeature",
+
+            "state" : 0,
+
+            "changeable" : false,
+
+            "children": [
+
+            ]
+            }
+            ,
+            {
+            "id" : "us800us1200",
+            "name" : "$800 - $1200",
+            "type" : "GroupedFeature",
+
+            "state" : 0,
+
+            "changeable" : false,
+
+            "children": [
+
+            ]
+            }
+            ,
+            {
+            "id" : "morethanus1200",
+            "name" : "More than $1200",
+            "type" : "GroupedFeature",
+
+            "state" : 0,
+
+            "changeable" : false,
+
+            "children": [
+
+            ]
+            }
+
+            ]
+            }
+
+            ]
+            }
+
+            ]
+},
+
+"steps" : [
+{
+"id" : "1",
+"type":
+"RootDecision"
+,
+"decision" : {
+
+"feature" : {
+"id" : "_id_0",
+"name" : "Dell Laptops/Notebooks"
+}
+},
+"propagations" : [
+{
+"feature" : {
+"id" : "memory"
+}
+}
+,
+{
+"feature" : {
+"id" : "productcategory"
+}
+}
+,
+{
+"feature" : {
+"id" : "operatingsystem"
+}
+}
+,
+{
+"feature" : {
+"id" : "price"
+}
+}
+,
+{
+"feature" : {
+"id" : "processor"
+}
+}
+,
+{
+"feature" : {
+"id" : "laptopweight"
+}
+}
+,
+{
+"feature" : {
+"id" : "harddrive"
+}
+}
+
+]
+}
+
+],
+
+"constraints" : [
+{
+"id" : "c58",
+"text" : "~XPS Laptops or ~DVD+-RW and CD-RW Combo"
+}
+,
+{
+"id" : "c59",
+"text" : "~XPS Laptops or ~2GB"
+}
+,
+{
+"id" : "c56",
+"text" : "~XPS Laptops or ~80GB"
+}
+,
+{
+"id" : "c57",
+"text" : "~XPS Laptops or ~DVD-ROM Drive and DVD+-RW"
+}
+,
+{
+"id" : "c54",
+"text" : "~XPS Laptops or ~128GB Solid State"
+}
+,
+{
+"id" : "c55",
+"text" : "~XPS Laptops or ~120GB"
+}
+,
+{
+"id" : "c52",
+"text" : "~XPS Laptops or ~Ubuntu Linux"
+}
+,
+{
+"id" : "c53",
+"text" : "~XPS Laptops or ~160GB"
+}
+,
+{
+"id" : "c62",
+"text" : "~XPS Laptops or ~Intel Celeron"
+}
+,
+{
+"id" : "c61",
+"text" : "~XPS Laptops or ~Intel Pentium Dual core"
+}
+,
+{
+"id" : "c60",
+"text" : "~XPS Laptops or ~1GB"
+}
+,
+{
+"id" : "c67",
+"text" : "~Adamo or ~Ubuntu Linux"
+}
+,
+{
+"id" : "c68",
+"text" : "~Adamo or ~500GB"
+}
+,
+{
+"id" : "c69",
+"text" : "~Adamo or ~320GB"
+}
+,
+{
+"id" : "c63",
+"text" : "~XPS Laptops or ~Intel Atom"
+}
+,
+{
+"id" : "c64",
+"text" : "~XPS Laptops or ~Less than $400"
+}
+,
+{
+"id" : "c66",
+"text" : "~Adamo or ~Windows XP Home"
+}
+,
+{
+"id" : "c71",
+"text" : "~Adamo or ~160GB"
+}
+,
+{
+"id" : "c70",
+"text" : "~Adamo or ~250GB"
+}
+,
+{
+"id" : "c73",
+"text" : "~Adamo or ~80GB"
+}
+,
+{
+"id" : "c72",
+"text" : "~Adamo or ~120GB"
+}
+,
+{
+"id" : "c32",
+"text" : "~Inspiron Laptops or ~More than 4GB"
+}
+,
+{
+"id" : "c33",
+"text" : "~Inspiron Laptops or ~1GB"
+}
+,
+{
+"id" : "c30",
+"text" : "~Inspiron Laptops or ~Ultra Light"
+}
+,
+{
+"id" : "c31",
+"text" : "~Inspiron Laptops or ~Desktop Replacement"
+}
+,
+{
+"id" : "c37",
+"text" : "~Studio Laptops or ~Windows XP Home"
+}
+,
+{
+"id" : "c34",
+"text" : "~Inspiron Laptops or ~Intel Atom"
+}
+,
+{
+"id" : "c35",
+"text" : "~Inspiron Laptops or ~More than $1200"
+}
+,
+{
+"id" : "c38",
+"text" : "~Studio Laptops or ~Ubuntu Linux"
+}
+,
+{
+"id" : "c39",
+"text" : "~Studio Laptops or ~160GB"
+}
+,
+{
+"id" : "c40",
+"text" : "~Studio Laptops or ~128GB Solid State"
+}
+,
+{
+"id" : "c41",
+"text" : "~Studio Laptops or ~120GB"
+}
+,
+{
+"id" : "c42",
+"text" : "~Studio Laptops or ~80GB"
+}
+,
+{
+"id" : "c43",
+"text" : "~Studio Laptops or ~More than 4GB"
+}
+,
+{
+"id" : "c44",
+"text" : "~Studio Laptops or ~2GB"
+}
+,
+{
+"id" : "c45",
+"text" : "~Studio Laptops or ~1GB"
+}
+,
+{
+"id" : "c46",
+"text" : "~Studio Laptops or ~Intel Celeron"
+}
+,
+{
+"id" : "c47",
+"text" : "~Studio Laptops or ~Intel Atom"
+}
+,
+{
+"id" : "c48",
+"text" : "~Studio Laptops or ~Less than $400"
+}
+,
+{
+"id" : "c49",
+"text" : "~Studio Laptops or ~More than $1200"
+}
+,
+{
+"id" : "c51",
+"text" : "~XPS Laptops or ~Windows XP Home"
+}
+,
+{
+"id" : "c99",
+"text" : "~Studio XPS Laptops or ~Blu Ray Disc"
+}
+,
+{
+"id" : "c98",
+"text" : "~Studio XPS Laptops or ~DVD+-RW and CD-RW Combo"
+}
+,
+{
+"id" : "c97",
+"text" : "~Studio XPS Laptops or ~DVD-ROM Drive and DVD+-RW"
+}
+,
+{
+"id" : "c96",
+"text" : "~Studio XPS Laptops or ~80GB"
+}
+,
+{
+"id" : "c29",
+"text" : "~Inspiron Laptops or ~Blu Ray Disc"
+}
+,
+{
+"id" : "c28",
+"text" : "~Inspiron Laptops or ~DVD+-RW and CD-RW Combo"
+}
+,
+{
+"id" : "c27",
+"text" : "~Inspiron Laptops or ~DVD-ROM Drive and DVD+-RW"
+}
+,
+{
+"id" : "c22",
+"text" : "~Inspiron Laptops or ~Windows XP Home"
+}
+,
+{
+"id" : "c21",
+"text" : "~Inspiron Laptops or ~Windows Vista 64 bit"
+}
+,
+{
+"id" : "c20",
+"text" : "~Mini Notebooks or ~More than $1200"
+}
+,
+{
+"id" : "c26",
+"text" : "~Inspiron Laptops or ~80GB"
+}
+,
+{
+"id" : "c25",
+"text" : "~Inspiron Laptops or ~120GB"
+}
+,
+{
+"id" : "c24",
+"text" : "~Inspiron Laptops or ~128GB Solid State"
+}
+,
+{
+"id" : "c23",
+"text" : "~Inspiron Laptops or ~Ubuntu Linux"
+}
+,
+{
+"id" : "c110",
+"text" : "~Studio XPS Laptops or ~More than $1200"
+}
+,
+{
+"id" : "c17",
+"text" : "~Mini Notebooks or ~Intel Pentium Dual core"
+}
+,
+{
+"id" : "c16",
+"text" : "~Mini Notebooks or ~Intel Core 2 Duo"
+}
+,
+{
+"id" : "c19",
+"text" : "~Mini Notebooks or ~$800 - $1200"
+}
+,
+{
+"id" : "c18",
+"text" : "~Mini Notebooks or ~Intel Celeron"
+}
+,
+{
+"id" : "c11",
+"text" : "~Mini Notebooks or ~Light"
+}
+,
+{
+"id" : "c10",
+"text" : "~Mini Notebooks or ~Blu Ray Disc"
+}
+,
+{
+"id" : "c13",
+"text" : "~Mini Notebooks or ~More than 4GB"
+}
+,
+{
+"id" : "c12",
+"text" : "~Mini Notebooks or ~Desktop Replacement"
+}
+,
+{
+"id" : "c15",
+"text" : "~Mini Notebooks or ~3GB"
+}
+,
+{
+"id" : "c14",
+"text" : "~Mini Notebooks or ~4GB"
+}
+,
+{
+"id" : "c77",
+"text" : "~Adamo or ~Blu Ray Disc"
+}
+,
+{
+"id" : "c100",
+"text" : "~Studio XPS Laptops or ~Desktop Replacement"
+}
+,
+{
+"id" : "c76",
+"text" : "~Adamo or ~DVD+-RW and CD-RW Combo"
+}
+,
+{
+"id" : "c101",
+"text" : "~Studio XPS Laptops or ~More than 4GB"
+}
+,
+{
+"id" : "c75",
+"text" : "~Adamo or ~DVD-ROM Drive and DVD+-RW"
+}
+,
+{
+"id" : "c74",
+"text" : "~Adamo or ~CD_DVD +RW"
+}
+,
+{
+"id" : "c79",
+"text" : "~Adamo or ~Desktop Replacement"
+}
+,
+{
+"id" : "c78",
+"text" : "~Adamo or ~Light"
+}
+,
+{
+"id" : "c109",
+"text" : "~Studio XPS Laptops or ~$400 - $800"
+}
+,
+{
+"id" : "c108",
+"text" : "~Studio XPS Laptops or ~Less than $400"
+}
+,
+{
+"id" : "c80",
+"text" : "~Adamo or ~More than 4GB"
+}
+,
+{
+"id" : "c107",
+"text" : "~Studio XPS Laptops or ~Intel Atom"
+}
+,
+{
+"id" : "c106",
+"text" : "~Studio XPS Laptops or ~Intel Celeron"
+}
+,
+{
+"id" : "c105",
+"text" : "~Studio XPS Laptops or ~Intel Pentium Dual core"
+}
+,
+{
+"id" : "c83",
+"text" : "~Adamo or ~Intel Pentium Dual core"
+}
+,
+{
+"id" : "c104",
+"text" : "~Studio XPS Laptops or ~1GB"
+}
+,
+{
+"id" : "c84",
+"text" : "~Adamo or ~Intel Celeron"
+}
+,
+{
+"id" : "c103",
+"text" : "~Studio XPS Laptops or ~2GB"
+}
+,
+{
+"id" : "c81",
+"text" : "~Adamo or ~3GB"
+}
+,
+{
+"id" : "c82",
+"text" : "~Adamo or ~1GB"
+}
+,
+{
+"id" : "c102",
+"text" : "~Studio XPS Laptops or ~3GB"
+}
+,
+{
+"id" : "c6",
+"text" : "~Mini Notebooks or ~128GB Solid State"
+}
+,
+{
+"id" : "c86",
+"text" : "~Adamo or ~Less than $400"
+}
+,
+{
+"id" : "c5",
+"text" : "~Mini Notebooks or ~250GB"
+}
+,
+{
+"id" : "c85",
+"text" : "~Adamo or ~Intel Atom"
+}
+,
+{
+"id" : "c4",
+"text" : "~Mini Notebooks or ~320GB"
+}
+,
+{
+"id" : "c88",
+"text" : "~Adamo or ~$800 - $1200"
+}
+,
+{
+"id" : "c3",
+"text" : "~Mini Notebooks or ~500GB"
+}
+,
+{
+"id" : "c87",
+"text" : "~Adamo or ~$400 - $800"
+}
+,
+{
+"id" : "c9",
+"text" : "~Mini Notebooks or ~DVD+-RW and CD-RW Combo"
+}
+,
+{
+"id" : "c8",
+"text" : "~Mini Notebooks or ~DVD-ROM Drive and DVD+-RW"
+}
+,
+{
+"id" : "c7",
+"text" : "~Mini Notebooks or ~CD_DVD +RW"
+}
+,
+{
+"id" : "c90",
+"text" : "~Studio XPS Laptops or ~Windows XP Home"
+}
+,
+{
+"id" : "c91",
+"text" : "~Studio XPS Laptops or ~Ubuntu Linux"
+}
+,
+{
+"id" : "c92",
+"text" : "~Studio XPS Laptops or ~250GB"
+}
+,
+{
+"id" : "c93",
+"text" : "~Studio XPS Laptops or ~160GB"
+}
+,
+{
+"id" : "c2",
+"text" : "~Mini Notebooks or ~Windows Vista 64 bit"
+}
+,
+{
+"id" : "c94",
+"text" : "~Studio XPS Laptops or ~128GB Solid State"
+}
+,
+{
+"id" : "c95",
+"text" : "~Studio XPS Laptops or ~120GB"
+}
+]
+}
+}
+</body></html>

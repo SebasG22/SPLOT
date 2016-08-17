@@ -118,7 +118,15 @@ app.config(function($stateProvider, $urlRouterProvider) {
             controller:'detalleproyectoCtrl',
             authenticate: false
 
-        });
+        })
+
+    .state('inicio.configuracionProyecto', {
+        url: '/configuracionProyecto',
+        templateUrl: 'views/proyectoConfiguracion.html',
+        controller:'configuracionCtrl',
+        authenticate: false
+
+    });
 
 
 

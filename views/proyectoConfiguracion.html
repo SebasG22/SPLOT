@@ -1,0 +1,83 @@
+<div class="">
+    <div class="page-title">
+        <div class="title_left">
+            <h2>Configuración Interactiva de un Producto</h2>
+        </div>
+
+    </div>
+    <div class="clearfix"></div>
+
+    <div class="row">
+
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>{{proyecto[0].modelo.nombre}}
+                        <small>{{proyecto[0].modelo.numCaracteristicas}} Caractertisticas</small>
+                    </h2>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+
+                    <!--Creación los pasos del Wizard-->
+                    <div id="wizard" class="form_wizard wizard_horizontal">
+
+                        <ul class="wizard_steps">
+                            <li>
+                                <a href="#step-1">
+                                    <span class="step_no">1</span>
+                                    <span class="step_descr">Paso 1<br/>
+                                        <small>Conociendo el Sistema</small>
+                                    </span>
+                                </a>
+                            </li>
+
+                            <li ng-repeat="preguntas in proyecto[0].modelo.preguntas">
+                                <pasos></pasos>
+                            </li>
+
+                        </ul>
+
+                        <div id="step-1" ng-show="actual == 1">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="x_panel">
+                                    <div class="x_content">
+                                        <ul class="list-unstyled timeline">
+                                            <li ng-repeat="inicio in menuInicial">
+                                                <div class="block">
+                                                    <div class="tags">
+                                                        <p class="tag" align="center">
+                                                            {{inicio.minTitulo}}</p>
+                                                    </div>
+                                                    <div class="block_content">
+                                                        <h2 class="title">
+                                                            <a>{{inicio.titulo}}</a>
+                                                        </h2><br/>
+                                                        <p class="excerpt">{{inicio.contenido}}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <pregunta></pregunta>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <button type="button" class="btn btn-default">Finalizar</button>
+        <button type="button" class="btn btn-success" ng-click="doSiguiente()">Siguiente</button>
+        <button type="button" class="btn btn-danger" ng-click="agregarDecision('name')">Guardar</button>
+        <button type="button" class="btn btn-primary" ng-click="doAnterior()">Anterior</button>
+
+    </div>
+</div>
+

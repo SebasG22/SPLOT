@@ -1,0 +1,218 @@
+{
+"model" : {
+"name": "TiendaVirtualPUJ",
+"complete": false,
+
+"tree": {
+"id": "_r",
+"name": "TiendaVirtualPUJ",
+"type": "RootFeature",
+"state": 2,
+"children": [
+              {
+              "id": "_r_1",
+              "name": "Productos",
+              "type" : "SolitaireFeature",
+              "state": 2,
+              "undoable": false,
+              "mandatory": true,
+              "children": [
+                            {
+                            "id": "_r_1_4",
+                            "name": "Marcas",
+                            "type" : "SolitaireFeature",
+                            "state": 2,
+                            "undoable": false,
+                            "mandatory": true,
+                            "children": [
+                            ]
+                            },
+                            {
+                            "id": "_r_1_6",
+                            "name": "Categorias",
+                            "type": "SolitaireFeature",
+                            "state": 2,
+                            "undoable" : false,
+                            "mandatory": true,
+                            "children": [
+                            ]
+                            },
+                            {
+                            "id": "_r_1_7",
+                            "name": "CarroCompras",
+                            "type": "SolitaireFeature",
+                            "state": 2,
+                            "undoable" : false,
+                            "mandatory": true,
+                            "children": [
+                                          {
+                                          "id": "_r_1_7_9",
+                                          "name": "Cotizaciones",
+                                          "type" : "SolitaireFeature",
+                                          "state": 0,
+                                          "undoable": false,
+                                          "mandatory": false,
+                                          "children": [
+                                          ]
+                                          },
+                                          {
+                                          "id": "_r_1_7_24",
+                                          "name": "_r_1_7_24",
+                                          "type": "FeatureGroup",
+                                          "state": 0,
+                                          "min" : 1,
+                                          "max": 1,
+                                          "children": [
+                                          {
+                                          "id": "_r_1_7_24_25",
+                                          "name": "PagoContraentrega",
+                                          "type" : "GroupedFeature",
+                                          "state": 0,
+                                          "changeable": false,
+                                          "children": [
+                                          ]
+                                          },
+                                          {
+                                          "id": "_r_1_7_24_26",
+                                          "name": "Paypal",
+                                          "type": "GroupedFeature",
+                                          "state": 0,
+                                          "changeable" : false,
+                                          "children": [
+                                          ]
+                                          },
+                                          {
+                                          "id": "_r_1_7_24_27",
+                                          "name": "Consignacion",
+                                          "type": "GroupedFeature",
+                                          "state": 0,
+                                          "changeable" : false,
+                                          "children": [
+                                          ]
+                                          }
+                                          ]
+                                          }
+                            ]
+                            },
+                            {
+                            "id": "_r_1_23",
+                            "name": "Busquedas",
+                            "type": "SolitaireFeature",
+                            "state": 0,
+                            "undoable" : false,
+                            "mandatory": false,
+                            "children": [
+                            ]
+                            },
+                            {
+                            "id": "_r_1_28",
+                            "name": "Calificacion",
+                            "type": "SolitaireFeature",
+                            "state": 0,
+                            "undoable" : false,
+                            "mandatory": false,
+                            "children": [
+                            ]
+                            }
+              ]
+              },
+              {
+              "id": "_r_2",
+              "name": "RegistroUsuarios",
+              "type": "SolitaireFeature",
+              "state": 0,
+              "undoable" : false,
+              "mandatory": false,
+              "children": [
+              ]
+              },
+              {
+              "id": "_r_3",
+              "name": "Contenido",
+              "type": "SolitaireFeature",
+              "state": 0,
+              "undoable" : false,
+              "mandatory": false,
+              "children": [
+              {
+              "id": "_r_3_17",
+              "name": "Banners",
+              "type" : "SolitaireFeature",
+              "state": 0,
+              "undoable": false,
+              "mandatory": false,
+              "children": [
+              ]
+              },
+              {
+              "id": "_r_3_19",
+              "name": "Galeria",
+              "type": "SolitaireFeature",
+              "state": 0,
+              "undoable" : false,
+              "mandatory": false,
+              "children": [
+              ]
+              },
+              {
+              "id": "_r_3_20",
+              "name": "Redes sociales",
+              "type": "SolitaireFeature",
+              "state": 0,
+              "undoable" : false,
+              "mandatory": false,
+              "children": [
+              ]
+              },
+              {
+              "id": "_r_3_21",
+              "name": "Chat",
+              "type": "SolitaireFeature",
+              "state": 0,
+              "undoable" : false,
+              "mandatory": false,
+              "children": [
+              ]
+              }
+              ]
+              }
+]
+},
+"steps": [
+{
+"id": "1",
+"type": "RootDecision",
+"decision" : {
+"feature": {
+"id": "_r",
+"name" : "TiendaVirtualPUJ"
+}
+},
+"propagations": [
+{
+"feature": {
+"id": "_r_1"
+}
+},
+{
+"feature": {
+"id": "_r_1_6"
+}
+},
+{
+"feature": {
+"id": "_r_1_7"
+}
+},
+{
+"feature": {
+"id": "_r_1_4"
+}
+}
+]
+}
+],
+"constraints": [
+]
+}
+}

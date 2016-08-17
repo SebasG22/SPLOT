@@ -1,0 +1,118 @@
+<!-- saved from url=(0053)http: //localhost:8080/famosa.server/splot/json.fm.egl -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"></head><body>{
+"model" : {
+"name": "Bike",
+"complete": false,
+
+"tree": {
+"id": "bike",
+"name": "Bike",
+"type": "RootFeature",
+"state": 2,
+"children": [
+{
+"id": "frame",
+"name": "frame",
+"type" : "SolitaireFeature",
+"state": 2,
+"undoable": false,
+"mandatory": true,
+"children": [
+{
+"id": "_id_0",
+"name": "_id_0",
+"type" : "FeatureGroup",
+"state": 0,
+"min": 1,
+"max": 1,
+"children": [
+{
+"id": "_frame_aluminium",
+"name": "aluminium",
+"type" : "GroupedFeature",
+"state": 0,
+"changeable": false,
+"children": [
+]
+},
+{
+"id": "_frame_carbon",
+"name": "carbon",
+"type": "GroupedFeature",
+"state": 0,
+"changeable" : false,
+"children": [
+]
+}
+]
+}
+]
+},
+{
+"id": "pedal",
+"name": "pedal",
+"type": "SolitaireFeature",
+"state": 0,
+"undoable" : false,
+"mandatory": false,
+"children": [
+{
+"id": "_id_1",
+"name": "_id_1",
+"type" : "FeatureGroup",
+"state": 0,
+"min": 1,
+"max": 1,
+"children": [
+{
+"id": "_pedal_pedala",
+"name": "pedal A",
+"type" : "GroupedFeature",
+"state": 0,
+"changeable": false,
+"children": [
+]
+},
+{
+"id": "_pedal_pedalb",
+"name": "pedal B",
+"type": "GroupedFeature",
+"state": 0,
+"changeable" : false,
+"children": [
+]
+}
+]
+}
+]
+}
+]
+},
+"steps": [
+{
+"id": "1",
+"type": "RootDecision",
+"decision" : {
+"feature": {
+"id": "bike",
+"name" : "Bike"
+}
+},
+"propagations": [
+{
+"feature": {
+"id": "frame"
+}
+}
+]
+}
+],
+"constraints": [
+{
+"id": "c1",
+"text": "~pedal B or carbon"
+}
+]
+}
+}
+</body></html>
