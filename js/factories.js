@@ -178,7 +178,7 @@ angular
         return {
             get: function () {
                 console.log("inside function");
-                return $http.get('json/stores.json');
+                return $http.get('json/dell-computers2.json');
             }
         };
     });
