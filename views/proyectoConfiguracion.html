@@ -21,105 +21,6 @@
                     <pre> "Type:"  {{msg.data.model.tree.type}}</pre>
                     <pre> "Estado:"  {{msg.data.model.tree.state}}</pre>-->
 
-                    <div ng-repeat="child in msg.data.model.tree.children">
-                        <!--First Child -->
-                        <!--<h2>Children 1</h2>-->
-
-                        <!-- Get the Id of the First Child -->
-                        <!-- <pre> "Id:"  {{child.id}}</pre> -->
-
-                        <!-- Get the Name of the First Child -->
-                        <!--<pre> "Name:"  {{child.name}}</pre>-->
-
-                        <!-- Get the Type of the First Child -->
-                        <!--<pre> "Type:"  {{child.type}}</pre>-->
-
-                        <!-- Get the State of the First Child -->
-                        <!--<pre> "State:"  {{child.state}}</pre>-->
-
-                        <div ng-repeat="child2 in child.children">
-
-                            <!-- Second Child -->
-                            <!--<h2>Children 2</h2>-->
-
-                            <!-- Get the Id of the Second Child -->
-                            <!--<pre> "Id:"  {{child2.id}}</pre>-->
-
-
-                            <!-- Get the Name of the Second Child -->
-                            <!--<pre> "Name:"  {{child2.name}}</pre> -->
-
-                            <!-- Get the Type of the Second Child -->
-                            <!--<pre> "Type:"  {{child2.type}}</pre>-->
-
-                            <!-- Get the State of the Second Child -->
-                            <!--<pre> "Type:"  {{child2.state}}</pre>-->
-
-
-                            <div>
-                                <div id="step-{{child2.id}}">
-                                    <h2>{{child2.id}}</h2>
-                                    <div class="x_panel">
-                                        <div class="x_title">
-                                            <h2>{{child.name}}</h2>
-                                            <div class="clearfix"></div>
-                                        </div>
-
-                                        <div class="x_content">
-                                            <br/>
-                                            <form name="myForm">
-                                                <div class="col-md-55" ng-repeat="child4 in child2.children">
-                                                    <div class="thumbnail">
-                                                        <div class="image view view-first">
-                                                            <img style="width: 100%; display: block;"
-                                                                 src="https://github.com/SebasG22/New-SPLOT/blob/master/images/4.jpg" alt="image"/>
-                                                            <div class="mask">
-                                                                <p>{{child4.name}}</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="caption">
-                                                            <div class="radio">
-                                                                <label>
-                                                                    <input type="radio" value="{{child4.name}}"
-                                                                           name=""
-                                                                           ng-model="$parent.name"> {{child4.name}}
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <p><tt>myForm.$invalid: {{myForm.$invalid}}</tt></p>
-                                                <p><tt>Selected: {{name}}</tt></p>
-
-                                                <button ng-disabled="myForm.$invalid">Submit</button>
-
-                                            </form>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div ng-repeat="child3 in child2.children">
-
-                                <!-- Third Child -->
-                                <!-- <h2>Children 3</h2> -->
-
-                                <!-- Get the Id of the Third Child -->
-                                <!--<pre> "Id:"  {{child3.id}}</pre> -->
-
-                                <!-- Get the Name of the Third Child -->
-                                <!--<pre> "Name:"  {{child3.name}}</pre> -->
-
-                                <!-- Get the Type of the Third Child -->
-                                <!--<pre> "Type:"  {{child3.type}}</pre>-->
-
-                                <!-- Get the State of the Third Child -->
-                                <!--<pre> "State:"  {{child2.state}}</pre>-->
-                            </div>
-                        </div>
-                    </div>
 
 
                     <h2>{{msg.data.model.name}}
@@ -173,6 +74,107 @@
                             </div>
                         </div>
 
+                        <div ng-repeat="child in msg.data.model.tree.children">
+                            <!--First Child -->
+                            <!--<h2>Children 1</h2>-->
+
+                            <!-- Get the Id of the First Child -->
+                            <!-- <pre> "Id:"  {{child.id}}</pre> -->
+
+                            <!-- Get the Name of the First Child -->
+                            <!--<pre> "Name:"  {{child.name}}</pre>-->
+
+                            <!-- Get the Type of the First Child -->
+                            <!--<pre> "Type:"  {{child.type}}</pre>-->
+
+                            <!-- Get the State of the First Child -->
+                            <!--<pre> "State:"  {{child.state}}</pre>-->
+
+                            <div ng-repeat="child2 in child.children">
+
+                                <!-- Second Child -->
+                                <!--<h2>Children 2</h2>-->
+
+                                <!-- Get the Id of the Second Child -->
+                                <!--<pre> "Id:"  {{child2.id}}</pre>-->
+
+
+                                <!-- Get the Name of the Second Child -->
+                                <!--<pre> "Name:"  {{child2.name}}</pre> -->
+
+                                <!-- Get the Type of the Second Child -->
+                                <!--<pre> "Type:"  {{child2.type}}</pre>-->
+
+                                <!-- Get the State of the Second Child -->
+                                <!--<pre> "Type:"  {{child2.state}}</pre>-->
+
+
+                                <div>
+                                    <div id="step-{{child2.id}}" ng-show="indix2==child2.id">
+                                        <!--<h2>{{child2.id}}</h2>-->
+                                        <div class="x_panel">
+                                            <div class="x_title">
+                                                <h2>{{child.name}}</h2>
+                                                <div class="clearfix"></div>
+                                            </div>
+
+                                            <div class="x_content">
+                                                <br/>
+                                                <form name="myForm">
+                                                    <div class="col-md-55" ng-repeat="child4 in child2.children">
+                                                        <div class="thumbnail">
+                                                            <div class="image view view-first">
+                                                                <img style="width: 100%; display: block;"
+                                                                     src="https://github.com/SebasG22/New-SPLOT/blob/master/images/4.jpg" alt="image"/>
+                                                                <div class="mask">
+                                                                    <p>{{child4.name}}</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="caption">
+                                                                <div class="radio">
+                                                                    <label>
+                                                                        <input type="radio" value="{{child4.name}}"
+                                                                               name=""
+                                                                               ng-model="$parent.name"> {{child4.name}}
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <p><tt>myForm.$invalid: {{myForm.$invalid}}</tt></p>
+                                                    <p><tt>Selected: {{name}}</tt></p>
+
+                                                    <button ng-disabled="myForm.$invalid">Submit</button>
+
+                                                </form>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div ng-repeat="child3 in child2.children">
+
+                                    <!-- Third Child -->
+                                    <!-- <h2>Children 3</h2> -->
+
+                                    <!-- Get the Id of the Third Child -->
+                                    <!--<pre> "Id:"  {{child3.id}}</pre> -->
+
+                                    <!-- Get the Name of the Third Child -->
+                                    <!--<pre> "Name:"  {{child3.name}}</pre> -->
+
+                                    <!-- Get the Type of the Third Child -->
+                                    <!--<pre> "Type:"  {{child3.type}}</pre>-->
+
+                                    <!-- Get the State of the Third Child -->
+                                    <!--<pre> "State:"  {{child2.state}}</pre>-->
+                                </div>
+                            </div>
+                        </div>
+
+
                         <pregunta></pregunta>
 
                     </div>
@@ -183,9 +185,9 @@
         </div>
 
         <button type="button" class="btn btn-default">Finalizar</button>
-        <button type="button" class="btn btn-success" ng-click="doSiguiente()">Siguiente</button>
+        <button type="button" class="btn btn-success" ng-click="aumentar()">Siguiente</button>
         <button type="button" class="btn btn-danger" ng-click="agregarDecision('name')">Guardar</button>
-        <button type="button" class="btn btn-primary" ng-click="doAnterior()">Anterior</button>
+        <button type="button" class="btn btn-primary" ng-click="disminuir()">Anterior</button>
 
     </div>
 </div>
