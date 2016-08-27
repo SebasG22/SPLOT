@@ -2793,7 +2793,8 @@ ul.project_files li a i {
     display: block; }
 
 .ui-ribbon-container {
-    position: relative; }
+    position: relative;
+    }
 
 .ui-ribbon-container .ui-ribbon-wrapper {
     position: absolute;
@@ -2801,7 +2802,8 @@ ul.project_files li a i {
     width: 85px;
     height: 88px;
     top: -3px;
-    right: -3px; }
+    right: -3px;
+      }
 
 .ui-ribbon-container.ui-ribbon-primary .ui-ribbon {
     background-color: #5b90bf; }
@@ -2820,7 +2822,8 @@ ul.project_files li a i {
     width: 120px;
     line-height: 20px;
     background-color: #555;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3); }
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    z-index:5000}
 
 .ui-ribbon-container.ui-ribbon-primary .ui-ribbon:after, .ui-ribbon-container.ui-ribbon-primary .ui-ribbon:before {
     border-top: 2px solid #5b90bf; }

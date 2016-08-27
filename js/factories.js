@@ -190,3 +190,21 @@ angular
             $scope.msg = msg;
         });
     });
+
+
+//Factory to pass the user information to Edit Page
+angular
+    .module('asideMenuDemo')
+    .factory('userUpdate', function() {
+        var userInfo;
+
+        return {
+
+            get: function () {
+                return userInfo;
+            },
+            set: function (userInfoR) {
+                userInfo=userInfoR;
+            }
+        };
+    });

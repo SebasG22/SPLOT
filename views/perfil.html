@@ -21,8 +21,8 @@
                         <div class="profile_img">
                             <div id="crop-avatar">
                                 <!-- Current avatar -->
-                                <img class="img-responsive avatar-view" src="images/picture.jpg" alt="Avatar"
-                                     title="Change the avatar">
+                                <img class="img-responsive avatar-view" src="{{usuario.imagen}}" alt="Avatar"
+                                     title="Change the avatar" width="70%">
                             </div>
                         </div>
                         <h3>{{usuario.nombre}}</h3>
@@ -49,7 +49,7 @@
                             </li>
                         </ul>
 
-                        <a class="btn btn-success"><i class="fa fa-edit m-right-xs"></i>Editar</a>
+                        <a class="btn btn-success" ng-click="updateInformation()"><i class="fa fa-edit m-right-xs"></i>Editar Perfil</a>
 
                         <button class="btn btn-danger" ng-click="deleteUser()"><i class="fa fa-edit m-right-xs"></i>Eliminar
                         </button>
@@ -81,7 +81,7 @@
                                 <td>
                                     <ul class="list-inline" ng-repeat="miembro in project.miembros">
                                         <li>
-                                            <img src="images/user.png" class="avatar" alt="Avatar">&nbsp
+                                            <img src="{{miembro.imagen}}" class="avatar" alt="Avatar">&nbsp
                                             {{miembro.nombre}}
                                         </li>
 
@@ -105,6 +105,7 @@
                             </tbody>
                         </table>
                         <!-- end user projects -->
+
 
 
                     </div>

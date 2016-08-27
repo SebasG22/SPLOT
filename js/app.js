@@ -81,6 +81,13 @@ app.config(function($stateProvider, $urlRouterProvider) {
             authenticate: false
         })
 
+        .state('inicio.editarPerfil', {
+            url: '/editarPerfil',
+            templateUrl: 'views/formUsuarioUpdate.html',
+            controller:'usuarioUpdateCtrl',
+            authenticate: false
+
+        })
 
         .state('inicio.crearUsuario', {
             url: '/crearUsuario',
