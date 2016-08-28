@@ -1,2 +1,27 @@
-# Created by .ignore support plugin (hsz.mobi)
+# == Files to ignore by Git
+
+# -- From Javascript
+
+# npm
+node_modules/
+npm-debug.log
+
+# Bower
+bower_components/
+
+# Grunt
+.grunt
+
+# -- From Editors and IDEs
+
+# Netbeans
+nbactions.xml
+/nb-configuration.xml
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# WebStorm / IntelliJ
 .idea/
