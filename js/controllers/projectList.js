@@ -1,7 +1,8 @@
 /**
- * Created by SebasG on 10/07/16.
+ * Multi-user SPLOT
  */
-angular.module('asideMenuDemo')
+
+angular.module('multiSplot')
     .controller('projectListCtrl',
         function(users, $scope,projectsRelatedF,typeUser,$state,$window,projectSelected) {
 

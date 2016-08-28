@@ -1,7 +1,8 @@
 /**
- * Created by SebasG on 8/07/16.
+ * Multi-user SPLOT
  */
-angular.module('asideMenuDemo')
+
+angular.module('multiSplot')
     .controller('loginCtrl',
         function(auth, $state, $scope,$window,userActual) {
 

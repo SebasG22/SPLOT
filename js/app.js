@@ -1,3 +1,9 @@
+/**
+ * Multi-user SPLOT
+ */
+
+// definition of the main application
+
 // Initialize Firebase
 var config = {
     apiKey: "AIzaSyAdBtAgvhG9-tGmHlQNanwkBAnZrLU8u0o",
@@ -8,12 +14,11 @@ var config = {
 firebase.initializeApp(config);
 
 
+// define the main module
+var app = angular.module('multiSplot', ['asideModule','ui.router','firebase']);
 
-
-var app = angular.module('asideMenuDemo', ['asideModule','ui.router','firebase']);
-
-var module = angular.module('asideMenuDemo');
-// ui-route configuration
+// configure the ui-route
+var module = angular.module('multiSplot');
 module
     .run(['$rootScope', '$state', '$window', 'auth',
         function($rootScope, $state, $window, auth) {
@@ -40,7 +45,6 @@ module
             });
         }
     ]);
-
 
 app.config(function($stateProvider, $urlRouterProvider) {
 
@@ -134,9 +138,5 @@ app.config(function($stateProvider, $urlRouterProvider) {
         authenticate: false
 
     });
-
-
-
-
 
 });

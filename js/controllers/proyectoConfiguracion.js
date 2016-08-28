@@ -1,7 +1,8 @@
 /**
- * Created by SebasG on 6/08/16.
+ * Multi-user SPLOT
  */
-angular.module('asideMenuDemo')
+
+angular.module('multiSplot')
     .controller('configuracionCtrl',
         function(users, $scope,typeUser,$window,$http,Friend) {
 

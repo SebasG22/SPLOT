@@ -1,7 +1,8 @@
 /**
- * Created by SebasG on 9/07/16.
+ * Multi-user SPLOT
  */
-angular.module('asideMenuDemo')
+
+angular.module('multiSplot')
     .controller('inicioCtrl',
         function (users, $scope, sistema, $firebaseObject, auth, user, typeUser,userActual, projects ,projectsRelatedF,$window) {
 

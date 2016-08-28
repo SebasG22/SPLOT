@@ -1,8 +1,10 @@
 /**
- * Created by SebasG on 5/07/16.
+ * Multi-user SPLOT
  */
+
+
 // obtenga el módulo y cree un controlador
-angular.module('asideMenuDemo').controller('usuarioUpdateCtrl',
+angular.module('multiSplot').controller('usuarioUpdateCtrl',
     function($scope, $firebaseObject, $firebaseArray, users,user,whitelist,$customFirebaseArray,userService, auth, $state, $window,typeUser,userActual,userUpdate){
         $scope.usuarios = users;
 

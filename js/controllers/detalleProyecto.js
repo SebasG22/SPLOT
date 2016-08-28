@@ -1,7 +1,8 @@
 /**
- * Created by SebasG on 3/08/16.
+ * Multi-user SPLOT
  */
-angular.module('asideMenuDemo')
+
+angular.module('multiSplot')
     .controller('detalleproyectoCtrl',
         function(users, $scope,projectsRelatedF,typeUser,$state,$window,projectSelected) {
 
@@ -12,11 +13,6 @@ angular.module('asideMenuDemo')
 
             /* Imprime los miembros */
             //$window.alert(JSON.stringify($scope.miembros, null, 4));
-
-
-
-
-
 
         }
     );

@@ -1,7 +1,11 @@
 /**
- * Created by SebasG on 5/07/16.
+ * Multi-user SPLOT
  */
-angular.module('asideMenuDemo')
+
+var module = angular.module('multiSplot');
+
+// list of users
+module
     .service('usuarios', ['$customFirebaseArray',
         function($customFirebaseArray) {
             // reference to the database root
@@ -11,11 +15,6 @@ angular.module('asideMenuDemo')
         }
     ]);
 
-
-
-
-
-var module = angular.module('asideMenuDemo');
 // authentication
 module
     .factory('auth', ['$firebaseAuth',
@@ -39,7 +38,7 @@ module
     ]);
 
 // synchronized list of white-list
-angular.module('asideMenuDemo')
+angular.module('multiSplot')
     .service('whitelist', ['$customFirebaseArray',
         function($customFirebaseArray) {
             // reference to the database root
