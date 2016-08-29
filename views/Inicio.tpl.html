@@ -13,11 +13,11 @@
                 <!-- menu profile quick info -->
                 <div class="profile">
                     <div class="profile_pic">
-                        <img src="images/user.png" alt="..." class="img-circle profile_img">
+                        <img src="{{usuario1.imagen}}" alt="..." class="img-circle profile_img">
                     </div>
                     <div class="profile_info">
                         <span>Welcome,</span>
-                        <h2>{{ firebaseUser.email }}</h2>
+                        <h2>{{usuario1.nombre}}</h2>
                     </div>
                 </div>
                 <!-- /menu profile quick info -->
@@ -61,7 +61,7 @@
 
                             <li class="{{class}}">
                                 <a class="user-profile dropdown-toggle" aria-expanded="{{expanded}}" ng-click="dropdown()">
-                                    <img src="{{usuario.imagen}}" alt="">{{ usuario.nombre }}
+                                    <img src="{{usuario1.imagen}}" alt="">{{ usuario1.nombre }}
                                     <span class=" fa fa-angle-down"></span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-usermenu pull-right">

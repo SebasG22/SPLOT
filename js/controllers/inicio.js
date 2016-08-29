@@ -1,7 +1,8 @@
 /**
- * Created by SebasG on 9/07/16.
+ * Multi-user SPLOT
  */
-angular.module('asideMenuDemo')
+
+angular.module('multiSplot')
     .controller('inicioCtrl',
         function (users, $scope, sistema, $firebaseObject, auth, user, typeUser,userActual, projects ,projectsRelatedF,$window) {
 
@@ -146,9 +147,15 @@ angular.module('asideMenuDemo')
                 $scope.usuario;
 
                 //Obtener información del Usuario Actual
-                $scope.usuario = user.get();
+                //$scope.usuario = user.get();
 
-                ref.orderByChild('uid').equalTo($scope.usuario.uid).on("child_added", function (snapshot) {
+                //All the Users -> Firebase Array
+                $scope.usuarioss=users;
+
+                //Get the Record in  FirebaseArray througth userUpdate Factory
+                $scope.usuario1= $scope.usuarioss.$getRecord(auth.$getAuth().uid);
+
+                ref.orderByChild('uid').equalTo($scope.usuario1.uid).on("child_added", function (snapshot) {
 
                     $scope.valor = true;
 

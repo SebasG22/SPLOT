@@ -1,7 +1,8 @@
 /**
- * Created by SebasG on 7/07/16.
+ * Multi-user SPLOT
  */
-angular.module('asideMenuDemo')
+
+angular.module('multiSplot')
     .controller('proyectosCtrl',
         function(users, $scope,$window,fileTojson,projects,$state,$firebaseObject,typeUser) {
             //Arreglo para  guardar los lideres en Firebase

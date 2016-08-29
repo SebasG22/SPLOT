@@ -1,7 +1,8 @@
 /**
- * Created by SebasG on 10/07/16.
+ * Multi-user SPLOT
  */
-angular.module('asideMenuDemo')
+
+angular.module('multiSplot')
     .controller('profileCtrl',
         function (auth, $state, $scope, $firebaseObject, projects, user,users,$window,$firebaseObject,projectsRelatedF,userUpdate,userActual) {
 
@@ -35,10 +36,14 @@ angular.module('asideMenuDemo')
 
 
             //Method to Update User Information
-            $scope.updateInformation= function () {
+
+            $scope.updateInformation= function (action) {
 
                 //Pass the User UID to a userUpdate Factory, and the Factory save the data to change the information in the Edit Page.
                 userUpdate.set(userActual.getUID());
+
+                //Send the user Action, The selection affects the fields that the page shows.
+                userUpdate.setAction(action);
 
                 //Go to Edit Page
                 $state.go("inicio.editarPerfil");

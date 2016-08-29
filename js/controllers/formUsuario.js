@@ -1,13 +1,12 @@
 /**
- * Created by SebasG on 5/07/16.
+ * Multi-user SPLOT
  */
-// obtenga el módulo y cree un controlador
-angular.module('asideMenuDemo').controller('usuariosCtrl',
+
+angular.module('multiSplot').controller('usuariosCtrl',
     function($scope, $firebaseObject, $firebaseArray, users,whitelist,$customFirebaseArray,userService, auth, $state, $window,typeUser){
         $scope.usuarios = users;
 
 
-        console.log("Ingrese a usuariosCtrl");
 
 
         console.log("Tipo de Usuario Factory: "+ typeUser.get());
@@ -16,10 +15,6 @@ angular.module('asideMenuDemo').controller('usuariosCtrl',
             $state.go("inicio.bienvenida");
 
         }
-
-        console.log(typeUser.get());
-
-
 
         $scope.eliminarProyecto=function (proyecto) {
             console.log("Ingrese a Eliminar Proyecto");
@@ -31,7 +26,7 @@ angular.module('asideMenuDemo').controller('usuariosCtrl',
         $scope.saludo="hi usuariosCtrl";
         $scope.agregarUsuarioWH= function () {
 
-            $scope.whitelist.$addWithKey($scope.identificacion.value,{nombre:$scope.nombre,identificacion:$scope.identificacion.value,correo:$scope.login,direccion:$scope.direccion,profesion:$scope.profesion,permiso:$scope.permiso})
+            $scope.whitelist.$addWithKey($scope.identificacion.value,{nombre:$scope.nombre,identificacion:$scope.identificacion.value,correo:$scope.login,direccion:$scope.direccion,profesion:$scope.profesion,permiso:$scope.permiso,imagen:'images/user.png'})
             console.log("Agregado al whitelist");
             console.log($scope.whitelist);
             $window.alert("Se ha agregado el usuario a la whitelist")
@@ -64,11 +59,12 @@ angular.module('asideMenuDemo').controller('usuariosCtrl',
                 $scope.profesion = $scope.rec.profesion;
                 $scope.login=$scope.rec.correo;
                 $scope.permiso=$scope.rec.permiso;
+                $scope.imagen='images/user.png';
 
             }
 
             else {
-                console.log("Usuario No encontrado")
+                console.log("Usuario No encontrado");
                 $window.alert("No tiene invitación para registrarse");
             }
 
@@ -78,7 +74,7 @@ angular.module('asideMenuDemo').controller('usuariosCtrl',
 
 
             // create the user
-                userService.createUser($scope.login,$scope.password, $scope.nombre, $scope.identificacion, $scope.direccion, $scope.profesion, $scope.permiso)
+                userService.createUser($scope.login,$scope.password, $scope.nombre, $scope.identificacion, $scope.direccion, $scope.profesion, $scope.permiso,$scope.imagen)
                     // if everything is ok
                     .then(function (user) {
                         $scope.whitelist.$remove($scope.rec);
