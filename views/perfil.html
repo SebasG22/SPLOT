@@ -49,10 +49,31 @@
                             </li>
                         </ul>
 
-                        <a class="btn btn-success" ng-click="updateInformation()"><i class="fa fa-edit m-right-xs"></i>Editar Perfil</a>
 
-                        <button class="btn btn-danger" ng-click="deleteUser()"><i class="fa fa-edit m-right-xs"></i>Eliminar
-                        </button>
+
+
+
+
+                        <ul class="list-unstyled user_data">
+                            <li >
+                                <a class="btn btn-success" ng-click="updateInformation('EditInformation')" style="width: 170px"><i class="fa fa-edit m-right-xs"></i>Editar Informacion</a>
+                            </li>
+
+                            <li>
+                                <a class="btn btn-info" ng-click="updateInformation('ChangeMail')" style="width: 170px"><i class="fa fa-edit m-right-xs"></i>Cambiar Usuario</a>
+                            </li>
+
+                            <li>
+                                <a class="btn btn-warning" ng-click="updateInformation('ChangePassword')" style="width: 170px"><i class="fa fa-edit m-right-xs"></i>Cambiar Contraseña</a>
+                            </li>
+
+                            <li>
+                                <a class="btn btn-danger" ng-click="updateInformation('DeleteAccount')" style="width: 170px"><i class="fa fa-edit m-right-xs"></i>Eliminar Cuenta</a>
+                            </li>
+
+                        </ul>
+
+
                         <br/>
 
 
@@ -91,9 +112,9 @@
                                 <td class="project_progress">
                                     <div class="progress progress_sm">
                                         <div class="progress-bar bg-green" role="progressbar"
-                                             data-transitiongoal="57"></div>
+                                             data-transitiongoal="0"></div>
                                     </div>
-                                    <small>57% Complete</small>
+                                    <small>0% Complete</small>
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-success btn-xs">Completado</button>

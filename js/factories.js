@@ -1,7 +1,9 @@
 /**
- * Created by SebasG on 5/07/16.
+ * Multi-user SPLOT
  */
-angular.module('asideMenuDemo')
+
+// firebaseArray with a method to add an item defining the key
+angular.module('multiSplot')
     .factory("$customFirebaseArray",
         function($firebaseArray, $firebaseObject) {
 
@@ -16,8 +18,9 @@ angular.module('asideMenuDemo')
 
             });
         });
+
 angular
-    .module('asideMenuDemo')
+    .module('multiSplot')
     .factory('fileTojson', function ($http,$window,$scope) {
         return {
             get: function () {
@@ -32,15 +35,13 @@ angular
                     $window.alert(JSON.stringify(msg, null, 4));
 
                 });
-
-
                 return $http.get('json/stores.json');
             }
         };
     });
 
 angular
-    .module('asideMenuDemo')
+    .module('multiSplot')
     .factory('typeUser', function() {
         var type;
     return {
@@ -55,7 +56,7 @@ angular
 });
 
 angular
-    .module('asideMenuDemo')
+    .module('multiSplot')
     .factory('user', function() {
         var user;
         return {
@@ -70,7 +71,7 @@ angular
     });
 
 angular
-    .module('asideMenuDemo')
+    .module('multiSplot')
     .factory('userActual', function() {
         var userA;
         var uid;
@@ -91,9 +92,9 @@ angular
         };
     });
 
-//Factory para almacenar los proyectos relacionados
+// Factory para almacenar los proyectos relacionados
 angular
-    .module('asideMenuDemo')
+    .module('multiSplot')
     .factory('projectsRelatedF', function() {
         var projects;
 
@@ -108,9 +109,9 @@ angular
         };
     });
 
-//Factory para almacenar el project Key del proyecto que se desea ver en detalle cuado se haga click en detallar
+// Factory para almacenar el project Key del proyecto que se desea ver en detalle cuado se haga click en detallar
 angular
-    .module('asideMenuDemo')
+    .module('multiSplot')
     .factory('projectSelected', function() {
         var key;
         var information;
@@ -140,7 +141,7 @@ angular
     });
 
 angular
-    .module('asideMenuDemo')
+    .module('multiSplot')
     .controller('yourCtrl', function ($scope, fileTojson,$window) {
         fileTojson.get().then(function (msg) {
             $scope.msg = msg;
@@ -151,7 +152,7 @@ angular
 
 
 angular
-    .module('asideMenuDemo')
+    .module('multiSplot')
     .factory('yourCtrl2', function ($scope, fileTojson,$window) {
 
 
@@ -173,7 +174,7 @@ angular
     });
 
 angular
-    .module('asideMenuDemo')
+    .module('multiSplot')
     .factory('Friend', function ($http) {
         return {
             get: function () {
@@ -184,7 +185,7 @@ angular
     });
 
 angular
-    .module('asideMenuDemo')
+    .module('multiSplot')
     .controller('yourCtrl', function ($scope, Friend) {
         Friend.get().then(function (msg) {
             $scope.msg = msg;
@@ -194,9 +195,10 @@ angular
 
 //Factory to pass the user information to Edit Page
 angular
-    .module('asideMenuDemo')
+    .module('multiSplot')
     .factory('userUpdate', function() {
         var userInfo;
+        var action;
 
         return {
 
@@ -205,6 +207,12 @@ angular
             },
             set: function (userInfoR) {
                 userInfo=userInfoR;
+            },
+            getAction:function () {
+                return action;
+            },
+            setAction:function (actionR) {
+                action=actionR;
             }
         };
     });

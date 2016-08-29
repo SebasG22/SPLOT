@@ -1,7 +1,8 @@
 /**
- * Created by SebasG on 8/07/16.
+ * Multi-user SPLOT
  */
-angular.module('asideMenuDemo')
+
+angular.module('multiSplot')
     .controller('loginCtrl',
         function(auth, $state, $scope,$window,userActual) {
 
@@ -13,10 +14,6 @@ angular.module('asideMenuDemo')
 
                         if (firebaseUser) {
                             userActual.setUID(firebaseUser.uid);
-                            console.log("Signed in as:", firebaseUser.uid);
-
-                            console.log("Guardado UID:"+userActual.getUID())
-
 
                         } else {
                             console.log("Signed out");
