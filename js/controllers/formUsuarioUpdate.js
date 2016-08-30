@@ -2,7 +2,6 @@
  * Multi-user SPLOT
  */
 
-
 // obtenga el módulo y cree un controlador
 angular.module('multiSplot').controller('usuarioUpdateCtrl',
     function ($scope, $firebaseObject, $firebaseArray, users, user, whitelist, $customFirebaseArray, userService, auth, $state, $window, typeUser, userActual, userUpdate) {
