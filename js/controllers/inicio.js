@@ -6,14 +6,18 @@ angular.module('multiSplot')
     .controller('inicioCtrl',
         function (users, $scope, sistema, $firebaseObject, auth, user, typeUser,userActual, projects ,projectsRelatedF,$window) {
 
+
+            //Obtener información del Usuario Actual
+            $scope.usuario = user.get();
+
+            var a=0;
+
             //Variables para ampliar/reducir el Dropdown de la barra
-            $scope.class = '';
+            $scope.class = '22git ';
             $scope.expanded = '';
 
             //Obtiene los valores del sistema el cual contiene el menuInicial mediante el uso de una Factory
             $scope.sistema = sistema;
-
-
 
 
             var i=0;
@@ -147,7 +151,7 @@ angular.module('multiSplot')
                 $scope.usuario;
 
                 //Obtener información del Usuario Actual
-                //$scope.usuario = user.get();
+                $scope.usuario = user.get();
 
                 //All the Users -> Firebase Array
                 $scope.usuarioss=users;
@@ -155,7 +159,7 @@ angular.module('multiSplot')
                 //Get the Record in  FirebaseArray througth userUpdate Factory
                 $scope.usuario1= $scope.usuarioss.$getRecord(auth.$getAuth().uid);
 
-                ref.orderByChild('uid').equalTo($scope.usuario1.uid).on("child_added", function (snapshot) {
+                ref.orderByChild('uid').equalTo($scope.usuario.uid).on("child_added", function (snapshot) {
 
                     $scope.valor = true;
 

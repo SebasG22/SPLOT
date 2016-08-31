@@ -45,6 +45,9 @@ angular.module('multiSplot').controller('usuarioUpdateCtrl',
                 $scope.usuarios.$save($scope.usuarios.$getRecord(userUpdate.get()));
                 $window.alert("Se ha actualizado la información correctamente");
 
+                userActual.set($scope.usuarios.$getRecord(userActual.getUID()));
+
+                user.set($scope.usuarios.$getRecord(userActual.getUID()));
                 //Go to profile page
                 $state.go("inicio.perfil");
 
