@@ -4,8 +4,6 @@
         <div class="title_left">
 
             <h3>Administración de Proyectos</h3>
-
-            <p>Vista Disponible: Lider</p>
         </div>
 
 
@@ -32,7 +30,7 @@
                     <form class="form-horizontal form-label-left ">
 
                         <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                            <input type="text" class="form-control" placeholder="Nombre" ng-model="nombreProyecto" required="">
+                            <input type="text" class="form-control" placeholder="Nombre" ng-model="projectName" required="">
                         </div>
 
                         <div class="col-md-1 col-sm-1 col-xs-12 form-group has-feedback">
@@ -186,7 +184,7 @@
 
 
 
-                                <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                                <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback" ng-show="nombreArchivo.length>0 && descripcionArchivo.length>0">
                                     <input id="file2" type="FILE" class="form-control" ng-model="archivo2" >
                                 </div>
 
@@ -234,9 +232,9 @@
 
 
                                 <br>
-                                <label for="message">Acerca de (10 caracteres min, 40 max) :</label>
+                                <label for="message">Acerca de (Escribe una descripción del proyecto) :</label>
                                 <textarea id="message" required="" class="form-control"
-                                          ng-model="descripcionProyecto"></textarea>
+                                          ng-model="projectDescription"></textarea>
                                 <br>
 
 
@@ -249,7 +247,7 @@
                         <div class="form-group">
                             <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-5 ">
                                 <a type="button" href="#proyectos" class="btn btn-primary" >Cancelar</a>
-                                <button type="submit" class="btn btn-success" ng-click="agregarProyecto()">Agregar Proyecto</button>
+                                <button type="submit" class="btn btn-success" ng-click="addProject()">Agregar Proyecto</button>
                             </div>
                         </div>
 
