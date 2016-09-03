@@ -4,7 +4,7 @@
 
 angular.module('multiSplot')
     .controller('inicioCtrl',
-        function (users, $scope, sistema, $firebaseObject, auth, user, typeUser,userActual, projects ,projectsRelatedF,$window) {
+        function (users, $scope, sistema, $firebaseObject, auth, user, typeUser,userActual, projects ,projectsRelatedF,$window,menu) {
 
 
             //Obtener información del Usuario Actual
@@ -13,19 +13,16 @@ angular.module('multiSplot')
             var a=0;
 
             //Variables para ampliar/reducir el Dropdown de la barra
-            $scope.class = '22git ';
+            $scope.class = '';
             $scope.expanded = '';
 
             //Obtiene los valores del sistema el cual contiene el menuInicial mediante el uso de una Factory
             $scope.sistema = sistema;
 
 
-            var i=0;
-            do {
-                $scope.menuGeneral=MenuType();
-                i++;
-            }
-            while (i < 5);
+
+               // $scope.menuGeneral=MenuType();
+
 
 
             //Funcion dropdown: Expande o contrae el dropdown de la barra según su estado
@@ -44,6 +41,7 @@ angular.module('multiSplot')
 
 
 
+            $scope.menuGeneral=menu.get();
 
             function getGeneralMenu(typeUser) {
 
@@ -68,6 +66,8 @@ angular.module('multiSplot')
                 return $scope.menuSearched;
 
             }
+
+/*
 
 
             //Función MenuType: Obtiene el menu correspondiente basado el tipo de usuario actual
@@ -129,6 +129,8 @@ angular.module('multiSplot')
                 return $scope.menuGen;
             };
 
+            */
+
 
             //BUSCA TODOS LOS PROYECTOS RELACIONADOS CON EL USUARIO
 
@@ -138,7 +140,7 @@ angular.module('multiSplot')
             //Proyectos relacionados con el usuario
             $scope.projectsRelated = [];
 
-
+           /*
             //Metodo FindRelation: Encuentra si en los miembros del proyecto esta el usuario actual
             function FindRelation(identificador) {
 
@@ -239,5 +241,7 @@ angular.module('multiSplot')
 
                     })
                 });
+
+                */
 
         });
