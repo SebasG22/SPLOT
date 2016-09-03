@@ -14,7 +14,7 @@ angular.module('multiSplot')
             $scope.sistema = sistema;
 
 
-
+       var a =0;
 
             var i=0;
             do {
