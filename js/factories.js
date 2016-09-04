@@ -218,6 +218,25 @@ angular
     });
 
 
+//Factory to pass the project information to Edit Page
+angular
+    .module('multiSplot')
+    .factory('projectUpdate', function() {
+        var project;
+
+        return {
+
+            get: function () {
+                return project;
+            },
+            set: function (projectR) {
+                project=projectR;
+            }
+
+        };
+    });
+
+
 //Factory para mostrar el menu dependiendo del usuario
 angular
     .module('multiSplot')

@@ -116,6 +116,13 @@ app.config(function($stateProvider, $urlRouterProvider) {
             authenticate: false
 
         })
+        .state('inicio.editarProyecto', {
+            url: '/editarProyecto',
+            templateUrl: 'views/formProyectoUpdate.html',
+            controller:'proyectoUpdateCtrl',
+            authenticate: false
+
+        })
     .state('inicio.listarProyectos', {
         url: '/listarProyectos',
         templateUrl: 'views/listarProyectos.tpl.html',
@@ -130,6 +137,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             authenticate: false
 
         })
+        
 
     .state('inicio.configuracionProyecto', {
         url: '/configuracionProyecto',
