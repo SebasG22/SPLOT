@@ -8,9 +8,21 @@ angular.module('multiSplot')
 
 
             //Obtener información del Usuario Actual
-            $scope.usuario = user.get();
+            $scope.authUser = auth.$getAuth();
 
-            var a=0;
+            var ref = firebase.database().ref("users");
+
+
+            ref.orderByKey().equalTo($scope.authUser.uid).on("child_added", function (snapshot) {
+
+                //Obtiene la informacion del usuario
+                $scope.userSPLOT= snapshot.val();
+
+                //Guardar la información del usuario en la factory User
+                user.set($scope.usuarioSearched);
+
+
+            });
 
             //Variables para ampliar/reducir el Dropdown de la barra
             $scope.class = '';
@@ -18,12 +30,6 @@ angular.module('multiSplot')
 
             //Obtiene los valores del sistema el cual contiene el menuInicial mediante el uso de una Factory
             $scope.sistema = sistema;
-
-
-
-               // $scope.menuGeneral=MenuType();
-
-
 
             //Funcion dropdown: Expande o contrae el dropdown de la barra según su estado
             $scope.dropdown = function () {
@@ -38,8 +44,6 @@ angular.module('multiSplot')
                 }
 
             };
-
-
 
             $scope.menuGeneral=menu.get();
 
@@ -67,69 +71,6 @@ angular.module('multiSplot')
 
             }
 
-/*
-
-
-            //Función MenuType: Obtiene el menu correspondiente basado el tipo de usuario actual
-            function MenuType() {
-
-                //Referencia del usuario
-                var ref = firebase.database().ref("users");
-
-                $scope.firebaseUser = auth.$getAuth();
-
-                //Busca basado en el UID del usuario en la rama USERS
-                ref.orderByKey().equalTo(userActual.getUID()).on("child_added", function (snapshot) {
-
-                    //Obtiene la informacion del usuario
-                    $scope.usuarioSearched = snapshot.val();
-
-                    //Guardar la información del usuario en la factory User
-                    user.set($scope.usuarioSearched);
-
-
-                    //Obtencion del menu segun el tipo de usuario
-                    if ($scope.usuarioSearched.tipo == "Administrador") {
-
-                        //Actualizacion del typeUser Factory
-                        typeUser.set("Administrador");
-
-                        //Obtiene y muestra el menu de administrador
-                        $scope.menuGen = getGeneralMenu("Administrador");
-
-                        //Muestra en consola el cambio en la Factory
-                        console.log("Tipo de Usuario Factory:" + typeUser.get());
-
-                    }
-                    else if ($scope.usuarioSearched.tipo == "Lider") {
-
-                        //Actualizacion del typeUser Factory
-                        typeUser.set("Lider");
-
-                        //Obtiene y muestra el menu de lider
-                        $scope.menuGen = getGeneralMenu("Lider");
-
-                        //Muestra en consola el cambio en la Factory
-                        console.log("Tipo de Usuario Factory:" + typeUser.get());
-
-                    }
-                    else if ($scope.usuarioSearched.tipo == "Configurador") {
-
-                        //Actualizacion del typeUser Factory
-                        typeUser.set("Configurador");
-
-                        //Obtiene y muestra el menu de configurador
-                        $scope.menuGen = getGeneralMenu("Configurador");
-
-                        //Muestra en consola el cambio en la Factory
-                        console.log("Tipo de Usuario Factory:" + typeUser.get());
-
-                    }
-                });
-                return $scope.menuGen;
-            };
-
-            */
 
 
             //BUSCA TODOS LOS PROYECTOS RELACIONADOS CON EL USUARIO
@@ -140,7 +81,7 @@ angular.module('multiSplot')
             //Proyectos relacionados con el usuario
             $scope.projectsRelated = [];
 
-           /*
+
             //Metodo FindRelation: Encuentra si en los miembros del proyecto esta el usuario actual
             function FindRelation(identificador) {
 
@@ -153,7 +94,7 @@ angular.module('multiSplot')
                 $scope.usuario;
 
                 //Obtener información del Usuario Actual
-                $scope.usuario = user.get();
+                $scope.usuario = userActual.get();
 
                 //All the Users -> Firebase Array
                 $scope.usuarioss=users;
@@ -242,6 +183,6 @@ angular.module('multiSplot')
                     })
                 });
 
-                */
+
 
         });

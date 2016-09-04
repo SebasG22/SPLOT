@@ -214,14 +214,14 @@ angular.module('multiSplot')
                     nombre: $scope.nombreArchivo,
                     descripcion: $scope.descripcionArchivo,
                     tipo: $scope.tipoArchivo,
-                    ruta: $scope.ruta
+                    ruta: $scope.rutaFiles
                 });
                 console.log("Archivos:" + $scope.archivos);
                 $scope.nombreArchivo = '';
                 $scope.descripcionArchivo = '';
                 $scope.tipoArchivo = '';
                 $scope.ubicacion = '';
-                $scope.ruta = '';
+                $scope.rutaFiles = '';
 
             };
 
@@ -323,7 +323,7 @@ angular.module('multiSplot')
                     console.log(uploadTask.snapshot.metadata);
                     var url = uploadTask.snapshot.metadata.downloadURLs[0];
                     console.log('File available at', url);
-                    $scope.ruta=url;
+                    $scope.rutaFiles=url;
 
 
 
@@ -378,6 +378,24 @@ angular.module('multiSplot')
 
 
             };
+
+
+
+
+
+            //BUSCA TODOS LOS PROYECTOS RELACIONADOS CON EL USUARIO
+
+            $scope.activeUsersFilter = function (item) {
+
+                if (item.activo === 'true') {
+                    return item;
+                }
+            };
+
+            //Proyectos relacionados con el usuario
+            $scope.projectsRelated = [];
+
+
 
         }
     );

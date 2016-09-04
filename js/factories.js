@@ -216,3 +216,21 @@ angular
             }
         };
     });
+
+
+//Factory para mostrar el menu dependiendo del usuario
+angular
+    .module('multiSplot')
+    .factory('menu', function() {
+        var menu;
+        return {
+
+            set: function (menuR) {
+                menu=menuR;
+            },
+            get: function () {
+                return menu;
+            }
+        };
+    });
+

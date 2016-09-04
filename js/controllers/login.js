@@ -4,95 +4,84 @@
 
 angular.module('multiSplot')
     .controller('loginCtrl',
-        function(auth, $state, $scope,$window,userActual,$firebaseArray,user,typeUser,menu) {
+        function (auth, $state, $scope, $window, userActual, $firebaseArray, user, typeUser, menu) {
 
             this.login = function () {
                 auth.$signInWithEmailAndPassword($scope.login, $scope.password)
-                    .then(function() {
+                    .then(function () {
 
                         var firebaseUser = auth.$getAuth();
 
 
-
-
                         if (firebaseUser) {
+
+                            //Change the user UID in UserActual Factory
                             userActual.setUID(firebaseUser.uid);
 
-                            //Referencia del usuario
+                            //Reference to users branch in Firebase
                             var ref = firebase.database().ref("users");
 
-                            $scope.firebaseUser = auth.$getAuth();
 
-                            console.log("UID:"+firebaseUser.uid);
-                            //Busca basado en el UID del usuario en la rama USERS
+                            //Search the user in Users branch in Firebase
                             ref.orderByKey().equalTo(firebaseUser.uid).on("child_added", function (snapshot) {
 
-                                //Obtiene la informacion del usuario
+                                //Get the user information
                                 $scope.usuarioSearched = snapshot.val();
 
-                                //Guardar la información del usuario en la factory User
-                                user.set($scope.usuarioSearched);
+                                //Save the information in UserActual Factory
+                                userActual.set($scope.usuarioSearched);
 
-                                //Referencia del usuario
+                                //Reference to menu branch in Firebase
                                 var ref = firebase.database().ref("sistema/menuGeneral");
 
 
-                                //Obtencion del menu segun el tipo de usuario
+                                //Compare the user type
                                 if ($scope.usuarioSearched.tipo == "Administrador") {
 
-                                    //Actualizacion del typeUser Factory
+                                    //Update the typeUser Factory
                                     typeUser.set("Administrador");
 
-                                    //Referencia del usuario
-                                    var ref = firebase.database().ref("sistema/menuGeneral");
 
-                                    console.log("Referencia menuGeneral:"+ref);
+                                    //Search the "Administador" menu
+                                    ref.orderByKey().equalTo("Administrador").on("child_added", function (snapshot) {
 
+                                        //Get the menu
+                                        $scope.menuSearched = snapshot.val();
 
+                                        //Print the object
+                                        //$window.alert(JSON.stringify($scope.menuSearched, null, 4));
 
+                                        //Update the data menu in the factory
+                                        menu.set($scope.menuSearched);
 
-                                        //Actualizacion del typeUser Factory
-                                        typeUser.set("Administrador");
-
-                                        //Busca basado en el UID del usuario en la rama USERS
-                                        ref.orderByKey().equalTo("Administrador").on("child_added", function (snapshot) {
-
-                                            //Obtiene la informacion del menuGeneral
-                                            $scope.menuSearched = snapshot.val();
-                                            console.log("Encontre el Menu");
-
-                                            $window.alert(JSON.stringify($scope.menuSearched, null, 4));
-                                            menu.set($scope.menuSearched);
-
-                                            $state.go("inicio.bienvenida");
+                                        //Go to Welcome Page
+                                        $state.go("inicio.bienvenida");
 
 
-                                        });
-
-                                    
-
-
-
-
+                                    });
 
 
                                 }
 
                                 else if ($scope.usuarioSearched.tipo == "Lider") {
 
-                                    //Actualizacion del typeUser Factory
+                                    //Update the typeUser Factory
                                     typeUser.set("Lider");
 
-                                    //Busca basado en el UID del usuario en la rama USERS
+
+                                    //Search the "Administador" menu
                                     ref.orderByKey().equalTo("Lider").on("child_added", function (snapshot) {
 
-                                        //Obtiene la informacion del menuGeneral
+                                        //Get the menu
                                         $scope.menuSearched = snapshot.val();
-                                        console.log("Encontre el Menu");
 
-                                        $window.alert(JSON.stringify($scope.menuSearched, null, 4));
+                                        //Print the object
+                                        //$window.alert(JSON.stringify($scope.menuSearched, null, 4));
+
+                                        //Update the data menu in the factory
                                         menu.set($scope.menuSearched);
 
+                                        //Go to Welcome Page
                                         $state.go("inicio.bienvenida");
 
 
@@ -101,21 +90,24 @@ angular.module('multiSplot')
                                 }
                                 else if ($scope.usuarioSearched.tipo == "Configurador") {
 
-                                    //Actualizacion del typeUser Factory
+                                    //Update the typeUser Factory
                                     typeUser.set("Configurador");
 
-                                    //Busca basado en el UID del usuario en la rama USERS
+
+                                    //Search the "Administador" menu
                                     ref.orderByKey().equalTo("Configurador").on("child_added", function (snapshot) {
 
-                                        //Obtiene la informacion del menuGeneral
+                                        //Get the menu
                                         $scope.menuSearched = snapshot.val();
-                                        console.log("Encontre el Menu");
 
-                                        $window.alert(JSON.stringify($scope.menuSearched, null, 4));
+                                        //Print the object
+                                        //$window.alert(JSON.stringify($scope.menuSearched, null, 4));
+
+                                        //Update the data menu in the factory
                                         menu.set($scope.menuSearched);
 
+                                        //Go to Welcome Page
                                         $state.go("inicio.bienvenida");
-
 
                                     });
 
@@ -130,14 +122,11 @@ angular.module('multiSplot')
                         //$state.go("inicio.bienvenida");
 
 
-
-
-                    }).catch(function(error) {
+                    }).catch(function (error) {
                     console.error("Authentication failed:", error);
-                    $window.alert("La autenticación ha fallado: "+ error );
+                    $window.alert("La autenticación ha fallado: " + error);
                 });
             };
-
 
 
         }

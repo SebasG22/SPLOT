@@ -48,8 +48,17 @@ angular.module('multiSplot').controller('usuarioUpdateCtrl',
                 userActual.set($scope.usuarios.$getRecord(userActual.getUID()));
 
                 user.set($scope.usuarios.$getRecord(userActual.getUID()));
-                //Go to profile page
-                $state.go("inicio.perfil");
+
+                if(userActual.getUID()==userUpdate.get){
+                    //Go to profile page
+                    $state.go("inicio.perfil");
+                }
+                else{
+                    //Go to list users
+                    $state.go("inicio.listarUsuarios");
+
+                }
+
 
             }
 
@@ -96,6 +105,24 @@ angular.module('multiSplot').controller('usuarioUpdateCtrl',
             }
 
         };
+
+        //Method to Check the user in SPLOT
+      $scope.checkUser=function () {
+          console.log("User Actual:"+userActual.getUID());
+          console.log("User Update:"+userUpdate.get());
+
+
+          if(userActual.getUID()==userUpdate.get){
+
+              //Go to profile page
+              $state.go("inicio.perfil");
+          }
+          else{
+              //Go to list users
+              $state.go("inicio.listarUsuarios");
+
+          }
+      };
 
         //Upload Images througth Firebase Storage
 
