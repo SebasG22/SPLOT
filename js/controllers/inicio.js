@@ -4,7 +4,7 @@
 
 angular.module('multiSplot')
     .controller('inicioCtrl',
-        function (users, $scope, sistema, $firebaseObject, auth, user, typeUser,userActual, projects ,projectsRelatedF,$window,menu) {
+        function ($state,users, $scope, sistema, $firebaseObject, auth, user, typeUser,userActual, projects ,projectsRelatedF,$window,menu) {
 
 
             //Obtener información del Usuario Actual
@@ -19,10 +19,23 @@ angular.module('multiSplot')
                 $scope.userSPLOT= snapshot.val();
 
                 //Guardar la información del usuario en la factory User
-                user.set($scope.usuarioSearched);
+                userActual.set($scope.userSPLOT);
 
 
             });
+
+
+            $scope.test=userActual.get();
+
+            if(userActual.get().activo=='false'){
+                $window.alert("Usuario Inactivo");
+                $state.go("usuarioInactivo");
+            }
+            else{
+                $window.alert("Usuario Activo");
+
+            }
+
 
             //Variables para ampliar/reducir el Dropdown de la barra
             $scope.class = '';

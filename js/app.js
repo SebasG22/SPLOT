@@ -93,6 +93,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
         })
 
+        .state('usuarioInactivo', {
+            url: '/usuarioInactivo',
+            templateUrl: 'views/userInactive.html',
+            controller:'userInactiveCtrl',
+            authenticate: false
+
+        })
+
         .state('inicio.crearUsuario', {
             url: '/crearUsuario',
             templateUrl: 'views/formUsuario.html',
@@ -137,7 +145,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             authenticate: false
 
         })
-        
+
 
     .state('inicio.configuracionProyecto', {
         url: '/configuracionProyecto',
