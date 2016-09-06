@@ -85,7 +85,7 @@
                             <!--<pre> "Name:"  {{child.name}}</pre>-->
 
                             <!-- Get the Type of the First Child -->
-                            <!--<pre> "Type:"  {{child.type}}</pre>-->
+                            <!--<pre> "Type 1:"  {{child.type}}</pre>-->
 
                             <!-- Get the State of the First Child -->
                             <!--<pre> "State:"  {{child.state}}</pre>-->
@@ -103,14 +103,14 @@
                                 <!--<pre> "Name:"  {{child2.name}}</pre> -->
 
                                 <!-- Get the Type of the Second Child -->
-                                <!--<pre> "Type:"  {{child2.type}}</pre>-->
+                                <!--<pre> "Type 2:"  {{child2.type}}</pre>-->
 
                                 <!-- Get the State of the Second Child -->
                                 <!--<pre> "Type:"  {{child2.state}}</pre>-->
 
 
                                 <div>
-                                    <div id="step-{{child2.id}}" ng-show="indix2==child2.id">
+                                    <div id="step-{{child2.id}}" ng-show="indix2==child2.id && child2.min==1 && child2.max==1">
                                         <!--<h2>{{child2.id}}</h2>-->
                                         <div class="x_panel">
                                             <div class="x_title">
@@ -153,6 +153,44 @@
                                         </div>
                                     </div>
 
+                                    <div id="step-{{child2.id}}" ng-show="indix2==child2.id && child2.min==1 && child2.max>=2">
+                                        <!--<h2>{{child2.id}}</h2>-->
+                                        <div class="x_panel">
+                                            <div class="x_title">
+                                                <h2>{{child.name}}</h2>
+                                                <div class="clearfix"></div>
+                                            </div>
+
+                                            <div class="x_content">
+                                                <br/>
+                                                <form name="myForm2">
+                                                    <div class="col-md-55" ng-repeat="child5 in child2.children">
+                                                        <div class="thumbnail">
+                                                            <div class="image view view-first">
+                                                                <img style="width: 100%; display: block;"
+                                                                     src="images/4.jpg" alt="image"/>
+                                                                <div class="mask">
+                                                                    <p>{{child5.name}}</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="caption">
+                                                                <div class="radio">
+                                                                    <label>
+                                                                        <input type="checkbox"
+                                                                               ng-true-value="{{child5.name}}"> {{child5.name}}
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <p><tt>Selected: {{model}}</tt></p>
+
+                                                </form>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
                                 </div>
                                 <div ng-repeat="child3 in child2.children">
 
@@ -184,10 +222,12 @@
             </div>
         </div>
 
-        <button type="button" class="btn btn-default">Finalizar</button>
+
+
+        <button type="button" class="btn btn-primary" style="margin-left: 40px" ng-click="disminuir()">Anterior</button>
         <button type="button" class="btn btn-success" ng-click="aumentar()">Siguiente</button>
-        <button type="button" class="btn btn-danger" ng-click="agregarDecision('name')">Guardar</button>
-        <button type="button" class="btn btn-primary" ng-click="disminuir()">Anterior</button>
+        <button type="button" class="btn btn-default">Finalizar</button>
+
 
     </div>
 </div>
