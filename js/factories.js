@@ -140,38 +140,7 @@ angular
         };
     });
 
-angular
-    .module('multiSplot')
-    .controller('yourCtrl', function ($scope, fileTojson,$window) {
-        fileTojson.get().then(function (msg) {
-            $scope.msg = msg;
-            console.log("He convertido el archivoJson a un Arreglo");
-            console.log(msg);
-        });
-    });
 
-
-angular
-    .module('multiSplot')
-    .factory('yourCtrl2', function ($scope, fileTojson,$window) {
-
-
-        return {
-
-            getFile: function () {
-
-                fileTojson.get().then(function (msg) {
-                    $scope.msg = msg;
-                    console.log("He convertido el archivoJson a un Arreglo");
-                    console.log(msg);
-                    $window.alert(JSON.stringify(msg, null, 4));
-
-                });
-
-                return msg;
-            }
-        };
-    });
 
 angular
     .module('multiSplot')
