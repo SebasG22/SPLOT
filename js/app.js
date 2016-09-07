@@ -153,6 +153,13 @@ app.config(function($stateProvider, $urlRouterProvider) {
         controller:'configuracionCtrl',
         authenticate: false
 
+    })
+
+    .state('inicio.preguntasFrecuentes', {
+        url: '/preguntasFrecuentes',
+        templateUrl: 'views/faq.html',
+        authenticate: true
+
     });
 
 });
