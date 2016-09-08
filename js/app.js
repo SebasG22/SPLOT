@@ -154,7 +154,18 @@ app.config(function($stateProvider, $urlRouterProvider) {
         authenticate: false
 
     })
+        .state('inicio.nosotros', {
+            url: '/nosotros',
+            templateUrl: 'views/team.html',
+            authenticate: true
 
+        })
+        .state('inicio.procesoConfiguracion', {
+            url: '/procesoConfiguracion',
+            templateUrl: 'views/configurationProcess.html',
+            authenticate: true
+
+        })
     .state('inicio.preguntasFrecuentes', {
         url: '/preguntasFrecuentes',
         templateUrl: 'views/faq.html',
