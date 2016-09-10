@@ -93,6 +93,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
         })
 
+        .state('usuarioInactivo', {
+            url: '/usuarioInactivo',
+            templateUrl: 'views/userInactive.html',
+            controller:'userInactiveCtrl',
+            authenticate: false
+
+        })
+
         .state('inicio.crearUsuario', {
             url: '/crearUsuario',
             templateUrl: 'views/formUsuario.html',
@@ -116,6 +124,13 @@ app.config(function($stateProvider, $urlRouterProvider) {
             authenticate: false
 
         })
+        .state('inicio.editarProyecto', {
+            url: '/editarProyecto',
+            templateUrl: 'views/formProyectoUpdate.html',
+            controller:'proyectoUpdateCtrl',
+            authenticate: false
+
+        })
     .state('inicio.listarProyectos', {
         url: '/listarProyectos',
         templateUrl: 'views/listarProyectos.tpl.html',
@@ -131,11 +146,30 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
         })
 
+
     .state('inicio.configuracionProyecto', {
         url: '/configuracionProyecto',
         templateUrl: 'views/proyectoConfiguracion.html',
         controller:'configuracionCtrl',
         authenticate: false
+
+    })
+        .state('inicio.nosotros', {
+            url: '/nosotros',
+            templateUrl: 'views/team.html',
+            authenticate: true
+
+        })
+        .state('inicio.procesoConfiguracion', {
+            url: '/procesoConfiguracion',
+            templateUrl: 'views/configurationProcess.html',
+            authenticate: true
+
+        })
+    .state('inicio.preguntasFrecuentes', {
+        url: '/preguntasFrecuentes',
+        templateUrl: 'views/faq.html',
+        authenticate: true
 
     });
 

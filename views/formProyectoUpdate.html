@@ -20,7 +20,7 @@
             <div class="x_panel">
                 <div class="x_title">
                     <h2>Formulario
-                        <small>Nuevo Proyecto</small>
+                        <small>Editar Proyecto</small>
                     </h2>
 
                     <div class="clearfix"></div>
@@ -30,7 +30,7 @@
                     <form class="form-horizontal form-label-left ">
 
                         <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                            <input type="text" class="form-control" placeholder="Nombre" ng-model="projectName" required="">
+                            <input type="text" class="form-control" placeholder="Nombre" ng-model="projectName" >
                         </div>
 
                         <div class="col-md-1 col-sm-1 col-xs-12 form-group has-feedback">
@@ -39,7 +39,9 @@
 </label>                        </div>
 
                         <div class="col-md-5 col-sm-5 col-xs-12 form-group has-feedback">
-                            <input type="file" id="file" class="form-control" accept="application/json"required="" >
+                            <input type="file" id="file" ng-model="modeloFeatures" class="form-control" accept="application/json"git >
+                            <span class="error"><a href="{{modeloFeatures}" target="_blank"><i class=""></i> Click aqui para descargar el Feature Model Actual (JSON)</a></span>
+
                         </div>
 
 
@@ -250,7 +252,7 @@
                         <div class="form-group">
                             <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-5 ">
                                 <a type="button" href="#proyectos" class="btn btn-primary" >Cancelar</a>
-                                <button type="submit" class="btn btn-success" ng-click="addProject()">Agregar Proyecto</button>
+                                <button type="submit" class="btn btn-success" ng-click="editProject()">Editar Proyecto</button>
                             </div>
                         </div>
 

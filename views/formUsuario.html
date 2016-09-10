@@ -18,7 +18,7 @@
                 </div>
                 <div class="x_content">
                     <br />
-                    <form class="form-horizontal form-label-left input_mask">
+                    <form class="form-horizontal form-label-left input_mask" name="userForm">
 
                         <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
                             <input type="text" class="form-control has-feedback-left"  placeholder="Nombre Completo"  ng-model="nombre" >
@@ -29,14 +29,18 @@
 
                         <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
                             <input type="number" class="form-control has-feedback-left" placeholder="Identificación"    ng-model="identificacion.value">
-                            <span class="fa fa-envelope form-control-feedback left"></span>
+                            <span class="fa fa-sort-numeric-asc form-control-feedback left"></span>
                         </div>
 
 
 
                         <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
-                            <input type="text" class="form-control"  placeholder="Correo Eléctronico"  ng-model="login" >
-                            <span class="fa fa-phone form-control-feedback right" ></span>
+                            <input type="email" class="form-control"  name="userEmail" placeholder="Correo Eléctronico"  ng-model="login" >
+                            <span class="fa fa-envelope form-control-feedback right" ></span>
+                            <div role="alert">
+                                <span class="error" ng-show="userForm.userEmail.$error.required">Este campo es requerido!</span>
+                                <span class="error" ng-show="userForm.userEmail.$error.email">El correo no es válido!</span>
+                            </div>
                         </div>
 
 
@@ -64,8 +68,8 @@
                                     <label>Tipo Usuario:</label>
                                     <select class="form-control" ng-model="permiso"  >
 
-                                        <option value="Integrante">Integrante de la Organización</option>
-                                        <option value="Jefe">Jefe de equipo</option>
+                                        <option value="Configurador">Configurador </option>
+                                        <option value="Lider">Lider de Proyectos</option>
                                         <option value="Administrador">Administrador</option>
                                     </select>
                             </div>

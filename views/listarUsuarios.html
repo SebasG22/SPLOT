@@ -37,7 +37,7 @@
 
                         <div class="clearfix"></div>
 
-                        <div class="col-md-4 col-sm-4 col-xs-12 profile_details" ng-repeat="usuario in users | filter: usuarioBuscado">
+                        <div class="col-md-4 col-sm-4 col-xs-12 profile_details" ng-repeat="usuario in users | filter:activeUsersFilter |filter:usuarioBuscado">
                             <div class="well profile_view">
                                 <div class="col-sm-12">
                                     <h4 class="brief"><i>{{usuario.nombre}}</i></h4>
@@ -60,10 +60,10 @@
                                     <div class="col-xs-12 col-sm-12 ">
 
 
-                                        <button type="button" class="btn btn-warning btn-xs">
+                                        <button type="button" class="btn btn-warning btn-xs" ng-click="editUser(usuario.uid)">
                                         <i class="fa fa-user"> </i> Editar
                                     </button>
-                                        <button type="button" class="btn btn-danger btn-xs" ng-click="eliminarUsuario(usuario)">
+                                        <button type="button" class="btn btn-danger btn-xs" ng-click="eliminarUsuario(usuario.uid)">
                                             <i class="fa fa-user"> </i> Eliminar
                                         </button>
 

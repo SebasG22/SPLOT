@@ -108,7 +108,7 @@ module
                             newUser.direccion=direccion;
                             newUser.profesion=profesion;
                             newUser.tipo=permiso;
-                            newUser.activo=true;
+                            newUser.activo='true';
                             newUser.imagen=imagen;
 
 

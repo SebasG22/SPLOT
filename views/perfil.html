@@ -95,12 +95,12 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr ng-repeat="project in projectsRelated">
+                            <tr ng-repeat="project in projectsRelated ">
 
                                 <td>{{project.proyecto.nombre}}</td>
 
                                 <td>
-                                    <ul class="list-inline" ng-repeat="miembro in project.miembros">
+                                    <ul class="list-inline" ng-repeat="miembro in project.miembros track by $index">
                                         <li>
                                             <img src="{{miembro.imagen}}" class="avatar" alt="Avatar">&nbsp
                                             {{miembro.nombre}}

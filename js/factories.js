@@ -18,28 +18,6 @@ angular.module('multiSplot')
 
             });
         });
-
-angular
-    .module('multiSplot')
-    .factory('fileTojson', function ($http,$window,$scope) {
-        return {
-            get: function () {
-                console.log("inside function");
-                console.log(""+$http.get('json/stores.json'));
-                $window.alert(JSON.stringify($http.get('json/stores.json'), null, 4));
-
-                $http.get('json/stores.json').then(function (msg) {
-                    $scope.msg = msg;
-                    console.log("He convertido el archivoJson a un Arreglo");
-                    console.log(msg);
-                    $window.alert(JSON.stringify(msg, null, 4));
-
-                });
-                return $http.get('json/stores.json');
-            }
-        };
-    });
-
 angular
     .module('multiSplot')
     .factory('typeUser', function() {
@@ -140,42 +118,11 @@ angular
         };
     });
 
-angular
-    .module('multiSplot')
-    .controller('yourCtrl', function ($scope, fileTojson,$window) {
-        fileTojson.get().then(function (msg) {
-            $scope.msg = msg;
-            console.log("He convertido el archivoJson a un Arreglo");
-            console.log(msg);
-        });
-    });
 
 
 angular
     .module('multiSplot')
-    .factory('yourCtrl2', function ($scope, fileTojson,$window) {
-
-
-        return {
-
-            getFile: function () {
-
-                fileTojson.get().then(function (msg) {
-                    $scope.msg = msg;
-                    console.log("He convertido el archivoJson a un Arreglo");
-                    console.log(msg);
-                    $window.alert(JSON.stringify(msg, null, 4));
-
-                });
-
-                return msg;
-            }
-        };
-    });
-
-angular
-    .module('multiSplot')
-    .factory('Friend', function ($http) {
+    .factory('modelToJson', function ($http) {
         return {
             get: function () {
                 console.log("inside function");
@@ -183,15 +130,6 @@ angular
             }
         };
     });
-
-angular
-    .module('multiSplot')
-    .controller('yourCtrl', function ($scope, Friend) {
-        Friend.get().then(function (msg) {
-            $scope.msg = msg;
-        });
-    });
-
 
 //Factory to pass the user information to Edit Page
 angular
@@ -216,3 +154,40 @@ angular
             }
         };
     });
+
+
+//Factory to pass the project information to Edit Page
+angular
+    .module('multiSplot')
+    .factory('projectUpdate', function() {
+        var project;
+
+        return {
+
+            get: function () {
+                return project;
+            },
+            set: function (projectR) {
+                project=projectR;
+            }
+
+        };
+    });
+
+
+//Factory para mostrar el menu dependiendo del usuario
+angular
+    .module('multiSplot')
+    .factory('menu', function() {
+        var menu;
+        return {
+
+            set: function (menuR) {
+                menu=menuR;
+            },
+            get: function () {
+                return menu;
+            }
+        };
+    });
+

@@ -4,7 +4,41 @@
 
 angular.module('multiSplot')
     .controller('inicioCtrl',
-        function (users, $scope, sistema, $firebaseObject, auth, user, typeUser,userActual, projects ,projectsRelatedF,$window) {
+        function ($state,users, $scope, sistema, $firebaseObject, auth, user, typeUser,userActual, projects ,projectsRelatedF,$window,menu) {
+
+
+            //Obtener información del Usuario Actual
+            $scope.authUser = auth.$getAuth();
+
+            var ref = firebase.database().ref("users");
+
+
+            ref.orderByKey().equalTo($scope.authUser.uid).on("child_added", function (snapshot) {
+
+                //Obtiene la informacion del usuario
+                $scope.userSPLOT= snapshot.val();
+
+                //Guardar la información del usuario en la factory User
+                userActual.set($scope.userSPLOT);
+
+
+            });
+
+
+            $scope.test=userActual.get();
+
+
+       var a =0;
+
+            if(userActual.get().activo=='false'){
+                $window.alert("Usuario Inactivo");
+                $state.go("usuarioInactivo");
+            }
+            else{
+               // $window.alert("Usuario Activo");
+
+            }
+
 
             //Variables para ampliar/reducir el Dropdown de la barra
             $scope.class = '';
@@ -12,17 +46,6 @@ angular.module('multiSplot')
 
             //Obtiene los valores del sistema el cual contiene el menuInicial mediante el uso de una Factory
             $scope.sistema = sistema;
-
-
-       var a =0;
-
-            var i=0;
-            do {
-                $scope.menuGeneral=MenuType();
-                i++;
-            }
-            while (i < 5);
-
 
             //Funcion dropdown: Expande o contrae el dropdown de la barra según su estado
             $scope.dropdown = function () {
@@ -38,8 +61,7 @@ angular.module('multiSplot')
 
             };
 
-
-
+            $scope.menuGeneral=menu.get();
 
             function getGeneralMenu(typeUser) {
 
@@ -66,65 +88,6 @@ angular.module('multiSplot')
             }
 
 
-            //Función MenuType: Obtiene el menu correspondiente basado el tipo de usuario actual
-            function MenuType() {
-
-                //Referencia del usuario
-                var ref = firebase.database().ref("users");
-
-                $scope.firebaseUser = auth.$getAuth();
-
-                //Busca basado en el UID del usuario en la rama USERS
-                ref.orderByKey().equalTo(userActual.getUID()).on("child_added", function (snapshot) {
-
-                    //Obtiene la informacion del usuario
-                    $scope.usuarioSearched = snapshot.val();
-
-                    //Guardar la información del usuario en la factory User
-                    user.set($scope.usuarioSearched);
-
-
-                    //Obtencion del menu segun el tipo de usuario
-                    if ($scope.usuarioSearched.tipo == "Administrador") {
-
-                        //Actualizacion del typeUser Factory
-                        typeUser.set("Administrador");
-
-                        //Obtiene y muestra el menu de administrador
-                        $scope.menuGen = getGeneralMenu("Administrador");
-
-                        //Muestra en consola el cambio en la Factory
-                        console.log("Tipo de Usuario Factory:" + typeUser.get());
-
-                    }
-                    else if ($scope.usuarioSearched.tipo == "Lider") {
-
-                        //Actualizacion del typeUser Factory
-                        typeUser.set("Lider");
-
-                        //Obtiene y muestra el menu de lider
-                        $scope.menuGen = getGeneralMenu("Lider");
-
-                        //Muestra en consola el cambio en la Factory
-                        console.log("Tipo de Usuario Factory:" + typeUser.get());
-
-                    }
-                    else if ($scope.usuarioSearched.tipo == "Configurador") {
-
-                        //Actualizacion del typeUser Factory
-                        typeUser.set("Configurador");
-
-                        //Obtiene y muestra el menu de configurador
-                        $scope.menuGen = getGeneralMenu("Configurador");
-
-                        //Muestra en consola el cambio en la Factory
-                        console.log("Tipo de Usuario Factory:" + typeUser.get());
-
-                    }
-                });
-                return $scope.menuGen;
-            };
-
 
             //BUSCA TODOS LOS PROYECTOS RELACIONADOS CON EL USUARIO
 
@@ -147,7 +110,7 @@ angular.module('multiSplot')
                 $scope.usuario;
 
                 //Obtener información del Usuario Actual
-                $scope.usuario = user.get();
+                $scope.usuario = userActual.get();
 
                 //All the Users -> Firebase Array
                 $scope.usuarioss=users;
@@ -155,7 +118,7 @@ angular.module('multiSplot')
                 //Get the Record in  FirebaseArray througth userUpdate Factory
                 $scope.usuario1= $scope.usuarioss.$getRecord(auth.$getAuth().uid);
 
-                ref.orderByChild('uid').equalTo($scope.usuario1.uid).on("child_added", function (snapshot) {
+                ref.orderByChild('uid').equalTo($scope.usuario.uid).on("child_added", function (snapshot) {
 
                     $scope.valor = true;
 
@@ -235,5 +198,7 @@ angular.module('multiSplot')
 
                     })
                 });
+
+
 
         });
