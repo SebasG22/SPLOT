@@ -32,7 +32,7 @@ angular.module('multiSplot')
 
             if(userActual.get().activo=='false'){
                 $window.alert("Usuario Inactivo");
-               // $state.go("usuarioInactivo");
+                $state.go("usuarioInactivo");
             }
             else{
                // $window.alert("Usuario Activo");
