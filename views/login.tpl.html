@@ -1,5 +1,5 @@
 <body class="login">
-<div>
+<div >
 
     <a class="hiddenanchor" id="signin"></a>
 
@@ -15,7 +15,17 @@
                         <input type="password" class="form-control" placeholder="Contraseña" ng-model="password" required="" />
                     </div>
                     <div>
-                        <button type="button" class="btn btn-success btn-sm" ng-click="ctrl.login()">Ingresar</button>                        <hr/>
+                        <button type="button" class="btn btn-success btn-sm" ng-click="ctrl.login()">Ingresar con email</button>
+
+                        <!--
+                        <a ng-click="openButton()">
+                            <span class="fa fa-github"></span> Sign in with GitHub
+                        </a>
+
+                        -->
+                        <hr/>
+
+                        <hr/>
                         <div class="text-center ">No tienes una cuenta ?, <a ui-sref="signup">Crear Cuenta</a></div>
                     </div>
 
@@ -36,6 +46,8 @@
                 </form>
             </section>
         </div>
+
+
 
 
     </div>

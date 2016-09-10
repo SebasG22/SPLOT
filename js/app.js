@@ -3,6 +3,8 @@
  */
 
 // definition of the main application
+// define the main module
+var app = angular.module('multiSplot', ['asideModule','ui.router','firebase']);
 
 // Initialize Firebase
 var config = {
@@ -12,10 +14,6 @@ var config = {
     storageBucket: "splot3-31f45.appspot.com",
 };
 firebase.initializeApp(config);
-
-
-// define the main module
-var app = angular.module('multiSplot', ['asideModule','ui.router','firebase']);
 
 // configure the ui-route
 var module = angular.module('multiSplot');
