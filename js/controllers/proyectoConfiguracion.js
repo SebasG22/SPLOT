@@ -4,11 +4,14 @@
 
 angular.module('multiSplot')
     .controller('configuracionCtrl',
-        function(users, $scope,typeUser,$window,$http,modelToJson) {
+        function(users, $scope,typeUser,$window,$http,modelToJson,projectSelected) {
 
 
                 //$window.alert(JSON.stringify($scope.proyecto, null, 4));
-                modelToJson.get().then(function (msg) {
+
+
+            $scope.proyecto=projectSelected.getInformation();
+                modelToJson.get($scope.proyecto.modelo).then(function (msg) {
                         $scope.msg = msg;
                 });
 

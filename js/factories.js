@@ -124,9 +124,9 @@ angular
     .module('multiSplot')
     .factory('modelToJson', function ($http) {
         return {
-            get: function () {
+            get: function (urlModelo) {
                 console.log("inside function");
-                return $http.get('json/dell-computers2.json');
+                return $http.get(urlModelo);
             }
         };
     });
