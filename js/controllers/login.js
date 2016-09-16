@@ -4,7 +4,7 @@
 
 angular.module('multiSplot')
     .controller('loginCtrl',
-        function (auth, $state, $scope, $window, userActual, $firebaseArray, user, typeUser, menu) {
+        function (auth, $state, $scope, $window, whitelist, userActual, $firebaseArray, user, typeUser, menu) {
 
             this.login = function () {
                 auth.$signInWithEmailAndPassword($scope.login, $scope.password)
@@ -131,7 +131,10 @@ angular.module('multiSplot')
 
             //TEST GITHUB
 
-            /*$scope.openButton=function () {
+            $scope.whitelist = whitelist;
+
+
+            $scope.openButton=function () {
 
              $scope.infoToken="Abri el boton";
 
@@ -160,6 +163,11 @@ angular.module('multiSplot')
              // The signed-in user info.
              var user = result.user;
 
+                 if($scope.verWH(user.email)==true){
+                     $window.alert("Usuario autenticado con GitHub correctamente");
+                     $state.go("inicio.bienvenida");
+                 }
+
              $window.alert("Usuario: "+user);
 
              }).catch(function (error) {
@@ -181,6 +189,8 @@ angular.module('multiSplot')
 
              });
 
+
+                //SE DEBE AGREGAR EL USUARIO A USER Y ELIMINARLO DE WHITELIST Y YA ENTRA AL SISTEMA
              firebase.auth().onAuthStateChanged(function(user) {
              if (user) {
              // User is signed in.
@@ -212,8 +222,71 @@ angular.module('multiSplot')
              // [END authstatelistener]
 
              };
-             */
 
 
+
+             //Metodos del Login
+
+            //Método que verifica si el usuario esta en la WH
+            $scope.verWH = function(correo) {
+
+
+
+                $scope.userFounded;
+                angular.forEach($scope.whitelist, function (value, key) {
+
+                    if(value.correo==correo){
+
+                        $scope.userFounded=value;
+
+                    }
+
+                });
+
+
+
+                if ($scope.userFounded != undefined || $scope.userFounded !=null) {
+                    $scope.form1 = false;
+                    $scope.form2 = true;
+                    //modelo asociado para conocer el valor de aceptado y mostrar el siguiente formulario de inscripción
+                    $scope.aceptado = true;
+                    console.log("Usuario Encontrado");
+                    $scope.identificacion=$scope.userFounded.identificacion;
+                    $scope.nombre = $scope.userFounded.nombre;
+                    $scope.direccion = $scope.userFounded.direccion;
+                    $scope.login = $scope.userFounded.login;
+                    $scope.profesion = $scope.userFounded.profesion;
+                    $scope.login=$scope.userFounded.correo;
+                    $scope.permiso=$scope.userFounded.permiso;
+                    $scope.imagen='images/user.png';
+                    return true;
+
+                }
+
+                else {
+                    console.log("Usuario No encontrado");
+                    $window.alert("No tiene invitación para registrarse");
+                    return false;
+                }
+
+            };
+
+            $scope.agregarUsuario = function() {
+
+
+                // create the user
+                userService.createUser($scope.login,$scope.password, $scope.nombre, $scope.identificacion, $scope.direccion, $scope.profesion, $scope.permiso,$scope.imagen)
+                    // if everything is ok
+                    .then(function (user) {
+                        $scope.whitelist.$remove($scope.userFounded);
+                        $state.go("inicio.listarUsuarios");
+                    })
+                    // if there is an error
+                    .catch(function (error) {
+                        $window.alert(error);
+                    });
+
+
+            };
         }
     );

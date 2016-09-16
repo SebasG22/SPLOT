@@ -44,21 +44,36 @@ angular.module('multiSplot').controller('usuariosCtrl',
             console.log($scope.identificacion);
 
 
-            $scope.rec = $scope.whitelist.$getRecord($scope.identificacion.value);
-            console.log($scope.rec);
+            //$scope.rec = $scope.whitelist.$getRecord($scope.identificacion.value);
+            //console.log($scope.rec);
 
-            if ($scope.rec != null) {
+
+            $scope.userFounded;
+            angular.forEach($scope.whitelist, function (value, key) {
+
+                if(value.correo==$scope.correo){
+
+                    $scope.userFounded=value;
+
+                }
+
+            });
+
+
+
+            if ($scope.userFounded != undefined || $scope.userFounded !=null) {
                 $scope.form1 = false;
                 $scope.form2 = true;
                 //modelo asociado para conocer el valor de aceptado y mostrar el siguiente formulario de inscripción
                 $scope.aceptado = true;
                 console.log("Usuario Encontrado");
-                $scope.nombre = $scope.rec.nombre;
-                $scope.direccion = $scope.rec.direccion;
-                $scope.login = $scope.rec.login;
-                $scope.profesion = $scope.rec.profesion;
-                $scope.login=$scope.rec.correo;
-                $scope.permiso=$scope.rec.permiso;
+                $scope.identificacion=$scope.userFounded.identificacion;
+                $scope.nombre = $scope.userFounded.nombre;
+                $scope.direccion = $scope.userFounded.direccion;
+                $scope.login = $scope.userFounded.login;
+                $scope.profesion = $scope.userFounded.profesion;
+                $scope.login=$scope.userFounded.correo;
+                $scope.permiso=$scope.userFounded.permiso;
                 $scope.imagen='images/user.png';
 
             }
@@ -77,7 +92,7 @@ angular.module('multiSplot').controller('usuariosCtrl',
                 userService.createUser($scope.login,$scope.password, $scope.nombre, $scope.identificacion, $scope.direccion, $scope.profesion, $scope.permiso,$scope.imagen)
                     // if everything is ok
                     .then(function (user) {
-                        $scope.whitelist.$remove($scope.rec);
+                        $scope.whitelist.$remove($scope.userFounded);
                         $state.go("inicio.listarUsuarios");
                     })
                     // if there is an error
