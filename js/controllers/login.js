@@ -6,6 +6,10 @@ angular.module('multiSplot')
     .controller('loginCtrl',
         function (auth, $state, $scope, $window, whitelist, userActual, $firebaseArray, $firebaseObject, user, users, typeUser, menu) {
 
+
+            $scope.whitelist = whitelist;
+            $scope.users=users;
+
             this.login = function () {
                 auth.$signInWithEmailAndPassword($scope.login, $scope.password)
                     .then(function () {
@@ -154,6 +158,7 @@ angular.module('multiSplot')
 
 
 
+                    //Check the whiteList to found the user
                     var myvalue= false;
                     angular.forEach($scope.whitelist, function (value, key) {
 
@@ -199,6 +204,9 @@ angular.module('multiSplot')
                                 console.log("Se ha agregado el usuario correctamente a Users");
                                 userActual.setUID($scope.uid);
                                 userActual.set($scope.userFounded);
+
+                                $scope.whitelist.$remove($scope.userFounded);
+
 
 
 
@@ -285,7 +293,6 @@ angular.module('multiSplot')
                                 }
 
 
-                                // $state.go('inicio.bienvenida');
 
                                 // the promise will return ok
                             }, function(error){
@@ -296,6 +303,116 @@ angular.module('multiSplot')
 
 
 
+
+
+                    }
+
+                    else{
+
+                        //Check the whiteList to found the user
+                        myvalue= false;
+                        angular.forEach($scope.users, function (value, key) {
+
+                            if(value.usuario==$scope.userEmail){
+
+                                $scope.userFounded=value;
+
+
+
+                                myvalue=true;
+                            }
+
+                        });
+
+                        if(myvalue==true){
+                            console.log("Usuario encontrado en el sistema");
+                            //Compare the user type
+
+                            //Reference to menu branch in Firebase
+                            var ref = firebase.database().ref("sistema/menuGeneral");
+
+                            if ($scope.userFounded.tipo == "Administrador") {
+
+                                //Update the typeUser Factory
+                                typeUser.set("Administrador");
+
+
+                                //Search the "Administador" menu
+                                ref.orderByKey().equalTo("Administrador").on("child_added", function (snapshot) {
+
+                                    //Get the menu
+                                    $scope.menuSearched = snapshot.val();
+
+                                    //Print the object
+                                    //$window.alert(JSON.stringify($scope.menuSearched, null, 4));
+
+                                    //Update the data menu in the factory
+                                    menu.set($scope.menuSearched);
+
+                                    //Go to Welcome Page
+                                    $state.go("inicio.bienvenida");
+
+
+                                });
+
+
+                            }
+
+                            else if ($scope.userFounded.tipo == "Lider") {
+
+                                //Update the typeUser Factory
+                                typeUser.set("Lider");
+
+
+                                //Search the "Administador" menu
+                                ref.orderByKey().equalTo("Lider").on("child_added", function (snapshot) {
+
+                                    //Get the menu
+                                    $scope.menuSearched = snapshot.val();
+
+                                    //Print the object
+                                    //$window.alert(JSON.stringify($scope.menuSearched, null, 4));
+
+                                    //Update the data menu in the factory
+                                    menu.set($scope.menuSearched);
+
+                                    //Go to Welcome Page
+                                    $state.go("inicio.bienvenida");
+
+
+                                });
+
+                            }
+                            else if ($scope.userFounded.tipo == "Configurador") {
+
+                                //Update the typeUser Factory
+                                typeUser.set("Configurador");
+
+
+                                //Search the "Administador" menu
+                                ref.orderByKey().equalTo("Configurador").on("child_added", function (snapshot) {
+
+                                    //Get the menu
+                                    $scope.menuSearched = snapshot.val();
+
+                                    //Print the object
+                                    //$window.alert(JSON.stringify($scope.menuSearched, null, 4));
+
+                                    //Update the data menu in the factory
+                                    menu.set($scope.menuSearched);
+
+                                    //Go to Welcome Page
+                                    $state.go("inicio.bienvenida");
+
+                                });
+
+                            }
+                        }
+                        else{
+                            console.log("Usuario no encontrado: El usuario debe estar previamente registrado")
+                        }
+                        //Check the users to found the user
+                        //$window.alert("El usuario no se encuentra registrado en el sistema");
 
 
                     }
@@ -337,38 +454,6 @@ angular.module('multiSplot')
 
 
 
-            $scope.agregarUser = function (uid,usuario) {
-                // add it to the /users array
-                // using the same uid defined by firebase
-                var userRef = users.$ref().child(uid);
-                var newUser = $firebaseObject(userRef);
-                newUser.uid =uid;
-                newUser.usuario = usuario.correo;
-                newUser.nombre= usuario.nombre;
-                newUser.identificacion=usuario.identificacion;
-                newUser.direccion=usuario.direccion;
-                newUser.profesion=usuario.profesion;
-                newUser.tipo=usuario.permiso;
-                newUser.activo='true';
-                newUser.imagen=usuario.imagen;
-
-
-
-                // save
-                newUser.$save()
-                    // if everything is ok
-                    .then( function(ref) {
-                        // report in console
-                        console.log("User " + uid+ " added to the users list!");
-                        // the promise will return ok
-                    }, function(error){
-                        // report in console
-                        console.error("User " + uid + " cannot be added to the users list!");
-                        // the promise will produce an error
-                    });
-            };
-
-
 
             //Metodos del Login
 
@@ -391,19 +476,7 @@ angular.module('multiSplot')
 
 
                 if ($scope.userFounded != undefined || $scope.userFounded !=null) {
-                    $scope.form1 = false;
-                    $scope.form2 = true;
-                    //modelo asociado para conocer el valor de aceptado y mostrar el siguiente formulario de inscripción
-                    $scope.aceptado = true;
-                    console.log("Usuario Encontrado");
-                    $scope.identificacion=$scope.userFounded.identificacion;
-                    $scope.nombre = $scope.userFounded.nombre;
-                    $scope.direccion = $scope.userFounded.direccion;
-                    $scope.login = $scope.userFounded.login;
-                    $scope.profesion = $scope.userFounded.profesion;
-                    $scope.login=$scope.userFounded.correo;
-                    $scope.permiso=$scope.userFounded.permiso;
-                    $scope.imagen='images/user.png';
+
                     return true;
 
                 }
@@ -411,6 +484,37 @@ angular.module('multiSplot')
                 else {
                     console.log("Usuario No encontrado");
                     $window.alert("Usuario no encontrado: No tiene invitación para registrarse");
+                    return false;
+                }
+
+            };
+
+            $scope.checkUser = function(correo) {
+
+
+
+                $scope.userFounded;
+                angular.forEach($scope.users, function (value, key) {
+
+                    if(value.correo==correo){
+
+                        $scope.userFounded=value;
+
+                    }
+
+                });
+
+
+
+                if ($scope.userFounded != undefined || $scope.userFounded !=null) {
+
+                    return true;
+
+                }
+
+                else {
+                    console.log("Usuario No encontrado in Users");
+                    $window.alert("Usuario no encontrado: No se encuentra registrado en el sistema");
                     return false;
                 }
 
