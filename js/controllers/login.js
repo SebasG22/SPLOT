@@ -10,6 +10,10 @@ angular.module('multiSplot')
             $scope.whitelist = whitelist;
             $scope.users=users;
 
+            $scope.selected='';
+            $scope.select=function (param) {
+                $scope.selected=''+param;
+            };
             this.login = function () {
                 auth.$signInWithEmailAndPassword($scope.login, $scope.password)
                     .then(function () {
@@ -24,6 +28,8 @@ angular.module('multiSplot')
 
                             //Reference to users branch in Firebase
                             var ref = firebase.database().ref("users");
+
+
 
 
                             //Search the user in Users branch in Firebase
@@ -138,7 +144,7 @@ angular.module('multiSplot')
             $scope.whitelist = whitelist;
 
 
-            $scope.initApp2=function () {
+            $scope.githubAcess=function () {
                 var provider = new firebase.auth.GithubAuthProvider();
                 //$window.alert(JSON.stringify(provider, null, 4));
 
@@ -298,6 +304,7 @@ angular.module('multiSplot')
                             }, function(error){
                                 // report in console
                                 console.error("User " + $scope.uid + " cannot be added to the users list!");
+                                console.log(error);
                                 // the promise will produce an error
                             });
 
@@ -409,7 +416,9 @@ angular.module('multiSplot')
                             }
                         }
                         else{
-                            console.log("Usuario no encontrado: El usuario debe estar previamente registrado")
+                            console.log("Usuario no encontrado: El usuario debe estar previamente registrado");
+                            $scope.auth = auth;
+                            $scope.auth.$signOut();
                         }
                         //Check the users to found the user
                         //$window.alert("El usuario no se encuentra registrado en el sistema");
