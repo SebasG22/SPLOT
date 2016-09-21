@@ -23,8 +23,8 @@
 
 
 
-                    <h2>{{msg.data.model.name}}
-                        <small> {{msg.data.model.name.tree.name}}</small>
+
+                    <h2>{{msg.model.name}}
 
                     </h2>
 
@@ -36,7 +36,7 @@
                     <div id="wizard" class="form_wizard wizard_horizontal">
 
                         <ul class="wizard_steps" >
-                            <li ng-repeat="child in msg.data.model.tree.children">
+                            <li ng-repeat="child in msg.model.tree.children">
                                 <a href="#step-1" >
                                     <span class="step_no">{{$index+1}}</span>
                                     <span class="step_descr">{{$index+1}}<br/>
@@ -74,7 +74,7 @@
                             </div>
                         </div>
 
-                        <div ng-repeat="child in msg.data.model.tree.children">
+                        <div ng-repeat="child in msg.model.tree.children">
                             <!--First Child -->
                             <!--<h2>Children 1</h2>-->
 

@@ -158,6 +158,18 @@ angular
                 }
                 };
 
+                $scope.url = ""+urlModelo;
+                $http({
+                    method: 'jsonp',
+                    url: $scope.url,
+                    params: {
+                        format: 'jsonp',
+                        callback: 'JSON_CALLBACK'
+                    }
+                }).then(function (response) {
+                    alert(response.data);
+                });
+
                 return $http.get(""+urlModelo,config);
 
 
