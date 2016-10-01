@@ -2,15 +2,14 @@
  * Multi-user SPLOT
  */
 
-angular.module('multiSplot')
+angular.module('projectsSplot')
     .controller('configuracionCtrl',
         function(users, $scope,typeUser,$window,$http,modelToJson,projectSelected) {
 
-
-                //$window.alert(JSON.stringify($scope.proyecto, null, 4));
-
-
             $scope.proyecto=projectSelected.getInformation();
+
+            //$window.alert(JSON.stringify($scope.proyecto.modelo, null, 4));
+
 
             /*modelToJson.get($scope.proyecto.modelo).then(function (msg) {
                         $scope.msg = msg;
@@ -19,7 +18,8 @@ angular.module('multiSplot')
 
             $http({
                 method: 'jsonp',
-                url: "https://firebasestorage.googleapis.com/v0/b/splot3-31f45.appspot.com/o/JSONMODELS%2Fdell-computersModified.json?alt=media&token=cc00fd35-3a56-4753-a537-28a7718dd6da",
+                url: ""+$scope.proyecto.modelo,
+
                 params: {
                     format: 'json',
                     callback: 'JSON_CALLBACK'

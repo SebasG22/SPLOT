@@ -65,7 +65,7 @@ angular.module('multiSplot')
                                         menu.set($scope.menuSearched);
 
                                         //Go to Welcome Page
-                                        $state.go("inicio.bienvenida");
+                                        $state.go("bienvenida");
 
 
                                     });
@@ -92,7 +92,7 @@ angular.module('multiSplot')
                                         menu.set($scope.menuSearched);
 
                                         //Go to Welcome Page
-                                        $state.go("inicio.bienvenida");
+                                        $state.go("bienvenida");
 
 
                                     });
@@ -117,7 +117,7 @@ angular.module('multiSplot')
                                         menu.set($scope.menuSearched);
 
                                         //Go to Welcome Page
-                                        $state.go("inicio.bienvenida");
+                                        $state.go("bienvenida");
 
                                     });
 
@@ -240,7 +240,7 @@ angular.module('multiSplot')
                                         menu.set($scope.menuSearched);
 
                                         //Go to Welcome Page
-                                        $state.go("inicio.bienvenida");
+                                        $state.go("bienvenida");
 
 
                                     });
@@ -267,7 +267,7 @@ angular.module('multiSplot')
                                         menu.set($scope.menuSearched);
 
                                         //Go to Welcome Page
-                                        $state.go("inicio.bienvenida");
+                                        $state.go("bienvenida");
 
 
                                     });
@@ -292,7 +292,7 @@ angular.module('multiSplot')
                                         menu.set($scope.menuSearched);
 
                                         //Go to Welcome Page
-                                        $state.go("inicio.bienvenida");
+                                        $state.go("bienvenida");
 
                                     });
 
@@ -357,7 +357,7 @@ angular.module('multiSplot')
                                     menu.set($scope.menuSearched);
 
                                     //Go to Welcome Page
-                                    $state.go("inicio.bienvenida");
+                                    $state.go("bienvenida");
 
 
                                 });
@@ -384,7 +384,7 @@ angular.module('multiSplot')
                                     menu.set($scope.menuSearched);
 
                                     //Go to Welcome Page
-                                    $state.go("inicio.bienvenida");
+                                    $state.go("bienvenida");
 
 
                                 });
@@ -409,7 +409,7 @@ angular.module('multiSplot')
                                     menu.set($scope.menuSearched);
 
                                     //Go to Welcome Page
-                                    $state.go("inicio.bienvenida");
+                                    $state.go("bienvenida");
 
                                 });
 

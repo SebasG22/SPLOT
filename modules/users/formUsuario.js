@@ -2,7 +2,7 @@
  * Multi-user SPLOT
  */
 
-angular.module('multiSplot').controller('usuariosCtrl',
+angular.module('usersSplot').controller('usuariosCtrl',
     function($scope, $firebaseObject, $firebaseArray, users,whitelist,$customFirebaseArray,userService, auth, $state, $window,typeUser){
         $scope.usuarios = users;
 
@@ -12,7 +12,7 @@ angular.module('multiSplot').controller('usuariosCtrl',
         console.log("Tipo de Usuario Factory: "+ typeUser.get());
         if(typeUser.get()=="Configurador" || typeUser.get()=="Lider" ){
             $window.alert("Página NO AUTORIZADA");
-            $state.go("inicio.bienvenida");
+            $state.go("bienvenida");
 
         }
 

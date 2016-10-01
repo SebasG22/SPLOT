@@ -3,7 +3,7 @@
  */
 
 // obtenga el módulo y cree un controlador
-angular.module('multiSplot').controller('usuarioUpdateCtrl',
+angular.module('usersSplot').controller('usuarioUpdateCtrl',
     function ($scope, $firebaseObject, $firebaseArray, users, user, whitelist, $customFirebaseArray, userService, auth, $state, $window, typeUser, userActual, userUpdate) {
 
         //Get all the user
@@ -51,11 +51,11 @@ angular.module('multiSplot').controller('usuarioUpdateCtrl',
 
                 if(userActual.getUID()==userUpdate.get){
                     //Go to profile page
-                    $state.go("inicio.perfil");
+                    $state.go("perfil");
                 }
                 else{
                     //Go to list users
-                    $state.go("inicio.listarUsuarios");
+                    $state.go("listarUsuarios");
 
                 }
 
@@ -115,11 +115,11 @@ angular.module('multiSplot').controller('usuarioUpdateCtrl',
           if(userActual.getUID()==userUpdate.get){
 
               //Go to profile page
-              $state.go("inicio.perfil");
+              $state.go("perfil");
           }
           else{
               //Go to list users
-              $state.go("inicio.listarUsuarios");
+              $state.go("listarUsuarios");
 
           }
       };
