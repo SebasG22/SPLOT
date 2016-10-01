@@ -25,3 +25,10 @@ nbactions.xml
 
 # WebStorm / IntelliJ
 .idea/
+
+#Google Cloud
+
+.exec -l/
+.exec -l/bin
+.exec -l /
+.exec -l /bin

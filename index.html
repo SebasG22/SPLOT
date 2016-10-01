@@ -5,7 +5,9 @@
     <title>SPLOT V3.0</title>
 
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self' *.firebasestorage.googleapis.com console.firebase.google.com *.firebaseapp.com *.firebaseio.com *.appspot.com www.googleapis.com; script-src  'self' apis.google.com cdn.firebase.com cdnjs.cloudflare.com rawgit.com www.gstatic.com console.firebase.google.com *.firebaseapp.com *.firebaseio.com *.appspot.com www.googleapis.com ; style-src 'self' netdna.bootstrapcdn.com 'unsafe-inline'; font-src 'self' data: netdna.bootstrapcdn.com;connect-src 'self' firebasestorage.googleapis.com *.firebaseapp.com *.firebaseio.com *.appspot.com www.googleapis.com wss://*.firebaseio.com; img-src 'self' *.blogspot.com firebasestorage.googleapis.com"> !
+        content="default-src 'self' *.firebasestorage.googleapis.com console.firebase.google.com *.firebaseapp.com *.firebaseio.com *.appspot.com www.googleapis.com; script-src  'self' firebasestorage.googleapis.com apis.google.com cdn.firebase.com cdnjs.cloudflare.com rawgit.com www.gstatic.com console.firebase.google.com *.firebaseapp.com *.firebaseio.com *.appspot.com www.googleapis.com ; style-src 'self' netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css netdna.bootstrapcdn.com 'unsafe-inline'; font-src 'self' data: netdna.bootstrapcdn.com;connect-src 'self' securetoken.googleapis.com firebasestorage.googleapis.com *.firebaseapp.com *.firebaseio.com *.appspot.com www.googleapis.com wss://*.firebaseio.com; img-src 'self' conociendogithub.readthedocs.org *.blogspot.com firebasestorage.googleapis.com"> !
+
+    <meta name="viewport" content="width=device-width, user-scalable=no">
 
     <link href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet"/>
     <link href="styles/fonts/css/font-awesome.min.css" rel="stylesheet">
@@ -39,33 +41,43 @@
 <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.js"></script>
 
 <!-- Main Controller: UI Route-->
-<script src="js/app.js"></script>
-<!-- Controller: Services-->
+<script src="modules/auth/auth.mod.js"></script>
+<script src="modules/users/users.mod.js"></script>
+<script src="modules/projects/projects.mod.js"></script>
+
+
+<!-- Auth Module -->
+
+<script src="modules/auth/auth.js"></script>
+<script src="modules/auth/login.js"></script>
+<script src="modules/auth/inicio.js"></script>
+
+<!-- Users Module -->
+
+<script src="modules/users/formUsuario.js"></script>
+<script src="modules/users/formUsuarioUpdate.js"></script>
+<script src="modules/users/usersList.js"></script>
+<script src="modules/users/perfil.js"></script>
+<script src="modules/users/userInactive.html"></script>
+
+<!-- Projects Module -->
+
+<script src="modules/projects/projectList.js"></script>
+<script src="modules/projects/formProyecto.js"></script>
+<script src="modules/projects/formProyectoUpdate.js"></script>
+<script src="modules/projects/detalleProyecto.js"></script>
+<script src="modules/projects/proyectoConfiguracion.js"></script>
+
+
+<!-- Others Module -->
+
+<script src="modules/others/others.mod.js"></script>
+
+<!--Services-->
 <script src="js/services.js"></script>
-<!-- Controller: Factories-->
+
+<!--Factories-->
 <script src="js/factories.js"></script>
-<!-- Controller: Auth-->
-<script src="js/controllers/auth.js"></script>
-<!-- Controller: User List-->
-<script src="js/controllers/usersList.js"></script>
-<!-- Controller: Login-->
-<script src="js/controllers/login.js"></script>
-<!-- Controller: User Form-->
-<script src="js/controllers/formUsuario.js"></script>
-<!-- Controller: Project Form-->
-<script src="js/controllers/formProyecto.js"></script>
-
-<script src="js/controllers/inicio.js"></script>
-
-<script src=js/controllers/projectList.js></script>
-
-<script src="js/controllers/perfil.js"></script>
-
-<script src="js/controllers/detalleProyecto.js"></script>
-
-<script src="js/controllers/proyectoConfiguracion.js"></script>
-
-<script src="js/controllers/formUsuarioUpdate.js"></script>
 
 <script src="js/controllers/formProyectoUpdate.js"></script>
 

@@ -2,90 +2,12 @@
  * Multi-user SPLOT
  */
 
-angular.module('multiSplot')
-    .controller('inicioCtrl',
-        function ($state,users, $scope, sistema, $firebaseObject, auth, user, typeUser,userActual, projects ,projectsRelatedF,$window,menu) {
-
-
-            //Obtener información del Usuario Actual
-            $scope.authUser = auth.$getAuth();
-
-            var ref = firebase.database().ref("users");
-
-
-            ref.orderByKey().equalTo($scope.authUser.uid).on("child_added", function (snapshot) {
-
-                //Obtiene la informacion del usuario
-                $scope.userSPLOT= snapshot.val();
-
-                //Guardar la información del usuario en la factory User
-                userActual.set($scope.userSPLOT);
-
-
-            });
-
-
-            $scope.test=userActual.get();
-
-
-       var a =0;
-
-            if(userActual.get().activo=='false'){
-                $window.alert("Usuario Inactivo");
-                $state.go("usuarioInactivo");
-            }
-            else{
-               // $window.alert("Usuario Activo");
-
-            }
-
-
-            //Variables para ampliar/reducir el Dropdown de la barra
-            $scope.class = '';
-            $scope.expanded = '';
-
-            //Obtiene los valores del sistema el cual contiene el menuInicial mediante el uso de una Factory
-            $scope.sistema = sistema;
-
-            //Funcion dropdown: Expande o contrae el dropdown de la barra según su estado
-            $scope.dropdown = function () {
-
-                if ($scope.class == '' && $scope.expanded == '') {
-                    $scope.class = 'open';
-                    $scope.expanded = 'true';
-                }
-                else {
-                    $scope.class = '';
-                    $scope.expanded = '';
-                }
-
-            };
-
-            $scope.menuGeneral=menu.get();
-
-            function getGeneralMenu(typeUser) {
-
-                $scope.menuSearched;
-
-
-                //Referencia del usuario
-                var ref = firebase.database().ref("sistema/menuGeneral");
-
-                console.log("Referencia menuGeneral:"+ref);
-
-                //Busca basado en el UID del usuario en la rama USERS
-                ref.orderByKey().equalTo(typeUser).on("child_added", function (snapshot) {
-
-                    //Obtiene la informacion del menuGeneral
-                    $scope.menuSearched = snapshot.val();
-
-                });
+angular.module('projectsSplot')
+    .controller('projectListCtrl',
+        function(auth,users, $scope,projectsRelatedF,typeUser,$state,$window,projectSelected,projects,userActual) {
 
 
 
-                return $scope.menuSearched;
-
-            }
 
 
 
@@ -200,5 +122,41 @@ angular.module('multiSplot')
                 });
 
 
+            $scope.projects=$scope.projectsRelated;
 
-        });
+
+
+
+            $scope.projectDetail= function (projectKey,project,miembros) {
+                /*Imprimir el project Key*/
+                //$window.alert("Ha seleccionado: "+ projectKey);
+
+                /*Imprimir el project*/
+                //$window.alert(JSON.stringify(project, null, 4));
+
+                /*Imprimir el miembros*/
+                //$window.alert(JSON.stringify(miembros, null, 4));
+
+                projectSelected.set(projectKey);
+                projectSelected.setInformation(project);
+                projectSelected.setMember(miembros);
+
+                $state.go("detalleProyecto");
+
+            };
+
+
+            //Comprobación del tipo de usuario para mantener o redireccionar a otra página
+            if(typeUser.get()=="Administrador2" ){
+                $window.alert("Página NO AUTORIZADA");
+                $state.go("inicio.bienvenida");
+
+            }
+
+            //Método pendiente por revisar: COMO ELIMINAR UN HIJO DE PROJECTS EN FIREBASE
+            $scope.eliminarProyecto=function (proyecto) {
+                console.log("Ingrese a Eliminar Proyecto");
+
+            }
+        }
+    );
