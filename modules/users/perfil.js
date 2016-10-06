@@ -2,7 +2,7 @@
  * Multi-user SPLOT
  */
 
-angular.module('multiSplot')
+angular.module('usersSplot')
     .controller('profileCtrl',
         function (auth, $state, $scope, $firebaseObject, projects, user,users,$window,$firebaseObject,projectsRelatedF,userUpdate,userActual) {
 
@@ -46,7 +46,7 @@ angular.module('multiSplot')
                 userUpdate.setAction(action);
 
                 //Go to Edit Page
-                $state.go("inicio.editarPerfil");
+                $state.go("editarPerfil");
 
             };
 

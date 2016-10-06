@@ -5,7 +5,7 @@
  * Multi-user SPLOT
  */
 
-angular.module('multiSplot')
+angular.module('usersSplot')
     .controller('userInactiveCtrl',
         function (auth, $state, users, $scope, $window, $http, projects, $firebaseObject, typeUser,userActual) {
 

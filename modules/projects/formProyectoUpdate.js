@@ -2,7 +2,7 @@
  * Multi-user SPLOT
  */
 
-angular.module('multiSplot')
+angular.module('projectsSplot')
     .controller('proyectoUpdateCtrl',
         function (users, $scope, $window, $http, projects, $state, $firebaseObject, typeUser,projectSelected) {
 
@@ -12,7 +12,7 @@ angular.module('multiSplot')
             //CHECK THE CURRENT USER, IF HE HAS THE PERMISSION HE CAN SEE THE PAGE, IF NOT THE USER REDIRECT HIM TO WELCOME PAGE
             if (typeUser.get() == "Administrador2" || typeUser.get() == "Configurador") {
                 $window.alert("Página NO AUTORIZADA");
-                $state.go("inicio.bienvenida");
+                $state.go("bienvenida");
 
             }
 

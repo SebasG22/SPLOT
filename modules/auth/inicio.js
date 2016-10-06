@@ -12,6 +12,8 @@ angular.module('multiSplot')
 
             var ref = firebase.database().ref("users");
 
+<<<<<<< HEAD:js/controllers/inicio.js
+=======
 
             ref.orderByKey().equalTo($scope.authUser.uid).on("child_added", function (snapshot) {
 
@@ -21,6 +23,22 @@ angular.module('multiSplot')
                 //Guardar la información del usuario en la factory User
                 userActual.set($scope.userSPLOT);
 
+
+            });
+
+
+            $scope.test=userActual.get();
+>>>>>>> gh-pages:modules/auth/inicio.js
+
+            ref.orderByKey().equalTo($scope.authUser.uid).on("child_added", function (snapshot) {
+
+                //Obtiene la informacion del usuario
+                $scope.userSPLOT= snapshot.val();
+
+                //Guardar la información del usuario en la factory User
+                userActual.set($scope.userSPLOT);
+
+<<<<<<< HEAD:js/controllers/inicio.js
 
             });
 
@@ -36,9 +54,26 @@ angular.module('multiSplot')
             }
             else{
                // $window.alert("Usuario Activo");
+=======
+            if(userActual.get().activo=='false'){
+                $window.alert("Usuario Inactivo");
+                $state.go("usuarioInactivo");
+            }
+            else{
+               // $window.alert("Usuario Activo");
+
+            }
+>>>>>>> gh-pages:modules/auth/inicio.js
 
             }
 
+
+            //Variables para ampliar/reducir el Dropdown de la barra
+            $scope.class = '';
+            $scope.expanded = '';
+
+            //Obtiene los valores del sistema el cual contiene el menuInicial mediante el uso de una Factory
+            $scope.sistema = sistema;
 
             //Variables para ampliar/reducir el Dropdown de la barra
             $scope.class = '';

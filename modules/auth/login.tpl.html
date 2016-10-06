@@ -1,0 +1,77 @@
+<body class="login">
+<div >
+
+    <a class="hiddenanchor" id="signin"></a>
+
+    <div class="login_wrapper">
+        <div class="animate form login_form">
+            <section class="login_content">
+                <form>
+                    <h1>Bienvenido a SPLOT</h1>
+                    <div ng-show="selected=='Email'">
+
+                        <div>
+                            <input type="text" class="form-control" placeholder="Correo Eléctronico"ng-model="login" required="" />
+                        </div>
+                        <div>
+                            <input type="password" class="form-control" placeholder="Contraseña" ng-model="password" required="" />
+                        </div>
+                        <div ng-click="ctrl.login()">
+                            <h4>Ingresar con Email <i class="fa fa-envelope"></i></h4>
+
+                        </div>
+                        <div ng-click="select('')">
+                            <h5>Atras <i class="fa fa-arrow-circle-left"></i></h5>
+
+                        </div>
+                        <div>
+                    </div>
+                    </div>
+
+                    <div ng-show="selected==''">
+
+
+                        <div ng-click="select('Email')">
+                        <h4>Ingresar con Email <i class="fa fa-envelope"></i></h4>
+
+                        </div>
+
+
+                        <hr/>
+                        <div ng-click="githubAcess()">
+
+                            <h4>Ingresar con Github <i class="fa fa-github"></i></h4>
+                        </div>
+
+                        <hr/>
+                    <div ui-sref="signup">
+                        <h4> ¿ No tienes una cuenta ? </h4>
+                        <h6>Registrate</h6>
+                    </div>
+                    </div>
+
+
+
+                    <div class="clearfix"></div>
+
+                    <div class="separator">
+
+
+                        <div class="clearfix"></div>
+                        <br />
+
+                        <div>
+                            <h1><i class="fa fa-paw"></i> SPLOT V 3.0</h1>
+                            <p>©2016 Todos los derechos registrados. <br> Desarollado por Sebastián Guevara. </p>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+
+
+
+
+    </div>
+</div>
+</body>

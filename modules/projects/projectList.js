@@ -2,7 +2,7 @@
  * Multi-user SPLOT
  */
 
-angular.module('multiSplot')
+angular.module('projectsSplot')
     .controller('projectListCtrl',
         function(auth,users, $scope,projectsRelatedF,typeUser,$state,$window,projectSelected,projects,userActual) {
 
@@ -141,7 +141,7 @@ angular.module('multiSplot')
                 projectSelected.setInformation(project);
                 projectSelected.setMember(miembros);
 
-                $state.go("inicio.detalleProyecto");
+                $state.go("detalleProyecto");
 
             };
 

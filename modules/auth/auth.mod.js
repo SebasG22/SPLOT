@@ -1,8 +1,13 @@
 /**
+ * Created by SebasG on 1/10/16.
+ */
+/**
  * Multi-user SPLOT
  */
 
 // definition of the main application
+// define the main module
+var app = angular.module('multiSplot', ['asideModule','ui.router','firebase','usersSplot','projectsSplot','othersSplot']);
 
 // Initialize Firebase
 var config = {
@@ -12,10 +17,6 @@ var config = {
     storageBucket: "splot3-31f45.appspot.com",
 };
 firebase.initializeApp(config);
-
-
-// define the main module
-var app = angular.module('multiSplot', ['asideModule','ui.router','firebase']);
 
 // configure the ui-route
 var module = angular.module('multiSplot');
@@ -50,31 +51,36 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/login');
 
+    var basePath = 'modules/auth/';
+
+
     $stateProvider
 
     // HOME STATES AND NESTED VIEWS ========================================
         .state('login', {
             url: '/login',
-            templateUrl: 'views/login.tpl.html',
+            templateUrl: basePath+'login.tpl.html',
             controller: 'loginCtrl',
             controllerAs: 'ctrl',
             authenticate: false
         })
         .state('signup', {
             url: '/signup',
-            templateUrl: 'views/signup2.tpl.html',
+            templateUrl: basePath+'signup2.tpl.html',
             controller: 'usuariosCtrl',
             controllerAs: 'ctrl',
             authenticate: false
         })
         .state('inicio', {
             url: '/inicio',
-            templateUrl: 'views/Inicio.tpl.html',
+            templateUrl:  basePath+'Inicio.tpl.html',
+            controller:'inicioCtrl',
+            abstract:true,
             authenticate: false,
-            controller:'inicioCtrl'
         })
-        .state('inicio.bienvenida', {
+        .state('bienvenida', {
             url: '/bienvenida',
+<<<<<<< HEAD:js/app.js
             templateUrl: 'views/bienvenida.html',
             authenticate: false
         })
@@ -173,4 +179,15 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
     });
 
+=======
+            authenticate: false,
+            parent: 'inicio',
+            views: {
+                'mainView': {
+                    templateUrl: basePath+'bienvenida.html'
+                }
+            }
+        })
+
+>>>>>>> gh-pages:modules/auth/auth.mod.js
 });
