@@ -1,0 +1,137 @@
+<div class="">
+    <div class="page-title">
+        <div class="title_left">
+            <h3>Mi Perfil</h3>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>Reporte de Usuario
+                        <small>Acerca de</small>
+                    </h2>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <div class="col-md-3 col-sm-3 col-xs-12 profile_left">
+                        <div class="profile_img">
+                            <div id="crop-avatar">
+                                <!-- Current avatar -->
+                                <img class="img-responsive avatar-view" src="{{usuario.imagen}}" alt="Avatar"
+                                     title="Change the avatar" width="70%">
+                            </div>
+                        </div>
+                        <h3>{{usuario.nombre}}</h3>
+
+                        <ul class="list-unstyled user_data">
+                            <li><i class="fa fa-map-marker user-profile-icon"></i> {{usuario.direccion}}
+                            </li>
+
+                            <li>
+                                <i class="fa fa-briefcase user-profile-icon"></i> {{usuario.profesion}}
+                            </li>
+
+                            <li>
+                                <i class="fa fa-briefcase user-profile-icon"></i> {{usuario.tipo}}
+                            </li>
+
+                            <li>
+                                <i class="fa fa-briefcase user-profile-icon"></i> {{usuario.usuario}}
+                            </li>
+
+                            <li class="m-top-xs">
+                                <i class="fa fa-external-link user-profile-icon"></i>
+                                <a href="http://www.kimlabs.com/profile/" target="_blank">{{usuario.identificacion.value}}</a>
+                            </li>
+                        </ul>
+
+
+
+
+
+
+                        <ul class="list-unstyled user_data">
+                            <li >
+                                <a class="btn btn-success" ng-click="updateInformation('EditInformation')" style="width: 170px"><i class="fa fa-edit m-right-xs"></i>Editar Informacion</a>
+                            </li>
+
+                            <li>
+                                <a class="btn btn-info" ng-click="updateInformation('ChangeMail')" style="width: 170px"><i class="fa fa-edit m-right-xs"></i>Cambiar Usuario</a>
+                            </li>
+
+                            <li>
+                                <a class="btn btn-warning" ng-click="updateInformation('ChangePassword')" style="width: 170px"><i class="fa fa-edit m-right-xs"></i>Cambiar Contraseña</a>
+                            </li>
+
+                            <li>
+                                <a class="btn btn-danger" ng-click="updateInformation('DeleteAccount')" style="width: 170px"><i class="fa fa-edit m-right-xs"></i>Eliminar Cuenta</a>
+                            </li>
+
+                        </ul>
+
+
+                        <br/>
+
+
+                    </div>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+
+                        <h3>Mis Proyectos</h3>
+
+                        <!-- start user projects -->
+                        <table class="data table table-striped no-margin">
+                            <thead>
+                            <tr>
+
+                                <th>Nombre Proyecto</th>
+                                <th>Miembros</th>
+                                <th>Mi Progreso</th>
+                                <th>Estado</th>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="project in projectsRelated ">
+
+                                <td>{{project.proyecto.nombre}}</td>
+
+                                <td>
+                                    <ul class="list-inline" ng-repeat="miembro in project.miembros track by $index">
+                                        <li>
+                                            <img src="{{miembro.imagen}}" class="avatar" alt="Avatar">&nbsp
+                                            {{miembro.nombre}}
+                                        </li>
+
+                                    </ul>
+                                </td>
+
+                                <td class="project_progress">
+                                    <div class="progress progress_sm">
+                                        <div class="progress-bar bg-green" role="progressbar"
+                                             data-transitiongoal="0"></div>
+                                    </div>
+                                    <small>0% Complete</small>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-success btn-xs">Completado</button>
+                                </td>
+
+
+                            </tr>
+
+                            </tbody>
+                        </table>
+                        <!-- end user projects -->
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

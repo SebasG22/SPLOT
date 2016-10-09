@@ -1,0 +1,145 @@
+<div class="">
+    <div class="page-title" ng-init="onload()">
+        <div class="title_left">
+            <h3 class="">Mi cuenta </h3>
+
+        </div>
+
+    </div>
+    <div class="clearfix"></div>
+
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>Formulario <small>Actualizar mis Datos</small></h2>
+
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <br />
+                    <form class="form-horizontal form-label-left input_mask" name="editUserForm">
+
+                        <div ng-show="action=='EditInformation'" class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                            <input type="text" class="form-control has-feedback-left"  placeholder="Nombre Completo"  ng-model="currentUser.nombre" >
+                            <span class="fa fa-user form-control-feedback left" ></span>
+                        </div>
+
+
+
+                        <div ng-show="action=='EditInformation'" class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                            <input type="number" class="form-control has-feedback-left" placeholder="Identificación"    ng-model="currentUser.identificacion.value">
+                            <span class="fa fa-envelope form-control-feedback left"></span>
+                        </div>
+
+
+
+                        <div ng-show="action=='ChangeMail'" class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+                            <input type="email" class="form-control" name="userEmail" placeholder="Correo Eléctronico"  ng-model="currentUser.usuario2" >
+                            <span class="fa fa-phone form-control-feedback right" ></span>
+                            <div role="alert">
+                                <span class="error" ng-show="editUserForm.userEmail.$error.required">Este campo es requerido!</span>
+                                <span class="error" ng-show="editUserForm.userEmail.$error.email">El correo no es válido!</span>
+                            </div>
+                        </div>
+
+
+
+                        <div ng-show="action=='EditInformation'" class="form-group">
+
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="text" class="form-control" placeholder="Dirección Residencial" ng-model="currentUser.direccion"  >
+                            </div>
+
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="text" class="form-control" placeholder="Profesión" ng-model="currentUser.profesion"  >
+                            </div>
+
+                        </div>
+
+                        <div class="form-group" ng-if="userType=='Administrador' && action=='EditInformation'">
+
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+
+
+                                <label>Tipo Usuario:</label>
+                                <select class="form-control" ng-model="currentUser.tipo"  >
+
+                                    <option value="Integrante">Integrante de la Organización</option>
+                                    <option value="Jefe">Jefe de equipo</option>
+                                    <option value="Administrador">Administrador</option>
+                                </select>
+                            </div>
+
+
+                        </div>
+
+                        <div class="form-group" ng-if="userType=='Administrador' && action=='EditInformation'">
+
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+
+
+                                <label>Activo:</label>
+                                <select class="form-control" ng-model="currentUser.activo"  >
+
+                                    <option value="true">true</option>
+                                    <option value="false">false</option>
+
+                                </select>
+                            </div>
+
+
+                        </div>
+
+                        <div class="form-group" ng-show="action=='ChangePassword'">
+
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="password" class="form-control" placeholder="Escriba la nueva contraseña" ng-model="currentUser.newpassword1"  >
+                            </div>
+
+
+
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="password" class="form-control" placeholder="Reescriba la nueva contraseña" ng-model="currentUser.newpassword2"  >
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback" ng-show="action=='EditInformation'">
+                            <input type="file" id="file" class="form-control" accept="image/x-png, image/gif, image/jpeg , image/jpg" >
+                        </div>
+
+
+                        <div class="ln_solid"></div>
+
+                        <div class="group">
+                            <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-5 ">
+
+                                <button class="btn btn-success" ng-click="update()">Actualizar</button>
+                                <a type="button" ng-click="checkUser()" class="btn btn-info" >Cancelar</a>
+
+
+
+
+
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+</div>
