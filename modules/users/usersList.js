@@ -47,33 +47,26 @@ angular.module('usersSplot')
             };
 
             /*
-            //Obtiene los proyectos relaciones con el usuario y los almacena en la variable projectsRelated
-            $scope.proyectos.$loaded()
-                .then(function (data) {
-                    angular.forEach(data, function (value, key) {
-
-                        //Comparacion para conocer si el usuario actual esta asociado a un proyecto
-                        if (FindRelation(value.$id) == true) {
-
-                            //Obtiene la referencia de todos los projects
-                            var ref = firebase.database().ref("projects");
-
-
-                            //Variable para almacenar los miembros relacionados de un proyecto
-                            var miembros = [];
-
-                            //Obtencion de los datos del proyecto
-                            ref.orderByKey().equalTo(value.$id).on("child_added", function (snapshot) {
-
-                                $scope.projectFounded = snapshot.val();
-
-                                //Pasar el proyecto Actual --> Revisar
-                                $scope.projectFounded.miembros.$remove($scope.usuarios.$getRecord(UIDusuario));
-                            });
-                        }
-                    })
-                });
-           */
+             //Obtiene los proyectos relaciones con el usuario y los almacena en la variable projectsRelated
+             $scope.proyectos.$loaded()
+             .then(function (data) {
+             angular.forEach(data, function (value, key) {
+             //Comparacion para conocer si el usuario actual esta asociado a un proyecto
+             if (FindRelation(value.$id) == true) {
+             //Obtiene la referencia de todos los projects
+             var ref = firebase.database().ref("projects");
+             //Variable para almacenar los miembros relacionados de un proyecto
+             var miembros = [];
+             //Obtencion de los datos del proyecto
+             ref.orderByKey().equalTo(value.$id).on("child_added", function (snapshot) {
+             $scope.projectFounded = snapshot.val();
+             //Pasar el proyecto Actual --> Revisar
+             $scope.projectFounded.miembros.$remove($scope.usuarios.$getRecord(UIDusuario));
+             });
+             }
+             })
+             });
+             */
 
             //FIN TEST
             $scope.eliminarUsuario = function (usuarioUID) {

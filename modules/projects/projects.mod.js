@@ -1,7 +1,4 @@
 /**
- * Created by SebasG on 1/10/16.
- */
-/**
  * Multi-user SPLOT
  */
 
@@ -22,7 +19,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/listarProyectos');
 
     var basePath = 'modules/projects/';
-    
+
     $stateProvider
 
         .state('crearProyecto', {
@@ -37,7 +34,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
                 }
             }
         })
-        
+
         .state('editarProyecto', {
             url: '/editarProyecto',
             authenticate: false,

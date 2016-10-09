@@ -282,11 +282,11 @@ angular.module('projectsSplot')
                     //NO VA AQUI
 
                     /*$http.get(url).then(function (msg) {
-                        $scope.msg = msg;
-                        console.log("He convertido el archivoJson a un Arreglo");
-                        console.log(msg);
-                        $window.alert(JSON.stringify(msg, null, 4));
-                    });
+                     $scope.msg = msg;
+                     console.log("He convertido el archivoJson a un Arreglo");
+                     console.log(msg);
+                     $window.alert(JSON.stringify(msg, null, 4));
+                     });
                      */
 
 

@@ -1,7 +1,4 @@
 /**
- * Created by SebasG on 1/10/16.
- */
-/**
  * Multi-user SPLOT
  */
 

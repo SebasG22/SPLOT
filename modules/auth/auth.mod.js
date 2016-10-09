@@ -1,7 +1,4 @@
 /**
- * Created by SebasG on 1/10/16.
- */
-/**
  * Multi-user SPLOT
  */
 
@@ -80,106 +77,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
         })
         .state('bienvenida', {
             url: '/bienvenida',
-<<<<<<< HEAD:js/app.js
-            templateUrl: 'views/bienvenida.html',
-            authenticate: false
-        })
-        .state('inicio.perfil', {
-            url: '/miperfil',
-            templateUrl: 'views/perfil.html',
-            controller:'profileCtrl',
-            authenticate: false
-        })
-
-        .state('inicio.editarPerfil', {
-            url: '/editarPerfil',
-            templateUrl: 'views/formUsuarioUpdate.html',
-            controller:'usuarioUpdateCtrl',
-            authenticate: false
-
-        })
-
-        .state('usuarioInactivo', {
-            url: '/usuarioInactivo',
-            templateUrl: 'views/userInactive.html',
-            controller:'userInactiveCtrl',
-            authenticate: false
-
-        })
-
-        .state('inicio.crearUsuario', {
-            url: '/crearUsuario',
-            templateUrl: 'views/formUsuario.html',
-            controller:'usuariosCtrl',
-            authenticate: true
-
-        })
-
-        .state('inicio.listarUsuarios', {
-            url: '/listarUsuarios',
-            templateUrl: 'views/listarUsuarios.html',
-            controller: 'userListCtrl',
-            controllerAs: 'ctrl',
-            authenticate: true
-        })
-
-        .state('inicio.crearProyecto', {
-            url: '/crearProyecto',
-            templateUrl: 'views/formProyecto.html',
-            controller:'proyectosCtrl',
-            authenticate: false
-
-        })
-        .state('inicio.editarProyecto', {
-            url: '/editarProyecto',
-            templateUrl: 'views/formProyectoUpdate.html',
-            controller:'proyectoUpdateCtrl',
-            authenticate: false
-
-        })
-    .state('inicio.listarProyectos', {
-        url: '/listarProyectos',
-        templateUrl: 'views/listarProyectos.tpl.html',
-        controller:'projectListCtrl',
-        authenticate: false
-
-    })
-        .state('inicio.detalleProyecto', {
-            url: '/detalleProyecto',
-            templateUrl: 'views/detalleProyecto.html',
-            controller:'detalleproyectoCtrl',
-            authenticate: false
-
-        })
-
-
-    .state('inicio.configuracionProyecto', {
-        url: '/configuracionProyecto',
-        templateUrl: 'views/proyectoConfiguracion.html',
-        controller:'configuracionCtrl',
-        authenticate: false
-
-    })
-        .state('inicio.nosotros', {
-            url: '/nosotros',
-            templateUrl: 'views/team.html',
-            authenticate: true
-
-        })
-        .state('inicio.procesoConfiguracion', {
-            url: '/procesoConfiguracion',
-            templateUrl: 'views/configurationProcess.html',
-            authenticate: true
-
-        })
-    .state('inicio.preguntasFrecuentes', {
-        url: '/preguntasFrecuentes',
-        templateUrl: 'views/faq.html',
-        authenticate: true
-
-    });
-
-=======
             authenticate: false,
             parent: 'inicio',
             views: {
@@ -189,5 +86,4 @@ app.config(function($stateProvider, $urlRouterProvider) {
             }
         })
 
->>>>>>> Development:modules/auth/auth.mod.js
 });

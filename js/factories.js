@@ -22,16 +22,16 @@ angular
     .module('multiSplot')
     .factory('typeUser', function() {
         var type;
-    return {
+        return {
 
-        get: function () {
-            return type;
-        },
-        set: function (typeInput) {
-            type=typeInput;
-        }
-    };
-});
+            get: function () {
+                return type;
+            },
+            set: function (typeInput) {
+                type=typeInput;
+            }
+        };
+    });
 
 angular
     .module('multiSplot')
@@ -118,21 +118,6 @@ angular
         };
     });
 
-<<<<<<< HEAD
-
-
-angular
-    .module('multiSplot')
-    .factory('modelToJson', function ($http) {
-        return {
-            get: function () {
-                console.log("inside function");
-                return $http.get('json/dell-computers2.json');
-            }
-        };
-    });
-
-=======
 
 
 angular
@@ -143,30 +128,28 @@ angular
             get: function (urlModelo) {
                 console.log("inside function");
 
-               /* var req = {
-                    method: 'POST',
-                    url: ''+urlModelo,
-                    headers: {
-                        'Access-Control-Allow-Origin': '*'
-                    }
-                };
-                */
+                /* var req = {
+                 method: 'POST',
+                 url: ''+urlModelo,
+                 headers: {
+                 'Access-Control-Allow-Origin': '*'
+                 }
+                 };
+                 */
 
                 /*
-                $httpProvider.defaults.headers.common = {};
-                $httpProvider.defaults.headers.post = {};
-                $httpProvider.defaults.headers.put = {};
-                $httpProvider.defaults.headers.patch = {};
-                $httpProvider.defaults.headers.get = {};
-                $httpProvider.defaults.headers.common['Access-Control-Allow-Headers'] = '*';
-                $httpProvider.defaults.useXDomain = true;
-                delete $httpProvider.defaults.headers.common['X-Requested-With'];
-
-                $http.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
-                $http.defaults.headers.common['Access-Control-Allow-Headers'] = 'Origin,  X-Requested-With, Content-Type, Accept';
-                $http.defaults.headers.post['dataType'] = 'json';
-
-                */
+                 $httpProvider.defaults.headers.common = {};
+                 $httpProvider.defaults.headers.post = {};
+                 $httpProvider.defaults.headers.put = {};
+                 $httpProvider.defaults.headers.patch = {};
+                 $httpProvider.defaults.headers.get = {};
+                 $httpProvider.defaults.headers.common['Access-Control-Allow-Headers'] = '*';
+                 $httpProvider.defaults.useXDomain = true;
+                 delete $httpProvider.defaults.headers.common['X-Requested-With'];
+                 $http.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+                 $http.defaults.headers.common['Access-Control-Allow-Headers'] = 'Origin,  X-Requested-With, Content-Type, Accept';
+                 $http.defaults.headers.post['dataType'] = 'json';
+                 */
 
                 var config = {headers:  {
                     'Access-Control-Allow-Headers': '*'
@@ -189,29 +172,26 @@ angular
 
 
                 /*
-
-                return $http({
-                    url: ""+urlModelo,
-                    dataType: 'json',
-                    method: "GET",
-                    data: '',
-                    params: {},
-                    headers: {
-                        'Content-Type': 'text/plain',
-                        'Access-Control-Allow-Origin': '*'
-                    }
-                })
-                    .success(function(response) {
-                        console.log("Sucess");
-                        console.log(response);
-
-                    })
-                    .error(function(response) {
-                        console.log("Error");
-                        console.log(response);
-                    });
-
-                */
+                 return $http({
+                 url: ""+urlModelo,
+                 dataType: 'json',
+                 method: "GET",
+                 data: '',
+                 params: {},
+                 headers: {
+                 'Content-Type': 'text/plain',
+                 'Access-Control-Allow-Origin': '*'
+                 }
+                 })
+                 .success(function(response) {
+                 console.log("Sucess");
+                 console.log(response);
+                 })
+                 .error(function(response) {
+                 console.log("Error");
+                 console.log(response);
+                 });
+                 */
             }
         };
 
@@ -219,7 +199,6 @@ angular
 
     });
 
->>>>>>> Development
 //Factory to pass the user information to Edit Page
 angular
     .module('multiSplot')
@@ -279,4 +258,3 @@ angular
             }
         };
     });
-

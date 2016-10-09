@@ -89,16 +89,16 @@ angular.module('usersSplot').controller('usuariosCtrl',
 
 
             // create the user
-                userService.createUser($scope.login,$scope.password, $scope.nombre, $scope.identificacion, $scope.direccion, $scope.profesion, $scope.permiso,$scope.imagen)
-                    // if everything is ok
-                    .then(function (user) {
-                        $scope.whitelist.$remove($scope.userFounded);
-                        $state.go("inicio.listarUsuarios");
-                    })
-                    // if there is an error
-                    .catch(function (error) {
-                        $window.alert(error);
-                    });
+            userService.createUser($scope.login,$scope.password, $scope.nombre, $scope.identificacion, $scope.direccion, $scope.profesion, $scope.permiso,$scope.imagen)
+                // if everything is ok
+                .then(function (user) {
+                    $scope.whitelist.$remove($scope.userFounded);
+                    $state.go("inicio.listarUsuarios");
+                })
+                // if there is an error
+                .catch(function (error) {
+                    $window.alert(error);
+                });
 
 
         };
@@ -114,6 +114,3 @@ angular.module('usersSplot').controller('usuariosCtrl',
 
     }
 );
-
-
-

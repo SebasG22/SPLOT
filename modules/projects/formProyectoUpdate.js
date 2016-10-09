@@ -35,7 +35,7 @@ angular.module('projectsSplot')
             $scope.modeloFeatures=$scope.projectEdit.modelo;
 
             $scope.archivos= $scope.projectEdit.archivos;
-            
+
 
             angular.forEach($scope.projectEdit.miembros,function (value,key) {
 

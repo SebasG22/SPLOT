@@ -34,9 +34,9 @@
                         </div>
 
                         <div class="col-md-1 col-sm-1 col-xs-12 form-group has-feedback">
-<label>
-    Archivo JSON Feature Model
-</label>                        </div>
+                            <label>
+                                Archivo JSON Feature Model
+                            </label>                        </div>
 
                         <div class="col-md-5 col-sm-5 col-xs-12 form-group has-feedback">
                             <input type="file" id="file" ng-model="modeloFeatures" class="form-control" accept="application/json"git >
@@ -107,33 +107,33 @@
                         <div class="col-md-6 col-sm-6 col-xs-12" >
 
 
-                        <h4>Lideres del Proyecto</h4>
+                            <h4>Lideres del Proyecto</h4>
 
 
 
-                        <table class="data table table-striped no-margin">
-                            <thead>
-                            <tr>
+                            <table class="data table table-striped no-margin">
+                                <thead>
+                                <tr>
 
-                                <th>Nombre</th>
-                                <th>Identificación</th>
-                                <th>Correo</th>
-                                <th>Opciones</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr ng-repeat="lider in listarLideres">
+                                    <th>Nombre</th>
+                                    <th>Identificación</th>
+                                    <th>Correo</th>
+                                    <th>Opciones</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="lider in listarLideres">
 
-                                <td>{{lider.nombre}}</td>
-                                <td>{{lider.identificacion.value}}</td>
-                                <td>{{lider.usuario}}</td>
-                                <td>
-                                    <button class="btn btn-danger" ng-click="eliminarLideres(lider)">Eliminar</button>
-                                </td>
-                            </tr>
+                                    <td>{{lider.nombre}}</td>
+                                    <td>{{lider.identificacion.value}}</td>
+                                    <td>{{lider.usuario}}</td>
+                                    <td>
+                                        <button class="btn btn-danger" ng-click="eliminarLideres(lider)">Eliminar</button>
+                                    </td>
+                                </tr>
 
-                            </tbody>
-                        </table>
+                                </tbody>
+                            </table>
 
                         </div>
 
@@ -141,34 +141,34 @@
 
                         <div class="col-md-6 col-sm-6 col-xs-12" >
 
-                        <h4>Miembros del Proyecto</h4>
+                            <h4>Miembros del Proyecto</h4>
 
 
-                        <table class="data table table-striped no-margin">
-                            <thead>
-                            <tr>
+                            <table class="data table table-striped no-margin">
+                                <thead>
+                                <tr>
 
-                                <th>Nombre</th>
-                                <th>Identificación</th>
-                                <th>Correo</th>
-                                <th>Opciones</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr ng-repeat="miembro in listarMiembros">
+                                    <th>Nombre</th>
+                                    <th>Identificación</th>
+                                    <th>Correo</th>
+                                    <th>Opciones</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="miembro in listarMiembros">
 
-                                <td>{{miembro.nombre}}</td>
-                                <td>{{miembro.identificacion.value}}</td>
-                                <td>{{miembro.usuario}}</td>
-                                <td>
-                                    <button class="btn btn-danger" ng-click="eliminarMiembros(miembro)">Eliminar</button>
-                                </td>
-                            </tr>
+                                    <td>{{miembro.nombre}}</td>
+                                    <td>{{miembro.identificacion.value}}</td>
+                                    <td>{{miembro.usuario}}</td>
+                                    <td>
+                                        <button class="btn btn-danger" ng-click="eliminarMiembros(miembro)">Eliminar</button>
+                                    </td>
+                                </tr>
 
-                            </tbody>
-                        </table>
+                                </tbody>
+                            </table>
 
-                            </div>
+                        </div>
 
                         <div ng-show="agregarArchivo">
                             <form class="form-horizontal form-label-left">
@@ -262,7 +262,5 @@
 
 
         </div>
-</div>
     </div>
-
-
+</div>

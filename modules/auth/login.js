@@ -531,4 +531,3 @@ angular.module('multiSplot')
 
         }
     );
-

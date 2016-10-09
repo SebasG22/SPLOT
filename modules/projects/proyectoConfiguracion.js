@@ -12,9 +12,9 @@ angular.module('projectsSplot')
 
 
             /*modelToJson.get($scope.proyecto.modelo).then(function (msg) {
-                        $scope.msg = msg;
-                });
-                 */
+             $scope.msg = msg;
+             });
+             */
 
             $http({
                 method: 'jsonp',
@@ -30,19 +30,19 @@ angular.module('projectsSplot')
             });
 
 
-                $scope.indix2='_id_1';
+            $scope.indix2='_id_1';
 
-                $scope.act=1;
+            $scope.act=1;
 
-                $scope.aumentar=function () {
-                        $scope.indix2='_id_'+($scope.act+1);
-                        $scope.act=($scope.act+1);
+            $scope.aumentar=function () {
+                $scope.indix2='_id_'+($scope.act+1);
+                $scope.act=($scope.act+1);
+            }
+
+            $scope.disminuir=function () {
+                if($scope.act>1){
+                    $scope.indix2='_id_'+($scope.act-1);
+                    $scope.act=($scope.act-1);
                 }
-
-                $scope.disminuir=function () {
-                        if($scope.act>1){
-                                $scope.indix2='_id_'+($scope.act-1);
-                                $scope.act=($scope.act-1);
-                        }
-                }
+            }
         });

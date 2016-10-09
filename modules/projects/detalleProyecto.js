@@ -28,7 +28,7 @@ angular.module('projectsSplot')
                 console.log("For Each:"+value.uid);
                 console.log("User Actual:"+userActual.getUID());
                 if(value.uid==$scope.usuarioA){
-                        $scope.edit=true;
+                    $scope.edit=true;
                     console.log("El usuario es lider del proyecto");
                 }
                 else{

@@ -51,19 +51,11 @@ angular.module('usersSplot').controller('usuarioUpdateCtrl',
 
                 if(userActual.getUID()==userUpdate.get){
                     //Go to profile page
-<<<<<<< HEAD:js/controllers/formUsuarioUpdate.js
-                    $state.go("inicio.perfil");
-                }
-                else{
-                    //Go to list users
-                    $state.go("inicio.listarUsuarios");
-=======
                     $state.go("perfil");
                 }
                 else{
                     //Go to list users
                     $state.go("listarUsuarios");
->>>>>>> Development:modules/users/formUsuarioUpdate.js
 
                 }
 
@@ -115,30 +107,22 @@ angular.module('usersSplot').controller('usuarioUpdateCtrl',
         };
 
         //Method to Check the user in SPLOT
-      $scope.checkUser=function () {
-          console.log("User Actual:"+userActual.getUID());
-          console.log("User Update:"+userUpdate.get());
+        $scope.checkUser=function () {
+            console.log("User Actual:"+userActual.getUID());
+            console.log("User Update:"+userUpdate.get());
 
 
-          if(userActual.getUID()==userUpdate.get){
+            if(userActual.getUID()==userUpdate.get){
 
-              //Go to profile page
-<<<<<<< HEAD:js/controllers/formUsuarioUpdate.js
-              $state.go("inicio.perfil");
-          }
-          else{
-              //Go to list users
-              $state.go("inicio.listarUsuarios");
-=======
-              $state.go("perfil");
-          }
-          else{
-              //Go to list users
-              $state.go("listarUsuarios");
->>>>>>> Development:modules/users/formUsuarioUpdate.js
+                //Go to profile page
+                $state.go("perfil");
+            }
+            else{
+                //Go to list users
+                $state.go("listarUsuarios");
 
-          }
-      };
+            }
+        };
 
         //Upload Images througth Firebase Storage
 
@@ -189,6 +173,3 @@ angular.module('usersSplot').controller('usuarioUpdateCtrl',
         };
     }
 );
-
-
-
