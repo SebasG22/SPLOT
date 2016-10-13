@@ -36,6 +36,35 @@ angular.module('projectsSplot')
 
             $scope.archivos= $scope.projectEdit.archivos;
 
+            //Get all the users from Factory
+            $scope.usuariosDB = users;
+
+            //Initial Values to open the buttons
+            $scope.agregarLider = false;
+            $scope.agregarMiembro = false;
+            $scope.agregarArchivo = false;
+
+            //Method to show the leaderships througth a button: When the user do a click
+            $scope.mostrarLideres = function () {
+                if (!$scope.agregarLider) {
+                    $scope.agregarLider = true;
+                    $scope.agregarMiembro = false;
+                }
+                else {
+                    $scope.agregarLider = false;
+                }
+            };
+
+            //Method to show the members througth a button: When the user do a click
+            $scope.mostrarMiembros = function () {
+                if (!$scope.agregarMiembro) {
+                    $scope.agregarMiembro = true;
+                    $scope.agregarLider = false;
+                }
+                else {
+                    $scope.agregarMiembro = false;
+                }
+            };
 
             angular.forEach($scope.projectEdit.miembros,function (value,key) {
 
@@ -59,6 +88,7 @@ angular.module('projectsSplot')
 
             });
 
+
             angular.forEach($scope.projectEdit.lideres,function (value,key) {
 
                 console.log("Print ID:"+value.uid);
@@ -80,6 +110,80 @@ angular.module('projectsSplot')
 
 
             });
+
+            //Check if the user exits
+            function loopUser(uidSearched){
+
+                var response=false;
+
+                angular.forEach($scope.usuarios, function (value,key) {
+
+
+                    if(value.uid == uidSearched){
+                        response = true;
+                    }
+                });
+                return response;
+            }
+            //Variable to save users
+            $scope.usuarios=[];
+
+
+            checkusersSelected();
+
+            //Function to check the leaders and member selected in the project
+            function checkusersSelected (){
+
+                angular.forEach($scope.usuariosDB,function (valueUser,keyUser){
+
+
+
+                    angular.forEach($scope.listarLideres, function (valueLeader,keyLeader) {
+
+
+                        if(valueLeader.uid!=valueUser.uid){
+
+                            console.log(valueUser);
+                            $scope.usuarios.push(valueUser);
+
+                            console.log("valueUser: "+JSON.stringify($scope.usuarios,null,4));
+
+                            /*console.log("valueLeader: "+JSON.stringify(valueLeader,null,4));
+                             console.log("valueUser: "+JSON.stringify(valueUser,null,4));
+
+
+                             console.log("El usuario: %O: "+ valueUser + " Ya esta agregado al proyecto como: %O:"+valueLeader + " Rol: Lider ");
+                             var index = $scope.usuariosDB.indexOf(valueLeader);
+                             console.log("Index:"+index);
+                             $scope.usuarios.splice(index, 1);
+
+                             console.log("Usuarios: "+JSON.stringify($scope.usuariosDB,null,4));
+                             */
+                        }
+                    });
+
+                    angular.forEach($scope.listarMiembros, function (valueMember,keyMember) {
+
+
+                        if(valueMember.uid!=valueUser.uid){
+
+                            if(loopUser(valueMember.uid)==false && loopUser(valueUser.uid)){
+
+                                console.log(valueUser);
+                                $scope.usuarios.push(valueUser);
+
+                                console.log("valueUser: "+JSON.stringify($scope.usuarios,null,4));
+                            }
+                        }
+                    });
+
+
+
+
+                });
+
+            }
+
 
         }
     );

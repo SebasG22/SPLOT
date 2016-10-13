@@ -417,6 +417,7 @@ angular.module('multiSplot')
                         }
                         else{
                             console.log("Usuario no encontrado: El usuario debe estar previamente registrado");
+                            $window.alert("Usuario no encontrado: El usuario debe estar previamente registrado");
                             $scope.auth = auth;
                             $scope.auth.$signOut();
                         }

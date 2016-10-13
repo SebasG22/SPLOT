@@ -19,7 +19,7 @@ angular.module('projectsSplot')
 
             };
 
-            $scope.edit=false;
+            $scope.edit=true;
 
             $scope.usuarioA=userActual.getUID();
 
