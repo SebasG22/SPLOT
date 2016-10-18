@@ -14,7 +14,6 @@ angular.module('projectsSplot')
             $scope.editProject=function () {
 
                 projectUpdate.set($scope.proyecto);
-
                 $state.go("editarProyecto");
 
             };
