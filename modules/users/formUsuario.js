@@ -93,7 +93,6 @@ angular.module('usersSplot').controller('usuariosCtrl',
                 // if everything is ok
                 .then(function (user) {
                     $scope.whitelist.$remove($scope.userFounded);
-
                     $state.go("listarUsuarios");
                 })
                 // if there is an error

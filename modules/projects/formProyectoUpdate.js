@@ -24,6 +24,7 @@ angular.module('projectsSplot')
             $scope.listarLideres = [];
 
             $scope.projectName = $scope.projectEdit.nombre;
+<<<<<<< HEAD
 
             $scope.projectDescription = $scope.projectEdit.descripcion;
 
@@ -54,6 +55,33 @@ angular.module('projectsSplot')
                 }
             };
 
+=======
+
+            $scope.projectDescription = $scope.projectEdit.descripcion;
+
+            $scope.modeloFeatures = $scope.projectEdit.modelo;
+
+            $scope.archivos = $scope.projectEdit.archivos;
+
+            //Get all the users from Factory
+            $scope.usuarios = users;
+
+            //Initial Values to open the buttons
+            $scope.agregarLider = false;
+            $scope.agregarMiembro = false;
+            $scope.agregarArchivo = false;
+
+            //Method to show the leaderships througth a button: When the user do a click
+            $scope.mostrarLideres = function() {
+                if (!$scope.agregarLider) {
+                    $scope.agregarLider = true;
+                    $scope.agregarMiembro = false;
+                } else {
+                    $scope.agregarLider = false;
+                }
+            };
+
+>>>>>>> Development
             //Method to show the members througth a button: When the user do a click
             $scope.mostrarMiembros = function() {
                 if (!$scope.agregarMiembro) {

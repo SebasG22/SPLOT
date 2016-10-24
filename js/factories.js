@@ -259,6 +259,9 @@ angular
         };
 <<<<<<< HEAD
     });
+<<<<<<< HEAD
 =======
     });
+>>>>>>> Development
+=======
 >>>>>>> Development
