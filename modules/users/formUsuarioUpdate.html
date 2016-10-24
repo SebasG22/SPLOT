@@ -28,7 +28,7 @@
 
 
                         <div ng-show="action=='EditInformation'" class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                            <input type="number" class="form-control has-feedback-left" placeholder="Identificación"    ng-model="currentUser.identificacion.value">
+                            <input type="number" class="form-control has-feedback-left" placeholder="Identificación"   ng-model="currentUser.identificacion">
                             <span class="fa fa-envelope form-control-feedback left"></span>
                         </div>
 
@@ -65,8 +65,8 @@
                                 <label>Tipo Usuario:</label>
                                 <select class="form-control" ng-model="currentUser.tipo"  >
 
-                                    <option value="Integrante">Integrante de la Organización</option>
-                                    <option value="Jefe">Jefe de equipo</option>
+                                    <option value="Configurador">Configurador </option>
+                                    <option value="Lider">Lider de Proyectos</option>
                                     <option value="Administrador">Administrador</option>
                                 </select>
                             </div>

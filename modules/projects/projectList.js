@@ -149,7 +149,7 @@ angular.module('projectsSplot')
             //Comprobación del tipo de usuario para mantener o redireccionar a otra página
             if(typeUser.get()=="Administrador2" ){
                 $window.alert("Página NO AUTORIZADA");
-                $state.go("inicio.bienvenida");
+                $state.go("bienvenida");
 
             }
 

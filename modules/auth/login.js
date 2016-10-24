@@ -128,8 +128,6 @@ angular.module('multiSplot')
                         } else {
                             console.log("Signed out");
                         }
-                        // change current view
-                        //$state.go("inicio.bienvenida");
 
 
                     }).catch(function (error) {
@@ -417,6 +415,7 @@ angular.module('multiSplot')
                         }
                         else{
                             console.log("Usuario no encontrado: El usuario debe estar previamente registrado");
+                            $window.alert("Usuario no encontrado: El usuario debe estar previamente registrado");
                             $scope.auth = auth;
                             $scope.auth.$signOut();
                         }
