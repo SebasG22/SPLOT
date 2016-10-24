@@ -128,8 +128,6 @@ angular.module('multiSplot')
                         } else {
                             console.log("Signed out");
                         }
-                        // change current view
-                        //$state.go("inicio.bienvenida");
 
 
                     }).catch(function (error) {

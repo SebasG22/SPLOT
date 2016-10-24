@@ -30,7 +30,7 @@ angular.module('usersSplot').controller('usuariosCtrl',
             console.log("Agregado al whitelist");
             console.log($scope.whitelist);
             $window.alert("Se ha agregado el usuario a la whitelist")
-            $state.go("inicio.listarUsuarios");
+            $state.go("listarUsuarios");
         };
 
 
@@ -93,7 +93,7 @@ angular.module('usersSplot').controller('usuariosCtrl',
                 // if everything is ok
                 .then(function (user) {
                     $scope.whitelist.$remove($scope.userFounded);
-                    $state.go("inicio.listarUsuarios");
+                    $state.go("listarUsuarios");
                 })
                 // if there is an error
                 .catch(function (error) {
