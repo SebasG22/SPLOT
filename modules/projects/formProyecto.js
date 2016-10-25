@@ -260,7 +260,7 @@ angular.module('projectsSplot')
                 };
 
                 // Push to child path.
-                var uploadTask = storageRef.child('JSONMODELS/' + file.name).put(file, metadata);
+                var uploadTask = storageRef.child('jsonModels/' + file.name).put(file, metadata);
 
 
                 // Listen for errors and completion of the upload.
@@ -309,7 +309,7 @@ angular.module('projectsSplot')
                 };
 
                 // Push to child path.
-                var uploadTask = storageRef.child('files/' + file.name).put(file, metadata);
+                var uploadTask = storageRef.child('projectsFiles/' + file.name).put(file, metadata);
 
 
                 // Listen for errors and completion of the upload.
@@ -357,6 +357,33 @@ angular.module('projectsSplot')
                     //Get the current Date in YYYY/MM/DD
                     var utc = new Date().toJSON().slice(0, 10);
 
+                    //All the Users -> Firebase Array
+                    $scope.projects = projects;
+
+                    //Get the Record in  FirebaseArray
+
+                    $http({
+                        method: 'jsonp',
+                        url: ""+$scope.modeloFeatures,
+
+                        params: {
+                            format: 'json',
+                            callback: 'JSON_CALLBACK'
+                        }
+                    }).then(function (response) {
+                        //$window.alert(JSON.stringify(response.data, null, 4));
+
+                        $scope.msg=response.data;
+
+                        $scope.models=[];
+
+                        angular.forEach($scope.miembros, function(valueMember, keyMiembros) {
+
+                            $scope.models[keyMiembros]={uid:valueMember.uid,featureModel:$scope.msg};
+
+                        });
+
+                    });
                     //Add the project in Firebase
                     projects.$add({
                         nombre: $scope.projectName,
@@ -365,11 +392,12 @@ angular.module('projectsSplot')
                         miembros:$scope.miembros,
                         archivos:$scope.archivos,
                         modelo:$scope.modeloFeatures,
+                        models:$scope.models,
                         fecha:utc
 
 
                     }).then(function () {
-                        $window.alert("El proyecto fue agregado correctamente");
+                        $window.alert("SPLOT V.30 ha agregado correctamente el proyecto al sistema, este ya se encuentra disponible para su configuración");
                         $state.go("listarProyectos");
                     });
 

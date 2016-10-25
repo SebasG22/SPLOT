@@ -4,31 +4,25 @@
 
 angular.module('projectsSplot')
     .controller('configuracionCtrl',
-        function(users, $scope,typeUser,$window,$http,modelToJson,projectSelected) {
+        function(users, $scope,typeUser,$window,$http,modelToJson,projectSelected,projects, userActual) {
 
             $scope.proyecto=projectSelected.getInformation();
 
-            //$window.alert(JSON.stringify($scope.proyecto.modelo, null, 4));
 
+            angular.forEach($scope.proyecto.models, function(valueModel, keyModel) {
 
-            /*modelToJson.get($scope.proyecto.modelo).then(function (msg) {
-             $scope.msg = msg;
-             });
-             */
+                console.log(userActual.getUID());
+                console.log(valueModel.uid);
+                if(valueModel.uid==userActual.getUID()){
 
-            $http({
-                method: 'jsonp',
-                url: ""+$scope.proyecto.modelo,
-
-                params: {
-                    format: 'json',
-                    callback: 'JSON_CALLBACK'
+                    $scope.msg=valueModel.featureModel;
                 }
-            }).then(function (response) {
-                //$window.alert(JSON.stringify(response.data, null, 4));
-                $scope.msg=response.data;
+
             });
 
+
+            //All the Projects -> Firebase Array
+            $scope.projects = projects;
 
             $scope.indix2='_id_1';
 
@@ -37,7 +31,7 @@ angular.module('projectsSplot')
             $scope.aumentar=function () {
                 $scope.indix2='_id_'+($scope.act+1);
                 $scope.act=($scope.act+1);
-            }
+            };
 
             $scope.disminuir=function () {
                 if($scope.act>1){
