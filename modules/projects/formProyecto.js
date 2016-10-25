@@ -357,6 +357,7 @@ angular.module('projectsSplot')
                     //Get the current Date in YYYY/MM/DD
                     var utc = new Date().toJSON().slice(0, 10);
 
+                    
                     //Add the project in Firebase
                     projects.$add({
                         nombre: $scope.projectName,
