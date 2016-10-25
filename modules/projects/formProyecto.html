@@ -192,7 +192,7 @@
                                 </div>
 
 
-                                <div class=" col-md-12 col-sm-12 col-xs-12">
+                                <div class=" col-md-12 col-sm-12 col-xs-12" ng-show="nombreArchivo.length>0 && descripcionArchivo.length>0">
                                     <button class="btn btn-success" ng-click="agregarArchivos()">Agregar</button>
 
                                 </div>
@@ -216,11 +216,12 @@
                                 <td>{{archivo.nombre}}</td>
                                 <td>{{archivo.descripcion}}</td>
                                 <td>{{archivo.tipo}}</td>
+                                <td ng-if="archivo.tipo=='image/jpeg'">Imagen</td>
 
 
                                 <td>
                                     <a class="btn btn-primary" href="{{archivo.ubicacion}}" target="_blank">Revisar</a>
-                                    <button class="btn btn-info" ng-click="editarArchivo(archivo)">Editar</button>
+                                    <!--<button class="btn btn-info" ng-click="editarArchivo(archivo)">Editar</button>-->
                                     <button class="btn btn-danger" ng-click="eliminarArchivo(archivo)">Eliminar</button>
                                 </td>
                             </tr>

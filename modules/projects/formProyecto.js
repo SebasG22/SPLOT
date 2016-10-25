@@ -379,22 +379,9 @@ angular.module('projectsSplot')
 
                         angular.forEach($scope.miembros, function(valueMember, keyMiembros) {
 
-
                             $scope.models[keyMiembros]={uid:valueMember.uid,featureModel:$scope.msg};
 
                         });
-
-                        /*
-                        $scope.currentProject = $scope.projects.$getRecord(projectSelected.get());
-
-                        $scope.projects[$scope.projects.$indexFor(projectSelected.get())].modelo = $scope.msg;
-
-                        $scope.projects.$save($scope.projects.$getRecord(projectSelected.get()));
-
-                        $scope.currentProject = $scope.projects.$getRecord(projectSelected.get());
-
-                        $scope.msg=$scope.currentProject.copia.model;
-                        */
 
                     });
                     //Add the project in Firebase
