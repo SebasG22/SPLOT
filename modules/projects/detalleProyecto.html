@@ -33,14 +33,12 @@
 
                         <div class="project_detail">
 
-                            <p class="title">Lideres del Proyecto</p>
-                            <div ng-repeat="miembro in miembros">
-                                <p>{{miembro.nombre}}</p>
-                            </div>
-
                             <p class="title">Miembros del Proyecto</p>
+                            <br>
                             <div ng-repeat="miembro in miembros">
-                                <p>{{miembro.nombre}}</p>
+                                <img class="img-circle img-responsive" src="{{miembro.imagen}}" width="32px" height="32px" alt="">{{ miembro.nombre }}
+                                <br>
+
                             </div>
 
                         </div>
@@ -57,12 +55,14 @@
                         <div class="text-center">
 
 
+                            <!--
                             <button class="btn btn-warning btn-xs"  ng-click="editProject()"><i class="fa fa-pencil"></i>Editar</button>
+
+                            <button ui-sref="" class="btn btn-danger btn-xs"><i class="fa fa-pencil"></i>Eliminar32</button>
+                            -->
 
                             <button ui-sref="procesoConfiguracion" class="btn btn-success btn-xs"><i class="fa fa-pencil"></i>Configurar</button>
 
-                            <button ui-sref="" class="btn btn-danger btn-xs"><i class="fa fa-pencil"></i>Eliminar3
-                            2</button>
 
 
                         </div>
