@@ -33,7 +33,7 @@
 
                         <div class="clearfix"></div>
 
-                        <div class="col-md-4 col-sm-4 col-xs-12 profile_details" ng-repeat="usuario in users | filter:activeUsersFilter |filter:usuarioBuscado">
+                        <div class="col-md-4 col-sm-4 col-xs-12 profile_details" ng-repeat="usuario in users | filter:typeUsersFilter | filter:activeUsersFilter |filter:usuarioBuscado">
                             <div class="well profile_view">
                                 <div class="col-sm-12">
                                     <h4 class="brief"><i>{{usuario.nombre}}</i></h4>
