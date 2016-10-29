@@ -37,7 +37,7 @@
 
                         <ul class="wizard_steps" >
                             <li ng-repeat="child in msg.model.tree.children">
-                                <a href="#step-1" >
+                                <a ng-click="step($index+1)">
                                     <span class="step_no">{{$index+1}}</span>
                                     <span class="step_descr">{{$index+1}}<br/>
                                         <small>{{child.name}}</small>

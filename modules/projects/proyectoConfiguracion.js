@@ -28,6 +28,12 @@ angular.module('projectsSplot')
 
             $scope.act=1;
 
+            //Menu
+            $scope.step=function (child_id) {
+                $scope.indix2 ='_id_'+child_id;
+                console.log("Indix 2:"+$scope.indix2);
+            };
+
             $scope.aumentar=function () {
                 $scope.indix2='_id_'+($scope.act+1);
                 $scope.act=($scope.act+1);
