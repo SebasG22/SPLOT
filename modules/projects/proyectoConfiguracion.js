@@ -20,6 +20,28 @@ angular.module('projectsSplot')
 
             });
 
+            $scope.myConf=[];
+
+            angular.forEach($scope.msg.model.tree.children, function(valueCategory, keyCategory) {
+
+                $scope.idCategory = valueCategory.id;
+
+                angular.forEach(valueCategory.children, function(valueFeature, keyFeature) {
+
+                    $scope.idFeature = valueFeature.id;
+
+                    $scope.stateFeature = valueFeature.state;
+
+                    $scope.idSelection = '';
+
+                });
+
+                $scope.myConf[keyCategory]={"idCategory":$scope.idCategory,"idFeature":$scope.idFeature,"stateFeature":$scope.stateFeature,
+                    "idSelection":$scope.idSelection};
+
+            });
+
+                console.log("%O",$scope.myConf);
 
             //All the Projects -> Firebase Array
             $scope.projects = projects;
