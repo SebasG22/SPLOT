@@ -375,11 +375,34 @@ angular.module('projectsSplot')
 
                         $scope.msg=response.data;
 
-                        $scope.models=[];
+
+                        $scope.myConf=[];
+
+                        angular.forEach($scope.msg.model.tree.children, function(valueCategory, keyCategory) {
+
+                            $scope.idCategory = valueCategory.id;
+
+                            angular.forEach(valueCategory.children, function(valueFeature, keyFeature) {
+
+                                $scope.idFeature = valueFeature.id;
+
+                                $scope.stateFeature = valueFeature.state;
+
+                                $scope.idSelection = '';
+
+                            });
+
+                            $scope.myConf[keyCategory]={"idCategory":$scope.idCategory,"idFeature":$scope.idFeature,"stateFeature":$scope.stateFeature,
+                                "idSelection":$scope.idSelection};
+
+                        });
+
+
+                        $scope.configs=[];
 
                         angular.forEach($scope.miembros, function(valueMember, keyMiembros) {
 
-                            $scope.models[keyMiembros]={uid:valueMember.uid,featureModel:$scope.msg};
+                            $scope.configs[keyMiembros]={uid:valueMember.uid,config:$scope.myConf};
 
                         });
 
@@ -392,10 +415,8 @@ angular.module('projectsSplot')
                         miembros:$scope.miembros,
                         archivos:$scope.archivos,
                         modelo:$scope.modeloFeatures,
-                        models:$scope.models,
+                        configs:$scope.configs,
                         fecha:utc
-
-
                     }).then(function () {
                         $window.alert("SPLOT V.30 ha agregado correctamente el proyecto al sistema, este ya se encuentra disponible para su configuración");
                         $state.go("listarProyectos");
@@ -406,11 +427,6 @@ angular.module('projectsSplot')
 
 
             };
-
-
-
-
-
             //BUSCA TODOS LOS PROYECTOS RELACIONADOS CON EL USUARIO
 
             $scope.activeUsersFilter = function (item) {
