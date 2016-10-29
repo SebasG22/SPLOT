@@ -414,7 +414,8 @@ angular.module('projectsSplot')
                         lideres:$scope.lideres,
                         miembros:$scope.miembros,
                         archivos:$scope.archivos,
-                        modelo:$scope.modeloFeatures,
+                        modeloJSON:$scope.modeloFeatures,
+                        modelo:$scope.msg,
                         configs:$scope.configs,
                         fecha:utc
                     }).then(function () {
@@ -436,6 +437,12 @@ angular.module('projectsSplot')
                 }
             };
 
+            $scope.typeUsersFilter = function (item) {
+
+                if (item.tipo === 'Lider' || item.tipo === 'Configurador') {
+                    return item;
+                }
+            };
             //Proyectos relacionados con el usuario
             $scope.projectsRelated = [];
 
