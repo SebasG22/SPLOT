@@ -158,12 +158,6 @@ angular.module('usersSplot')
                     return item;
                 }
             };
-
-            $scope.typeUsersFilter = function (item) {
-
-                if (item.tipo === 'Lider' || item.tipo === 'Configurador') {
-                    return item;
-                }
-            };
+            
         }
     );
