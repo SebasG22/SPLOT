@@ -62,12 +62,76 @@ angular.module('usersSplot')
             this.resetPassword = function () {
                 auth.$sendPasswordResetEmail($scope.login);
             }
+
+
+
             $scope.deleteUser = function () {
                 auth.$deleteUser().then(function () {
                     console.log("User removed successfully!");
                     $state.go("login");
                 }).catch(function (error) {
                     console.error("Error: ", error);
+                });
+            }
+
+
+            $scope.projects=projects;
+
+            $scope.currentUser=userActual.getUID();
+
+            $scope.deleteUserWithInfo=function (){
+
+                $scope.userProjects =projectsRelatedF.get();
+
+                angular.forEach($scope.userProjects, function(value, key) {
+
+                    console.log("Key Project:"+value.key);
+
+                    //$scope.projects[$scope.projects.$indexFor(value.key)].activo = $scope.currentUser.activo;
+
+                    $scope.currentProject=$scope.projects[$scope.projects.$indexFor(value.key)];
+
+                    $scope.miembrosProject=$scope.currentProject.miembros;
+
+                    $scope.teamLeadersProject=$scope.currentProject.lideres;
+
+                    angular.forEach($scope.miembrosProject, function(valueMember, keyMember) {
+
+                        console.log("Value:"+valueMember.uid);
+                        console.log("UID:"+$scope.currentUser);
+                        if(valueMember.uid==$scope.currentUser){
+
+                            $scope.currentProject.miembros.splice(keyMember, 1);
+
+                            console.log($scope.currentProject);
+
+                            $scope.projects[$scope.projects[$scope.projects.$indexFor(value.key)]] = $scope.currentProject;
+
+                            $scope.projects.$save($scope.projects[$scope.projects.$indexFor(value.key)]).then(function() {
+
+                                $window.alert("El usuario ha sido eliminado de el proyecto relacionado");
+
+                            });
+
+
+                            //Remove projects Related: $remove doesn't work
+                            /*
+
+                             $scope.projects.$remove($scope.projects[$scope.projects.$indexFor(value.key).miembros[keyMember]]).then(function() {
+                             $window.alert("Usuario Removido del Sistema Satisfactoriamente");
+                             });
+
+                            $scope.projects.$remove($scope.des).then(function() {
+                                $window.alert("Usuario Removido del Sistema Satisfactoriamente");
+                            });
+                            $scope.projects.$remove($scope.projects[$scope.projects.$indexFor(value.key)].nombre).then(function() {
+                                $window.alert("Usuario Removido del Sistema Satisfactoriamente");
+                            });
+                            //$scope.usuarios.$save($scope.usuarios.$getRecord(userUpdate.get()));
+                            console.log($scope.projects);
+                            */
+                        }
+                    });
                 });
             }
 
