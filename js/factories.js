@@ -257,11 +257,4 @@ angular
                 return menu;
             }
         };
-<<<<<<< HEAD
     });
-<<<<<<< HEAD
-=======
-    });
->>>>>>> Development
-=======
->>>>>>> Development
