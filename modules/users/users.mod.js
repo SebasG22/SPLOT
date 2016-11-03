@@ -68,7 +68,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
         .state('usuarioInactivo', {
             url: '/usuarioInactivo',
-            authenticate: false,
+            authenticate: true,
             controller:'userInactiveCtrl',
             templateUrl: basePath+'userInactive.html'
         })

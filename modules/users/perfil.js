@@ -112,11 +112,17 @@ angular.module('usersSplot')
 
                             //Remove projects Related: $remove doesn't work
                             /*
+<<<<<<< HEAD
 
                              $scope.projects.$remove($scope.projects[$scope.projects.$indexFor(value.key).miembros[keyMember]]).then(function() {
                              $window.alert("Usuario Removido del Sistema Satisfactoriamente");
                              });
 
+=======
+                             $scope.projects.$remove($scope.projects[$scope.projects.$indexFor(value.key).miembros[keyMember]]).then(function() {
+                             $window.alert("Usuario Removido del Sistema Satisfactoriamente");
+                             });
+>>>>>>> DevelopmentSolver
                              $scope.projects.$remove($scope.des).then(function() {
                              $window.alert("Usuario Removido del Sistema Satisfactoriamente");
                              });
