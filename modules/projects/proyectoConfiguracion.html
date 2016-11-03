@@ -141,11 +141,22 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
                                                     <p><tt>myForm.$invalid: {{myForm.$invalid}}</tt></p>
                                                     <p><tt>Selected: {{name}}</tt></p>
 
                                                     <button ng-disabled="myForm.$invalid">Submit</button>
+                                                </form>
 
+                                                <!--- CheckBox Panel - Preferences -->
+                                                <form class="form-inline" >
+                                                    <h4>Preferencias</h4>
+                                                    <div class="checkbox" ng-repeat="child4 in child2.children">
+                                                        <label style="margin-left: 10px">
+                                                            <input type="checkbox" value="{{child4.name}}"> {{child4.name}}
+                                                        </label>
+
+                                                    </div>
                                                 </form>
 
                                             </div>
@@ -190,6 +201,13 @@
                                             </div>
 
                                         </div>
+                                    </div>
+
+
+
+                                    <div>
+
+
                                     </div>
                                 </div>
                                 <div ng-repeat="child3 in child2.children">
