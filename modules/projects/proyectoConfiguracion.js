@@ -28,6 +28,10 @@ angular.module('projectsSplot')
             $scope.aumentar=function () {
                 $scope.indix2='_id_'+($scope.act+1);
                 $scope.act=($scope.act+1);
+                var parentScope = $scope.$parent;
+                parentScope.$$childScope ;
+                console.log($scope.$parent.name);
+
             };
 
             $scope.disminuir=function () {
@@ -35,5 +39,12 @@ angular.module('projectsSplot')
                     $scope.indix2='_id_'+($scope.act-1);
                     $scope.act=($scope.act-1);
                 }
+            };
+
+            $scope.setValue = function (val) {
+
+                console.log(val);
             }
+
+
         });
