@@ -4,7 +4,7 @@
 
 angular.module('projectsSplot')
     .controller('configuracionCtrl',
-        function(users, $scope,typeUser,$window,$http,modelToJson,projectSelected,projects, userActual) {
+        function($scope,auth,users,typeUser,$http,modelToJson,projectSelected,projects) {
 
             $scope.proyecto=projectSelected.getInformation();
 
@@ -18,6 +18,32 @@ angular.module('projectsSplot')
             $scope.indix2='_id_1';
 
             $scope.act=1;
+
+            //All the Users -> Firebase Array
+            $scope.usuarios = users;
+
+            //Get the Record in  FirebaseArray througth userUpdate Factory
+            $scope.usuario = $scope.usuarios.$getRecord(auth.$getAuth().uid);
+
+            $scope.userConfig;
+
+            //Save the position
+            $scope.userConfigPos;
+
+            getUserConfiguration();
+
+            function getUserConfiguration(){
+
+                angular.forEach($scope.proyecto.configs, function(valueConfig, keyConfig) {
+
+                    if(valueConfig.uid == $scope.usuario.$id){
+                        $scope.userConfig=valueConfig;
+                        $scope.userConfigPos=keyConfig;
+                    }
+
+                });
+
+                } ;
 
             //Menu
             $scope.step=function (child_id) {
@@ -41,8 +67,17 @@ angular.module('projectsSplot')
                 }
             };
 
+
             $scope.setValue = function (val) {
 
+                console.log(projectSelected.get());
+                //$scope.usuarios[$scope.usuarios.$indexFor(userUpdate.get())].activo = $scope.currentUser.activo;
+
+                //$scope.projectSave=$scope.projects.$indexFor(projectSelected.get());
+
+                $scope.projects.$getRecord(projectSelected.get()).configs[$scope.userConfigPos].config[$scope.act-1].idSelection = "Do it";
+
+                $scope.projects.$save(projectSelected.get());
                 console.log(val);
             }
 
