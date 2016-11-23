@@ -18,11 +18,18 @@ user conflict with decisions of the others.
 
 **Resources**
 
-- Technologies
+- **Technologies**
   - [Angular JS](www.angularjs.com)
   - [Firebase](www.console.firebase.google.com)
   - [Linear Optimization](https://developers.google.com/apps-script/reference/optimization/linear-optimization-constraint)
 
-[Online Demo](https://sebasg22.github.io/SPLOT)
+- **Features Models**
+  - [Splot Research] http://www.splot-research.org/
+
+- **Others**
+  - [Famosa]
+
+[Online Demo](https://sebasg22.github.io/SPLOT) Try our last version of MULTISPLOT
+
 
  
