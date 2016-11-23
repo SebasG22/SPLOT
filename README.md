@@ -23,6 +23,6 @@ user conflict with decisions of the others.
   - [Firebase](www.console.firebase.google.com)
   - [Linear Optimization](https://developers.google.com/apps-script/reference/optimization/linear-optimization-constraint)
 
-(https://sebasg22.github.io/SPLOT/ "Online Demo Here")
+[Online Demo](https://sebasg22.github.io/SPLOT)
 
  
