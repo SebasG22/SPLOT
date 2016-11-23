@@ -43,7 +43,7 @@ angular.module('projectsSplot')
 
                 });
 
-                } ;
+                }
 
             //Menu
             $scope.step=function (child_id) {
@@ -52,12 +52,13 @@ angular.module('projectsSplot')
             };
 
             $scope.aumentar=function () {
-                $scope.indix2='_id_'+($scope.act+1);
-                $scope.act=($scope.act+1);
-                var parentScope = $scope.$parent;
-                parentScope.$$childScope ;
-                console.log($scope.$parent.name);
-
+                if($scope.act < $scope.proyecto.modelo.model.tree.children.length ){
+                    $scope.indix2='_id_'+($scope.act+1);
+                    $scope.act=($scope.act+1);
+                    var parentScope = $scope.$parent;
+                    parentScope.$$childScope ;
+                    console.log($scope.$parent.name);
+                }
             };
 
             $scope.disminuir=function () {

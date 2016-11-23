@@ -135,17 +135,12 @@
                                                                     <label>
                                                                         <input type="radio" ng-value="child4.name"
                                                                                name=""
-                                                                               ng-model="$parent.name" ng-click="setValue(child4.id)"> {{child4.id}}
+                                                                               ng-model="$parent.name" ng-click="setValue(child4.id)"> {{child4.name}}
                                                                     </label>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-
-                                                    <p><tt>myForm.$invalid: {{myForm.$invalid}}</tt></p>
-                                                    <p><tt>Selected: {{name}}</tt></p>
-
-                                                    <button ng-disabled="myForm.$invalid">Submit</button>
                                                 </form>
 
 
