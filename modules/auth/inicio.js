@@ -34,6 +34,10 @@ angular.module('multiSplot')
                 $state.go("usuarioInactivo");
             }
             else{
+<<<<<<< 0819d4d51bb2d6a6aeb1ef47e3e9dbc8550f69c2
+=======
+                // $window.alert("Usuario Activo");
+>>>>>>> New organization of the project: Modules
 
             }
 
