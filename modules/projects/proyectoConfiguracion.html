@@ -133,24 +133,20 @@
                                                             <div class="caption">
                                                                 <div class="radio">
                                                                     <label>
-                                                                        <input type="radio" value="{{child4.name}}"
+                                                                        <input type="radio" ng-value="child4.name"
                                                                                name=""
-                                                                               ng-model="$parent.name"> {{child4.name}}
+                                                                               ng-model="$parent.name" ng-click="setValue(child4.id)"> {{child4.name}}
                                                                     </label>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-
-                                                    <p><tt>myForm.$invalid: {{myForm.$invalid}}</tt></p>
-                                                    <p><tt>Selected: {{name}}</tt></p>
-
-                                                    <button ng-disabled="myForm.$invalid">Submit</button>
                                                 </form>
+
 
                                                 <!--- CheckBox Panel - Preferences -->
                                                 <form class="form-inline" >
-                                                    <h4>Preferencias</h4>
+                                                    <h4>Preferencias </h4>
                                                     <div class="checkbox" ng-repeat="child4 in child2.children">
                                                         <label style="margin-left: 10px">
                                                             <input type="checkbox" value="{{child4.name}}"> {{child4.name}}
@@ -158,7 +154,6 @@
 
                                                     </div>
                                                 </form>
-
                                             </div>
 
                                         </div>

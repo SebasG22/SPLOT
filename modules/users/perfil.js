@@ -13,7 +13,7 @@ angular.module('usersSplot')
             //$scope.usuario = user.get();
 
 
-            console.log("AUTH GET :" + auth.$getAuth().uid);
+            //console.log("AUTH GET :" + auth.$getAuth().uid);
 
             //All the Users -> Firebase Array
             $scope.usuarios = users;
