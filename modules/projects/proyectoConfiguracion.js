@@ -75,9 +75,10 @@ angular.module('projectsSplot')
 
                 //$scope.projectSave=$scope.projects.$indexFor(projectSelected.get());
 
-                $scope.projects.$getRecord(projectSelected.get()).configs[$scope.userConfigPos].config[$scope.act-1].idSelection = "Do it";
+                $scope.projectToSave=$scope.projects.$getRecord(projectSelected.get());
+                $scope.projectToSave.configs[$scope.userConfigPos].config[$scope.act-1].idSelection = val;
 
-                $scope.projects.$save(projectSelected.get());
+                $scope.projects.$save($scope.projectToSave);
                 console.log(val);
             }
 
