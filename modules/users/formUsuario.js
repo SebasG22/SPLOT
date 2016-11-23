@@ -93,7 +93,11 @@ angular.module('usersSplot').controller('usuariosCtrl',
                 // if everything is ok
                 .then(function (user) {
                     $scope.whitelist.$remove($scope.userFounded);
+<<<<<<< 0819d4d51bb2d6a6aeb1ef47e3e9dbc8550f69c2
                     $state.go("listarUsuarios");
+=======
+                    $state.go("inicio.listarUsuarios");
+>>>>>>> New organization of the project: Modules
                 })
                 // if there is an error
                 .catch(function (error) {
@@ -113,5 +117,9 @@ angular.module('usersSplot').controller('usuariosCtrl',
 
 
     }
+<<<<<<< 0819d4d51bb2d6a6aeb1ef47e3e9dbc8550f69c2
 );
 
+=======
+);
+>>>>>>> New organization of the project: Modules
