@@ -24,10 +24,10 @@ user conflict with decisions of the others.
   - [Linear Optimization](https://developers.google.com/apps-script/reference/optimization/linear-optimization-constraint)
 
 - **Features Models**
-  - [Splot Research] http://www.splot-research.org/
+  - [Splot Research] (http://www.splot-research.org/)
 
 - **Others**
-  - [Famosa]
+  - [Famosa] ()
 
 [Online Demo](https://sebasg22.github.io/SPLOT) Try our last version of MULTISPLOT
 
