@@ -14,14 +14,14 @@ Multi-SPLOT is a Configuration System that supports simultaneous decisions from 
 
 
 This system uses offthe-shelf solvers to determine if these decisions are not conflicting among them, and to propose solutions when the decisions of an
-user conflict with decisions of the others. Our solution use Angular, Firebase and optimization library in Google App Script
+user conflict with decisions of the others.
 
 ** Resources **
 
 -Technologies
-  -[Angular JS]www.angularjs.com
-  -[Firebase]www.console.firebase.google.com
-  -[Linear Optimization]https://developers.google.com/apps-script/reference/optimization/linear-optimization-constraint
+  -[Angular JS](www.angularjs.com)
+  -[Firebase](www.console.firebase.google.com)
+  -[Linear Optimization](https://developers.google.com/apps-script/reference/optimization/linear-optimization-constraint)
 
 (https://sebasg22.github.io/SPLOT/ "Online Demo Here")
 
