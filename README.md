@@ -16,6 +16,11 @@ Multi-SPLOT is a Configuration System that supports simultaneous decisions from 
 This system uses offthe-shelf solvers to determine if these decisions are not conflicting among them, and to propose solutions when the decisions of an
 user conflict with decisions of the others.
 
+**Screenshots**
+
+![Configuration Screenshot](https://firebasestorage.googleapis.com/v0/b/splot3-31f45.appspot.com/o/templates%2FCaptura%20de%20pantalla%202016-11-22%20a%20las%209.51.07%20p.m..png?alt=media&token=f4169c28-ff92-466b-9f3d-a3cc6ead7004)
+
+
 **Resources**
 
 - **Technologies**
