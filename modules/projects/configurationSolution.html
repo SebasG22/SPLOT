@@ -49,27 +49,28 @@
 
                         <div class="x_content">
                             <p>Por favor seleccione un método de solución.<code>Dependiendo del método escogido la solución puede variar.</code></p>
-                            <a class="btn btn-app">
+                            <a class="btn btn-app" ng-click="solve()">
                                 <i class="fa fa-cogs "></i> Solución Aleatoria
                             </a>
-                            <a class="btn btn-app">
+                            <a class="btn btn-app" ng-click="solveConflictMinimize()">
                                 <i class="fa fa-filter"></i> Minimizar Selecciones
                             </a>
-                            <a class="btn btn-app">
+                            <a class="btn btn-app" ng-click="solveConflictMaximize()">
                                 <i class="fa fa-exchange"></i> Maximizar Selecciones
                             </a>
-                            <a class="btn btn-app">
+                            <a class="btn btn-app" ng-click="solveConflictWithWeights()">
                                 <i class="fa fa-ellipsis-v"></i> Priorizar Decisiones
+                            </a>
+                            <a class="btn btn-app" ng-click="clear()">
+                                <i class="fa fa-eraser"></i> Clear
                             </a>
                         </div>
 
-
+                        {{resultado | json}}
                     </section>
-
 
                 </div>
                 <!-- end project-detail sidebar -->
-
 
             </div>
         </div>
