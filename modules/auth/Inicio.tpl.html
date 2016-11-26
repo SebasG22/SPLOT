@@ -29,7 +29,7 @@
                     <div class="menu_section active">
                         <h3>General</h3>
                         <ul class="nav side-menu" style="" ng-repeat="menu in menuGeneral">
-                            <li class=""><a ui-sref="{{menu.direccion}}"><i class="{{menu.class}}"></i> {{menu.titulo}} <span class="fa fa-chevron-down"></span></a>
+                            <li class=""><a ng-attr-ui-sref="{{menu.direccion || false}}"><i class="{{menu.class}}"></i> {{menu.titulo}} <span class="fa fa-chevron-down"></span></a>
 
                             </li>
 

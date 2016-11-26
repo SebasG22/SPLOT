@@ -36,7 +36,7 @@
                             <p class="title">Miembros del Proyecto</p>
                             <br>
                             <div ng-repeat="miembro in miembros">
-                                <img class="img-circle img-responsive" src="{{miembro.imagen}}" width="32px" height="32px" alt="">{{ miembro.nombre }}
+                                <img class="img-circle img-responsive" ng-src="{{miembro.imagen}}" width="32px" height="32px" alt="">{{ miembro.nombre }}
                                 <br>
 
                             </div>

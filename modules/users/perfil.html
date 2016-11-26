@@ -21,7 +21,7 @@
                         <div class="profile_img">
                             <div id="crop-avatar">
                                 <!-- Current avatar -->
-                                <img class="img-responsive avatar-view" src="{{usuario.imagen}}" alt="Avatar"
+                                <img class="img-responsive avatar-view" ng-src="{{usuario.imagen}}" alt="Avatar"
                                      title="Change the avatar" width="70%">
                             </div>
                         </div>
@@ -102,7 +102,7 @@
                                 <td>
                                     <ul class="list-inline" ng-repeat="miembro in project.miembros track by $index">
                                         <li>
-                                            <img src="{{miembro.imagen}}" class="avatar" alt="Avatar">&nbsp
+                                            <img ng-src="{{miembro.imagen}}" class="avatar" alt="Avatar">&nbsp
                                             {{miembro.nombre}}
                                         </li>
 
