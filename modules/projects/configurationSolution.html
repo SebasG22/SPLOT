@@ -1,0 +1,77 @@
+<div class="right_col" role="main">
+    <div class="page-title">
+        <div class="title_left">
+            <h2> Detalles del Proyecto</h2>
+
+
+        </div>
+
+
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="x_panel">
+
+
+
+                <!-- start project-detail sidebar -->
+                <div class="col-md-12 col-sm-12 col-xs-12">
+
+                    <section class="panel">
+
+                        <div class="x_title">
+                            <h2>Configuración Final</h2>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="panel-body">
+                            <h3 class="green"><i class="fa fa-paint-brush"></i>{{proyecto.nombre}}</h3>
+
+                            <p>{{proyecto.descripcion}}</p>
+                            <br />
+
+
+
+                            <div class="col-md-2 col-sm-2 col-xs-12 profile_view" ng-repeat="miembro in miembrosProject">
+                                <div class="col-sm-12">
+                                    <img ng-src="{{miembro.imagen}}" alt="" class="img-circle img-responsive">
+                                    <div class="text-center">
+                                        <h4>{{miembro.nombre}}</h4>
+                                        <p>{{miembro.tipo}}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="x_content">
+                            <p>Por favor seleccione un método de solución.<code>Dependiendo del método escogido la solución puede variar.</code></p>
+                            <a class="btn btn-app">
+                                <i class="fa fa-cogs "></i> Solución Aleatoria
+                            </a>
+                            <a class="btn btn-app">
+                                <i class="fa fa-filter"></i> Minimizar Selecciones
+                            </a>
+                            <a class="btn btn-app">
+                                <i class="fa fa-exchange"></i> Maximizar Selecciones
+                            </a>
+                            <a class="btn btn-app">
+                                <i class="fa fa-ellipsis-v"></i> Priorizar Decisiones
+                            </a>
+                        </div>
+
+
+                    </section>
+
+
+                </div>
+                <!-- end project-detail sidebar -->
+
+
+            </div>
+        </div>
+    </div>
+</div>

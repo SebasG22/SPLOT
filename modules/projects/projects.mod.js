@@ -100,4 +100,16 @@ app.config(function($stateProvider, $urlRouterProvider) {
             }
         })
 
+        .state('solucionConfiguracion', {
+            url: '/solucionConfiguracion',
+            authenticate: false,
+            parent: 'inicio',
+            views: {
+                'mainView': {
+                    controller:'configurationSolutionCtrl',
+                    templateUrl: basePath+'configurationSolution.html',
+                }
+            }
+        })
+
 });
