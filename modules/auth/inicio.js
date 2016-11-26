@@ -27,9 +27,6 @@ angular.module('multiSplot')
 
             $scope.test=userActual.get();
 
-
-
-
             if(userActual.get().activo=='false'){
                 $state.go("usuarioInactivo");
             }
