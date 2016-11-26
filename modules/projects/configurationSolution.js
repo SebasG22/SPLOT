@@ -17,6 +17,10 @@ angular.module('projectsSplot')
 
             $scope.resultado={};
 
+            $scope.resultado={};
+
+            $scope.result=[];
+
             $scope.miembros.forEach(function (item, index) {
                 $scope.miembrosProject.push($scope.usuarios.$getRecord(item.uid));
             });
@@ -39,6 +43,7 @@ angular.module('projectsSplot')
                         //ok
                         function(response) {
                             $scope.resultado = response.data;
+                            $scope.showAnswer();
                         },
 
                         // error
@@ -67,11 +72,12 @@ angular.module('projectsSplot')
                         //ok
                         function(response) {
                             $scope.resultado = response.data;
+                            $scope.showAnswer();
                         },
 
                         // error
                         function(error) {
-                            $window.alert("error");
+                            $window.alert("Ha ocurrido un error al tratar de solucionar el modelo");
                         }
                     );
             }
@@ -95,11 +101,12 @@ angular.module('projectsSplot')
                         //ok
                         function(response) {
                             $scope.resultado = response.data;
+                            $scope.showAnswer();
                         },
 
                         // error
                         function(error) {
-                            $window.alert("error");
+                            $window.alert("Ha ocurrido un error al tratar de solucionar el modelo");
                         }
                     );
             }
@@ -125,22 +132,48 @@ angular.module('projectsSplot')
                         //ok
                         function(response) {
                             $scope.resultado = response.data;
+                            $scope.showAnswer();
                         },
-
                         // error
                         function(error) {
-                            $window.alert("error");
+                            $window.alert("Ha ocurrido un error al tratar de solucionar el modelo");
                         }
                     );
             }
 
             $scope.clear= function () {
-
                 $scope.resultado={};
-                
-            };
-            /* Imprime los miembros */
-            //$window.alert(JSON.stringify($scope.miembros, null, 4));
+                $scope.result=[];
 
+            };
+
+
+            $scope.showAnswer= function () {
+
+                $scope.ant=0;
+                $scope.temp;
+                Object.keys($scope.resultado.solution).forEach(function (key) {
+
+                    if($scope.resultado.solution[key] == 1){
+
+                        if(!key.includes('id') || key.length>7){
+                            if($scope.ant==0){
+                                $scope.temp=key;
+                                $scope.ant=1;
+                            }
+                            else {
+                                $scope.result.push({"parent": $scope.temp, "child":key});
+                                $scope.ant=0;
+                                $scope.temp="";
+                            }
+                        }
+
+                    }
+                });
+
+                $scope.result.forEach(function (item,index) {
+                    console.log(item);
+                });
+            };
         }
     );
