@@ -34,15 +34,10 @@ angular.module('projectsSplot')
             //Get all the users from Factory
             $scope.usuarios = users;
 
-<<<<<<< 0819d4d51bb2d6a6aeb1ef47e3e9dbc8550f69c2
             //Initial Values to open the buttons
             $scope.agregarLider = false;
             $scope.agregarMiembro = false;
             $scope.agregarArchivo = false;
-=======
-            $scope.archivos= $scope.projectEdit.archivos;
-
->>>>>>> New organization of the project: Modules
 
             //Method to show the leaderships througth a button: When the user do a click
             $scope.mostrarLideres = function() {

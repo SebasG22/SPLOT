@@ -11,18 +11,11 @@ angular.module('projectsSplot')
             $scope.msg=$scope.proyecto.modelo;
 
             $scope.myConf=[];
-            
+
             //All the Projects -> Firebase Array
             $scope.projects = projects;
 
-<<<<<<< 0819d4d51bb2d6a6aeb1ef47e3e9dbc8550f69c2
             $scope.indix2='_id_1';
-=======
-            /*modelToJson.get($scope.proyecto.modelo).then(function (msg) {
-             $scope.msg = msg;
-             });
-             */
->>>>>>> New organization of the project: Modules
 
             $scope.act=1;
 
@@ -39,7 +32,6 @@ angular.module('projectsSplot')
 
             getUserConfiguration();
 
-<<<<<<< 0819d4d51bb2d6a6aeb1ef47e3e9dbc8550f69c2
             function getUserConfiguration(){
 
                 angular.forEach($scope.proyecto.configs, function(valueConfig, keyConfig) {
@@ -51,7 +43,7 @@ angular.module('projectsSplot')
 
                 });
 
-                }
+            }
 
             //Menu
             $scope.step=function (child_id) {
@@ -93,21 +85,3 @@ angular.module('projectsSplot')
 
 
         });
-=======
-            $scope.indix2='_id_1';
-
-            $scope.act=1;
-
-            $scope.aumentar=function () {
-                $scope.indix2='_id_'+($scope.act+1);
-                $scope.act=($scope.act+1);
-            }
-
-            $scope.disminuir=function () {
-                if($scope.act>1){
-                    $scope.indix2='_id_'+($scope.act-1);
-                    $scope.act=($scope.act-1);
-                }
-            }
-        });
->>>>>>> New organization of the project: Modules

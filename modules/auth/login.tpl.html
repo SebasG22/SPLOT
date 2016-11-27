@@ -1,85 +1,91 @@
-<body class="login">
-<div >
+<div class="container body">
 
-    <a class="hiddenanchor" id="signin"></a>
+    <div class="main_container">
 
-    <div class="login_wrapper">
-        <div class="animate form login_form">
-            <section class="login_content">
-                <form>
-                    <h1>MULTISPLOT</h1>
-                    <h1>Bienvenido a la nueva versión</h1>
-                    <div ng-show="selected=='Email'">
+        <aside-menu id="sol1" side="left" width="75px" is-backdrop="true" push-content="true" class="nav-sm">
+            <div class="left_col scroll-view">
+                <div class="navbar nav_title" style="border: 0;">
+                    <a  class="site_title"><i class="fa fa-paw"></i> <span>SPLOT V3.0!</span></a>
+                </div>
 
-                        <div>
-                            <input type="text" class="form-control" placeholder="Correo Eléctronico"ng-model="login" required="" />
-                        </div>
-                        <div>
-                            <input type="password" class="form-control" placeholder="Contraseña" ng-model="password" required="" />
-                        </div>
-                        <div class="cursorE" ng-click="ctrl.login()">
-                            <h4>Ingresar con Email <i class="fa fa-envelope"></i></h4>
+                <div class="clearfix"></div>
 
-                        </div>
-                        <div class="cursorE" ng-click="select('')">
-                            <h5>Atras <i class="fa fa-arrow-circle-left"></i></h5>
-
-                        </div>
-                        <div>
-                        </div>
+                <!-- menu profile quick info -->
+                <div class="profile">
+                    <div class="profile_pic">
+                        <img src="{{usuario1.imagen}}" alt="..." class="img-circle profile_img">
                     </div>
+                    <div class="profile_info">
+                        <span>Welcome,</span>
+                        <h2>{{usuario1.nombre}}</h2>
+                    </div>
+                </div>
+                <!-- /menu profile quick info -->
 
-                    <div ng-show="selected==''">
+                <br>
 
+                <!-- sidebar menu -->
+                <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                    <div class="menu_section active">
+                        <h3>General</h3>
+                        <ul class="nav side-menu" style="" ng-repeat="menu in menuGeneral">
+                            <li class=""><a ng-attr-ui-sref="{{menu.direccion || false}}"><i class="{{menu.class}}"></i> {{menu.titulo}} <span class="fa fa-chevron-down"></span></a>
 
-<<<<<<< 0819d4d51bb2d6a6aeb1ef47e3e9dbc8550f69c2
-                        <div class="cursorE" ng-click="select('Email')" >
-=======
-                        <div ng-click="select('Email')">
->>>>>>> New organization of the project: Modules
-                            <h4>Ingresar con Email <i class="fa fa-envelope"></i></h4>
+                            </li>
 
-                        </div>
-
-
-                        <hr/>
-                        <div class="cursorE" ng-click="githubAcess()">
-
-                            <h4>Ingresar con Github <i class="fa fa-github"></i></h4>
-                        </div>
-
-                        <hr/>
-<<<<<<< 0819d4d51bb2d6a6aeb1ef47e3e9dbc8550f69c2
-                        <div class="cursorE" ui-sref="signup">
-=======
-                        <div ui-sref="signup">
->>>>>>> New organization of the project: Modules
-                            <h4> ¿ No tienes una cuenta ? </h4>
-                            <h6>Registrate</h6>
-                        </div>
+                        </ul>
                     </div>
 
 
-
-                    <div class="clearfix"></div>
-
-                    <div class="separator">
+                </div>
+                <!-- /sidebar menu -->
 
 
-                        <div class="clearfix"></div>
-                        <br />
+            </div>
+        </aside-menu>
 
-                        <div>
-                            <p>© 2016 Todos los derechos registrados. <br> Desarollado por Sebastián Guevara. </p>
+        <div class="right_col" role="main" >
+
+
+            <aside-menu-content >
+
+                <div class="nav_menu">
+                    <nav class="" role="navigation">
+                        <div class="nav toggle">
+                            <a id="menu_toggle"><i class="fa fa-bars" aside-menu-toggle="sol1"></i></a>
+
                         </div>
-                    </div>
-                </form>
-            </section>
+
+                        <ul class="nav navbar-nav navbar-right">
+
+
+                            <li class="{{class}}">
+                                <a class="user-profile dropdown-toggle" aria-expanded="{{expanded}}" ng-click="dropdown()">
+                                    <img src="{{userSPLOT.imagen}}" alt="">{{ userSPLOT.nombre }}
+                                    <span class=" fa fa-angle-down"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-usermenu">
+                                    <li><a ui-sref="perfil"> Perfil</a></li>
+
+                                    <li ng-controller="authCtrl as ctrl">
+                                        <a ng-click="ctrl.signOut()"><i class="fa fa-sign-out pull-right"></i> Cerrar Sesión </a></li>
+                                </ul>
+                            </li>
+
+
+                        </ul>
+                    </nav>
+                </div>
+
+
+
+                <div ui-view="mainView">
+
+                </div>
+
+            </aside-menu-content>
+
+
         </div>
-
-
-
-
     </div>
 </div>
-</body>

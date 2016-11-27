@@ -86,8 +86,4 @@ app.config(function($stateProvider, $urlRouterProvider) {
             }
         })
 
-<<<<<<< 0819d4d51bb2d6a6aeb1ef47e3e9dbc8550f69c2
 });
-=======
-});
->>>>>>> New organization of the project: Modules
