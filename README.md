@@ -29,12 +29,25 @@ user conflict with decisions of the others.
   - [Linear Optimization](https://developers.google.com/apps-script/reference/optimization/linear-optimization-constraint)
 
 - **Features Models**
-  - [Splot Research] (http://www.splot-research.org/)
+  - [Splot Research](http://www.splot-research.org/)
 
 - **Others**
   - [Famosa] ()
+  
 
+**Tools**
+
+
+  [<img src="https://p14.zdusercontent.com/attachment/1015988/dPsiSStmIFY51HCkXczWewm2U?token=eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..spYtAdt0cpDGlpN8QRH5Fw.PWmWHZ-U9plu7A9Q-Wxcb1pGiaIlx5w9dUMaX3MUe-qpgnJrVOuiyzBUYr0QDXeHCFFbNhznUKu6P8XOtYZwx-WpfaCcEPX4QFpmRcrSgtnFGIR_ZvVMCtTYGK4Q8fb9X7W3uledi8RdZm5J0H3mSV-5EKIJiQqYIv_deyBz5doBxsaIXHotCGfa0Gg3UtKTU3v9Fpi_jlvwf8kcsgAk3lBVxgO4QEqxNzFXsQTgoMCE56mqI4EdHUWkIoNR3u4ao61jz3TvtuNhGaReWLWmxNXsF721Hn6BHu7vNKMamV8.S30dvnlRbw4jUO3zBZIWew" width="150">](https://www.browserstack.com) 
+  <br> Amazing and powerful tool to test your app on real devices.
+  We are happy to use Browserstack to review the performance of our application on the devices available in the market.   
+  
+  <hr>
+
+  
+    
 [Online Demo](https://sebasg22.github.io/SPLOT) Try our last version of MULTISPLOT
+
 
 
  
